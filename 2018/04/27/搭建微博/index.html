@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://villce.github.io/vilce/img/7.jpg">
 <meta property="og:image" content="https://villce.github.io/vilce/img/8.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/9.png">
-<meta property="og:updated_time" content="2018-04-27T09:15:18.688Z">
+<meta property="og:updated_time" content="2018-04-27T09:35:16.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建微博">
 <meta name="twitter:description" content="1.环境准备 node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。 git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。">
@@ -365,6 +365,19 @@ root: /vilce/
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-环境准备"><span class="toc-number">1.</span> <span class="toc-text">1.环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#node-js-因为-hexo-整个博客框架是基于node-js的，所以必须安装node-js环境。我安装的是最新的版本，v4-5-0，安装过程一路-next-即可。"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#git客户端-用来将hexo相关文件提交到github上去，安装过程一路next。"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装hexo框架"><span class="toc-number">2.</span> <span class="toc-text">2.安装hexo框架</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#环境准备好以后，我们便可以安装hexo博客框架。"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">环境准备好以后，我们便可以安装hexo博客框架。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#然后在文件夹中右键打开git命令框"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">然后在文件夹中右键打开git命令框</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在git命令框中安装Hexo-npm-install-g-hexo"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">在git命令框中安装Hexo(npm install -g hexo)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化（hexo-init）"><span class="toc-number">2.0.0.6.</span> <span class="toc-text">初始化（hexo init）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装相关的依赖包（npm-install）"><span class="toc-number">2.0.0.7.</span> <span class="toc-text">安装相关的依赖包（npm install）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#此时文件夹如下图"><span class="toc-number">2.0.0.8.</span> <span class="toc-text">此时文件夹如下图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#config-yml：用来配置站点信息，大多数配置都在这里进行。"><span class="toc-number">2.0.0.9.</span> <span class="toc-text">_config.yml：用来配置站点信息，大多数配置都在这里进行。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#package-json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。"><span class="toc-number">2.0.0.10.</span> <span class="toc-text">package.json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#scaffolds：模板文件夹。"><span class="toc-number">2.0.0.11.</span> <span class="toc-text">scaffolds：模板文件夹。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#source：源文件夹是存放用户资源的地方-他下面有一个-posts，文件夹，我们发表的文件就存放在这个文件夹下。"><span class="toc-number">2.0.0.12.</span> <span class="toc-text">source：源文件夹是存放用户资源的地方,他下面有一个_posts，文件夹，我们发表的文件就存放在这个文件夹下。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#themes：主题文件夹，Hexo-会根据主题来生成静态页面。"><span class="toc-number">2.0.0.13.</span> <span class="toc-text">themes：主题文件夹，Hexo 会根据主题来生成静态页面。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接下来在文件夹下执行"><span class="toc-number">2.0.0.14.</span> <span class="toc-text">接下来在文件夹下执行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#然后用浏览器访问http-localhost-4000，就能看到hexo初始化界面。"><span class="toc-number">2.0.0.15.</span> <span class="toc-text">然后用浏览器访问http://localhost:4000，就能看到hexo初始化界面。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-部署微博到github"><span class="toc-number">3.</span> <span class="toc-text">3.部署微博到github</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建仓库"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">创建仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#部署文件到github"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">部署文件到github</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#找到文件夹下的-config-yml-文件，找到关键字-deploy-，然后修改成如下，我就用我自己的做示例："><span class="toc-number">3.0.0.3.</span> <span class="toc-text">找到文件夹下的_config.yml 文件，找到关键字 deploy ，然后修改成如下，我就用我自己的做示例：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#执行一下命令部署项目到github"><span class="toc-number">3.0.0.4.</span> <span class="toc-text">执行一下命令部署项目到github</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#但是输入hexo-d-可能会报-ERROR-Deployer-not-fount：-git-错误-这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令："><span class="toc-number">3.0.0.5.</span> <span class="toc-text">但是输入hexo d 可能会报 ERROR Deployer not fount： git 错误,这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浏览器输入villce-github-io-vilce即可访问-但可能出现图中情况，没有加载css样式。"><span class="toc-number">3.0.0.6.</span> <span class="toc-text">浏览器输入villce.github.io/vilce即可访问,但可能出现图中情况，没有加载css样式。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改一下-config-yml文件，其中的url和root属性"><span class="toc-number">3.0.0.7.</span> <span class="toc-text">更改一下_config.yml文件，其中的url和root属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#root下面应该设置成-项目名-而不是"><span class="toc-number">3.0.0.8.</span> <span class="toc-text">root下面应该设置成 /项目名 ,而不是 /</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-参考"><span class="toc-number">4.</span> <span class="toc-text">4.参考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -406,7 +419,7 @@ root: /vilce/
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/vilce/",
 		innerArchive: true,
 		showTags: false
