@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="vilce">
 <meta property="og:description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：  cache - 配置给定模式的缓存">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-30T09:11:34.043Z">
+<meta property="og:updated_time" content="2018-05-30T09:15:07.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis映射文件SQL语句学习">
 <meta name="twitter:description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：  cache - 配置给定模式的缓存">
@@ -213,19 +213,18 @@
 <li><p>result - 反射到JavaBean属性的普通结果</p>
 </li>
 <li><p>association - 复杂类型的结合；多个结果合成的类型</p>
-<p> a) nested result mappings - 几个resultMap自身嵌套关联，也可以引用到一个其它上</p>
+<p>a) nested result mappings - 几个resultMap自身嵌套关联，也可以引用到一个其它上</p>
 </li>
 <li><p>collection - 复杂类型集合 a collection of complex types</p>
 </li>
 <li><p>nested result mappings - resultMap的集合，也可以引用到一个其它上</p>
 </li>
 <li><p>discriminator - 使用一个结果值以决定使用哪个resultMap</p>
-<p>  a) case - 基本一些值的结果映射的case情形</p>
-<p> ​      i. nested result mappings - 一个case情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap.</p>
+<p> a) case - 基本一些值的结果映射的case情形</p>
+<p>​      i. nested result mappings - 一个case情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap.</p>
 </li>
 </ol>
-<p>####（1）id 、result</p>
-<p>  id、result是最简单的映射，id为主键映射；result其他基本数据库表字段实体类属性的映射。</p>
+<h4 id="（1）id-、result"><a href="#（1）id-、result" class="headerlink" title="（1）id 、result"></a>（1）id 、result</h4><p>  id、result是最简单的映射，id为主键映射；result其他基本数据库表字段实体类属性的映射。</p>
 <p>  最简单的例子：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;com.capsp.model.Student&quot; id=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;id  property=&quot;studentId&quot; column=&quot;STUDENT_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot; column=&quot;STUDENT_NAME&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot; column=&quot;STUDENT_SEX&quot;  javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot; column=&quot;STUDENT_BIRTHDAY&quot;  javaType=&quot;Date&quot; jdbcType=&quot;DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentPhoto&quot; column=&quot;STUDENT_PHOTO&quot; javaType=&quot;byte[]&quot; jdbcType=&quot;BLOB&quot; typeHandler=&quot;org.apache.ibatis.type.BlobTypeHandler&quot; /&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
 <p>id、result语句属性配置细节：</p>
@@ -442,7 +441,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL语句映射文件（1）resultMap"><span class="toc-number">1.</span> <span class="toc-text">SQL语句映射文件（1）resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-resultMap"><span class="toc-number">1.1.</span> <span class="toc-text">一. resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）constructor"><span class="toc-number">1.1.1.</span> <span class="toc-text">（2）constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）association联合"><span class="toc-number">1.1.2.</span> <span class="toc-text">（3）association联合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现联合"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">a. 使用select实现联合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现联合"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">b. 使用resultMap实现联合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）collection聚集"><span class="toc-number">1.1.3.</span> <span class="toc-text">（4）collection聚集</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现聚集"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">a. 使用select实现聚集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现聚集"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">b. 使用resultMap实现聚集</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）discriminator鉴别器"><span class="toc-number">1.1.4.</span> <span class="toc-text">（5）discriminator鉴别器</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL语句映射文件（1）resultMap"><span class="toc-number">1.</span> <span class="toc-text">SQL语句映射文件（1）resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-resultMap"><span class="toc-number">1.1.</span> <span class="toc-text">一. resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）id-、result"><span class="toc-number">1.1.1.</span> <span class="toc-text">（1）id 、result</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）constructor"><span class="toc-number">1.1.2.</span> <span class="toc-text">（2）constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）association联合"><span class="toc-number">1.1.3.</span> <span class="toc-text">（3）association联合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现联合"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">a. 使用select实现联合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现联合"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">b. 使用resultMap实现联合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）collection聚集"><span class="toc-number">1.1.4.</span> <span class="toc-text">（4）collection聚集</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现聚集"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">a. 使用select实现聚集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现聚集"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">b. 使用resultMap实现聚集</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）discriminator鉴别器"><span class="toc-number">1.1.5.</span> <span class="toc-text">（5）discriminator鉴别器</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
