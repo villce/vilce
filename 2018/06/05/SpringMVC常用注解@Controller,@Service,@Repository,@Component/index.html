@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://villce.github.io">
-  <title>Hello World | vilce</title>
+  <title>SpringMVC常用注解学习 | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="SpringMVC常用注解@Controller,@Service,@Repository,@Component@Controller">
+<meta name="keywords" content="注解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://villce.github.io/2018/04/26/hello-world/index.html">
+<meta property="og:title" content="SpringMVC常用注解学习">
+<meta property="og:url" content="https://villce.github.io/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="SpringMVC常用注解@Controller,@Service,@Repository,@Component@Controller">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-27T08:59:19.022Z">
+<meta property="og:image" content="https://villce.github.io/vilce/img/spring注解1.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/spring注解2.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/spring注解3.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/spring注解4.png">
+<meta property="og:updated_time" content="2018-07-10T02:17:59.587Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="SpringMVC常用注解学习">
+<meta name="twitter:description" content="SpringMVC常用注解@Controller,@Service,@Repository,@Component@Controller">
+<meta name="twitter:image" content="https://villce.github.io/vilce/img/spring注解1.png">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -158,36 +164,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SpringMVC常用注解@Controller,@Service,@Repository,@Component" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      SpringMVC常用注解学习
     </h1>
   
 
         
-        <a href="/vilce/2018/04/26/hello-world/" class="archive-article-date">
-  	<time datetime="2018-04-26T13:38:54.315Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
+        <a href="/vilce/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/" class="archive-article-date">
+  	<time datetime="2018-06-05T07:45:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="SpringMVC常用注解-Controller-Service-Repository-Component"><a href="#SpringMVC常用注解-Controller-Service-Repository-Component" class="headerlink" title="SpringMVC常用注解@Controller,@Service,@Repository,@Component"></a>SpringMVC常用注解@Controller,@Service,@Repository,@Component</h2><h3 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h3><a id="more"></a>
+<p><img src="/vilce/img/spring注解1.png" alt="1"></p>
+<p>@Controller用于标记在一个类上，使用它标记的类就是一个SpringMVC Controller对象。分发处理器将会扫描使用了该注解的类的方法。通俗来说，被Controller标记的类就是一个控制器，这个类中的方法，就是相应的动作。</p>
+<p>@RequestMapping是一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。如上图的调用登录接口时路径就是：localhost:8080/xxx/user/login</p>
+<h3 id="Controller和-RestController的区别"><a href="#Controller和-RestController的区别" class="headerlink" title="@Controller和@RestController的区别"></a>@Controller和@RestController的区别</h3><p>@RestController注解相当于@ResponseBody + @Controller合在一起的作用</p>
+<p>1）如果只是使用@RestController注解Controller，则Controller中的方法无法返回jsp页面，或者html，配置的视图解析器 Internal Resource View Resolver 不起作用，返回的内容就是Return里面的内容</p>
+<p>2）如果需要返回指定页面，则需要用@Controller配合视图解析器 Internal Resource View Resolver 才行。如果需要返回 JSON、XML 或自定义 media Type 内容到页面，则需要在对应的方法上加上@ResponseBody注解。</p>
+<h3 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h3><p><img src="/vilce/img/spring注解2.png" alt="2"></p>
+<p>@Service(value=”UserServiceImpl”)注解是告诉Spring，当Spring要创建UserServiceImpl的实例时，bean的名字必须叫做“UserServiceImpl”，这样当Action需要使用UserServiceImpl的实例时，就可以由Spring创建好的“UserServiceImpl”，然后注入给Action。</p>
+<h3 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h3><p><img src="/vilce/img/spring注解3.png" alt="3"></p>
+<p>@Repository(value=”UserDaoImpl”)注解是告诉Spring，让Spring创建一个名字叫“UserDaoImpl”的UserDaoImpl实例。</p>
+<p>当Service需要使用Spring创建的名字叫“UserDaoImpl”的UserDaoImpl实例时，就可以使用@Resource(name=”UserDaoImpl”)注解告诉Spring，Spring把创建好的UserDaoImpl注入给Service即可。</p>
+<p>@Autowired可以对成员变量、方法和构造函数进行标注，来完成自动装配的工作，@Autowired是根据类型进行自动装配的</p>
+<h3 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h3><p><img src="/vilce/img/spring注解4.png" alt="4"></p>
+<p>@Component定义Spring管理Bean</p>
+<h3 id="总结一下："><a href="#总结一下：" class="headerlink" title="总结一下："></a>总结一下：</h3><p>@Controller用于标记在一个类上，使用它标记的类就是一个SpringMVC Controller对象。分发处理器将会扫描使用了该注解的类的方法。通俗来说，被Controller标记的类就是一个控制器，这个类中的方法，就是相应的动作。</p>
+<p>1、@Controller控制器（注入服务）</p>
+<p>用于标注控制层，相当于struts中的action层</p>
+<p>2、@Service服务（注入dao）</p>
+<p>用于标注服务层，主要用来进行业务的逻辑处理</p>
+<p>3、@Repository（实现dao访问）</p>
+<p>用于标注数据访问层，也可以说用于标注数据访问组件，即DAO组件。</p>
+<p>4、@Component（把普通pojo实例化到spring容器中）</p>
+<p>相当于配置文件中的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;&quot; class=&quot;&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于@Controller、@Service等的时候），我们就可以使用@Component来标注这个类</p>
+<p>说明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-package=&quot;com.*&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>这个例子是引入Component组件的例子，其中base-package表示为需要扫描的所有子包。</p>
 
       
 
@@ -227,6 +252,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -277,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/04/26/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,15 +327,20 @@
   
 <nav id="article-nav">
   
-    <a href="/vilce/2018/04/27/搭建微博/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/vilce/2018/06/13/Swagger常用注解说明/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          搭建微博
+          Swagger常用注解学习
         
       </div>
     </a>
   
+  
+    <a href="/vilce/2018/05/31/SQL语句映射文件（2）增删改查、参数、缓存/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis映射文件SQL语句学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -324,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringMVC常用注解-Controller-Service-Repository-Component"><span class="toc-number">1.</span> <span class="toc-text">SpringMVC常用注解@Controller,@Service,@Repository,@Component</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller"><span class="toc-number">1.1.</span> <span class="toc-text">@Controller</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller和-RestController的区别"><span class="toc-number">1.2.</span> <span class="toc-text">@Controller和@RestController的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Service"><span class="toc-number">1.3.</span> <span class="toc-text">@Service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Repository"><span class="toc-number">1.4.</span> <span class="toc-text">@Repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Component"><span class="toc-number">1.5.</span> <span class="toc-text">@Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结一下："><span class="toc-number">1.6.</span> <span class="toc-text">总结一下：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
