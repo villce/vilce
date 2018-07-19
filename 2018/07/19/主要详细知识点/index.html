@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://villce.github.io/vilce/img/java/java1.gif">
 <meta property="og:image" content="https://villce.github.io/vilce/img/java/Java2.jpg">
-<meta property="og:updated_time" content="2018-07-19T08:00:07.120Z">
+<meta property="og:updated_time" content="2018-07-19T08:37:58.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试知识点整理(一)">
 <meta name="twitter:description" content="主要详细知识点(一)一、Java基础">
@@ -188,6 +188,14 @@
 <p>对于HashMape而言，系统将key-value当成一个整体进行处理，系统根据Hash算法来计算key-value的存储位置，这样可以保证快速存取Map的key-value对。Entry就是数组中的元素 ，Map.Entry其实就是一个key-value对,系统在存储key-value对时，仅仅只是根据key来计算并决定每个Entry的存储位置。</p>
 <p>“Hash算法”：每个Java对象都有hashCode()方法，都可通过该方法获得它的hashCode值，系统根据该hashCode值来决定该元素的存储位置。</p>
 <p>HashMap初始容量为16，负载因子为0.75，当HashMap中元素个数超过16*0.75=12的时候，数据大小扩展为32，然后重新计算每个元素的位置，非常消耗性能操作，所以需要我们预知元素个数，预设元素个数提高性能。</p>
+<p><strong>扩充：</strong></p>
+<p>HashMap和HashTable的区别：</p>
+<p>(1)继承父类不同，HashMap继承自AbstractMap，而HashTable继承自Dictionary类</p>
+<p>(2)对外提供接口不同，HashTable比HashMap多提供了elments()和contains()两个方法</p>
+<p>(3)对Null key和Null value的支持不同，HashTable既不支持Null key也不支持Null value</p>
+<p>(4)线程安全性不同，HashTable是线程安全的，而HashMap不是</p>
+<p>(5)遍历方式不同，初始容量大小和每次扩充容量大小不同</p>
+<p>(6)计算Hash值的方法不同</p>
 <h4 id="1-2-Set、map区别"><a href="#1-2-Set、map区别" class="headerlink" title="1.2 Set、map区别"></a>1.2 Set、map区别</h4><p>(1)set的节点是一个数据，map的节点是一对键值对</p>
 <p>(2)map使用关键值key来唯一标识每一个成员，map的value值可以重复；set存储的无重复的元素</p>
 <p>(3)set是conllection接口的子接口，map不是conllection的子接口或实现类，map是一个接口</p>
