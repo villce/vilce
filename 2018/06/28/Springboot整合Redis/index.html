@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://villce.github.io">
   <title>Springboot整合Redis | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Springboot整合Redis1.Redis概述">
+  <meta name="description" content="1.Redis概述">
 <meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Springboot整合Redis">
 <meta property="og:url" content="https://villce.github.io/2018/06/28/Springboot整合Redis/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="Springboot整合Redis1.Redis概述">
+<meta property="og:description" content="1.Redis概述">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis1.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis2.png">
@@ -26,10 +26,10 @@
 <meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis9.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis10.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis8.png">
-<meta property="og:updated_time" content="2018-07-10T02:17:20.004Z">
+<meta property="og:updated_time" content="2018-07-19T07:59:27.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springboot整合Redis">
-<meta name="twitter:description" content="Springboot整合Redis1.Redis概述">
+<meta name="twitter:description" content="1.Redis概述">
 <meta name="twitter:image" content="https://villce.github.io/vilce/img/redis/redis1.png">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
@@ -190,7 +190,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Springboot整合Redis"><a href="#Springboot整合Redis" class="headerlink" title="Springboot整合Redis"></a>Springboot整合Redis</h2><h3 id="1-Redis概述"><a href="#1-Redis概述" class="headerlink" title="1.Redis概述"></a>1.Redis概述</h3><a id="more"></a>
+        <h3 id="1-Redis概述"><a href="#1-Redis概述" class="headerlink" title="1.Redis概述"></a>1.Redis概述</h3><a id="more"></a>
 <p>redis是一个开源的，先进的 key-value 存储可用于构建高性能的存储解决方案。它支持数据结构有字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引。 NoSQL，Not Only [SQL]，泛指非关系型的数据库。所以redis是一种nosql。<em>敲黑板画重点：redis是一种nosql.</em></p>
 <p>redis的优点：</p>
 <ul>
@@ -400,7 +400,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Springboot整合Redis"><span class="toc-number">1.</span> <span class="toc-text">Springboot整合Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Redis概述"><span class="toc-number">1.1.</span> <span class="toc-text">1.Redis概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Redis下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">2.Redis下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows下安装："><span class="toc-number">1.2.1.</span> <span class="toc-text">windows下安装：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装成Windows服务-开机自启："><span class="toc-number">1.2.2.</span> <span class="toc-text">安装成Windows服务-开机自启：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Spingboot引入依赖："><span class="toc-number">1.3.</span> <span class="toc-text">3.Spingboot引入依赖：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据访问层dao"><span class="toc-number">1.3.1.</span> <span class="toc-text">数据访问层dao</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单元测试"><span class="toc-number">1.3.2.</span> <span class="toc-text">单元测试</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Redis概述"><span class="toc-number">1.</span> <span class="toc-text">1.Redis概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Redis下载安装"><span class="toc-number">2.</span> <span class="toc-text">2.Redis下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows下安装："><span class="toc-number">2.1.</span> <span class="toc-text">windows下安装：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装成Windows服务-开机自启："><span class="toc-number">2.2.</span> <span class="toc-text">安装成Windows服务-开机自启：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Spingboot引入依赖："><span class="toc-number">3.</span> <span class="toc-text">3.Spingboot引入依赖：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据访问层dao"><span class="toc-number">3.1.</span> <span class="toc-text">数据访问层dao</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单元测试"><span class="toc-number">3.2.</span> <span class="toc-text">单元测试</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
