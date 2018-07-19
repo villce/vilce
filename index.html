@@ -159,6 +159,280 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-主要详细知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/vilce/2018/07/19/主要详细知识点/">面试知识点整理(1)</a>
+    </h1>
+  
+
+        
+        <a href="/vilce/2018/07/19/主要详细知识点/" class="archive-article-date">
+  	<time datetime="2018-07-19T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="主要详细知识点-1"><a href="#主要详细知识点-1" class="headerlink" title="主要详细知识点(1)"></a>主要详细知识点(1)</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><h4 id="1-1-HashMap的存储机制（很重要，必看）"><a href="#1-1-HashMap的存储机制（很重要，必看）" class="headerlink" title="1.1 HashMap的存储机制（很重要，必看）"></a>1.1 HashMap的存储机制（很重要，必看）</h4><p>HashMap是基于哈希表的Map接口的非同步实现。</p>
+<p>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。</p>
+<p>对于HashMape而言，系统将key-value当成一个整体进行处理，系统根据Hash算法来计算key-value的存储位置，这样可以保证快速存取Map的key-value对。Entry就是数组中的元素 ，Map.Entry其实就是一个key-value对,系统在存储key-value对时，仅仅只是根据key来计算并决定每个Entry的存储位置。</p>
+<p>“Hash算法”：每个Java对象都有hashCode()方法，都可通过该方法获得它的hashCode值，系统根据该hashCode值来决定该元素的存储位置。</p>
+<p>HashMap初始容量为16，负载因子为0.75，当HashMap中元素个数超过16*0.75=12的时候，数据大小扩展为32，然后重新计算每个元素的位置，非常消耗性能操作，所以需要我们预知元素个数，预设元素个数提高性能。</p>
+<h4 id="1-2-Set、map区别"><a href="#1-2-Set、map区别" class="headerlink" title="1.2 Set、map区别"></a>1.2 Set、map区别</h4><p>(1)set的节点是一个数据，map的节点是一对键值对</p>
+<p>(2)map使用关键值key来唯一标识每一个成员，map的value值可以重复；set存储的无重复的元素</p>
+<p>(3)set是conllection接口的子接口，map不是conllection的子接口或实现类，map是一个接口</p>
+<h4 id="1-3-Set、list区别"><a href="#1-3-Set、list区别" class="headerlink" title="1.3 Set、list区别"></a>1.3 Set、list区别</h4><p>(1)set、list都是collection接口的子接口</p>
+<p>(2)list可以允许重复的对象，可以插入多个null元素；set不允许重复对象，只允许一个null元素</p>
+<p>(3)list是一个有序容器，保持了每个元素的插入顺序，输出顺序就是插入顺序；set是无序容器，无法保证每个元素的存储顺序，TreeSet通过Comparator或者Comparable维护了一个排序顺序。</p>
+<h4 id="1-4-ArrayList、LinkedList区别"><a href="#1-4-ArrayList、LinkedList区别" class="headerlink" title="1.4 ArrayList、LinkedList区别"></a>1.4 ArrayList、LinkedList区别</h4><p>(1)ArrayList是实现了基于动态数组的数据结构，LinkedList是基于链表的数据结构</p>
+<p>(2)对于随意访问get和set，ArrayList优于LinkedList，因为LinkedList要移动指针</p>
+<p>(3)对于新增和删除操作add和remove，LinkedList比较占优势，因为ArratList要移动数据</p>
+<h4 id="1-5-String、Stringbufer、StringBuilder区别"><a href="#1-5-String、Stringbufer、StringBuilder区别" class="headerlink" title="1.5 String、Stringbufer、StringBuilder区别"></a>1.5 String、Stringbufer、StringBuilder区别</h4><p>(1)在运行速度上：StringBuilder&gt;StringBuffer&gt;String</p>
+<p>String是字符串常量，而StringBuilder和StringBuffer是字符串变量，即String对象一旦创建后是不可更改的</p>
+<p>(2)在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</p>
+<p>如果要进行多线程操作，就要使用StringBuffer，在单线程情况下，使用速度较快的StringBuilder</p>
+<p>(3)String：适用于少量字符串操作的情况</p>
+<p>​    StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
+<p>​    StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
+<h4 id="1-6-HashSet、TreeSet、LinkedHashSet区别"><a href="#1-6-HashSet、TreeSet、LinkedHashSet区别" class="headerlink" title="1.6 HashSet、TreeSet、LinkedHashSet区别"></a>1.6 HashSet、TreeSet、LinkedHashSet区别</h4><p>(1)HashSet：不能保证元素的怕排列顺序，顺序有可能发生变化，且是不同步的，集合元素可以是null但只能放入一个null（和HashMap实现的接口规范不同，但底层的Hash存储机制完全一样）</p>
+<p>(2)TreeSet：是J2SE中唯一可实现自动排序的类型，是SortedSet接口的唯一实现类，集合元素处于排序状态。支持自然排序和定制排序（通过红黑树实现）</p>
+<p>(3)LinkedHashSet：根据元素的HashCode值来决定元素的存储位置，但它同时使用链表维护元素的次序。在访问Set中的全部元素时，性能比HashSet好，但是插入时性能稍微逊色于HashSet</p>
+<h4 id="1-7-HashMap、TreeMap、LinkedHashMap"><a href="#1-7-HashMap、TreeMap、LinkedHashMap" class="headerlink" title="1.7 HashMap、TreeMap、LinkedHashMap"></a>1.7 HashMap、TreeMap、LinkedHashMap</h4><p>(1)HashMap：根据键的HashCode值存储数据，遍历时，取得数据的顺序是完全随机的，具有很快的访问速度；最多只允许一条记录的键为null，允许多条记录的值为null；不支持线程同步（通过哈希表实现）</p>
+<p>(2)TreeMap：将保存的记录根据键排序，默认是按键值的升序排序，也可以指定排序的比较器（通过红黑树实现）</p>
+<p>(3)LinkedHashMap：保存了记录的插入顺序，在遍历的时候会比HashMap慢，但当HashMap容量很大，实际数据较少时，遍历起来可能比LinkedHashMap慢</p>
+<h4 id="1-8-熟悉Java集合类的框架图"><a href="#1-8-熟悉Java集合类的框架图" class="headerlink" title="1.8 熟悉Java集合类的框架图"></a>1.8 熟悉Java集合类的框架图</h4><p><img src="/vilce/img/java1.gif" alt="1"></p>
+<h4 id="1-9-HashMap、ArrayList、StringBuffer、String等源码的熟悉"><a href="#1-9-HashMap、ArrayList、StringBuffer、String等源码的熟悉" class="headerlink" title="1.9 HashMap、ArrayList、StringBuffer、String等源码的熟悉"></a>1.9 HashMap、ArrayList、StringBuffer、String等源码的熟悉</h4><p><a href="http://www.cnblogs.com/xujian2014/tag/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">HashMap、ArrayList源码分析</a></p>
+<p><a href="https://www.cnblogs.com/Wilange/p/7570633.html" target="_blank" rel="noopener">StringBuffer、String源码分析</a></p>
+<h4 id="1-10-线程和进程"><a href="#1-10-线程和进程" class="headerlink" title="1.10 线程和进程"></a>1.10 线程和进程</h4><p>定义：进程时操作系统分配资源的最小单元，线程时操作系统调度的最小单元</p>
+<p>关系：一个线程可以创建和撤销另一个线程，同一个进程中的多个线程之间可以并发执行</p>
+<p>(1)一个程序至少有一个进程，一个进程至少有一个线程</p>
+<p>(2)线程的划分尺度小于进程，使得多线程程序的并发性高</p>
+<p>(3)进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率</p>
+<p>(4)线程在执行过程中与进程还是有区别的，每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制</p>
+<p>(5)从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看作多个独立的应用，来实现进程的调度和管理以及资源分配</p>
+<p>优缺点：线程执行开销小，但不利于资源的管理和保护；而进程正相反。同时，线程适合于在SMP机器上运行，而进程则可以跨机器迁移。</p>
+<h4 id="1-11-线程的特性"><a href="#1-11-线程的特性" class="headerlink" title="1.11 线程的特性"></a>1.11 线程的特性</h4><p>原子性：操作是单一不可分割的操作</p>
+<p>内存可见性：cpu在执行代码时，为了减少变量访问的时间消耗可能会将变量的值缓存到该cpu的缓存区。因此在再次访问该变量时可能会从cpu缓存而不是主内存中读取的。同样的，对变量的修改等操作也会写入cpu缓存区，而没有写回主内存。cpu的缓存区对其他cpu而言是不可见的，这就导致了其他cpu上的线程可能无法看到该线程对某变量的更改，这就是内存可见性.。</p>
+<p>重排序：编译器和cpu为了提高指令的执行效率可能会进行指令重排序。使得代码的实际的执行方式可能不是按照我们认为的方式进行的。如一个对象的初始化，可能会先为该实例引用创建内存空间并且创建引用，而不是先去初始化某个实例对象 </p>
+<h4 id="1-12-线程的状态"><a href="#1-12-线程的状态" class="headerlink" title="1.12 线程的状态"></a>1.12 线程的状态</h4><p>(1) <strong>初始(NEW)</strong>：新创建了一个线程对象，但还没有调用start()方法。</p>
+<p>(2) <strong>运行(RUNNABLE)</strong>：Java线程中将就绪（ready）和运行中（running）两种状态笼统的成为“运行”。</p>
+<p>线程对象创建后，其他线程(比如main线程）调用了该对象的start()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获取cpu 的使用权，此时处于就绪状态（ready）。就绪状态的线程在获得cpu 时间片后变为运行中状态（running）。</p>
+<p>(3)<strong>阻塞(BLOCKED)</strong>：表线程阻塞于锁。</p>
+<p>(4)<strong>等待(WAITING)</strong>：进入该状态的线程需要等待其他线程做出一些特定动作（通知或中断）。</p>
+<p>(5)<strong>超时等待(TIME_WAITING)</strong>：该状态不同于WAITING，它可以在指定的时间内自行返回。</p>
+<p>(6) <strong>终止(TERMINATED)</strong>：表示该线程已经执行完毕。</p>
+<p><img src="/vilce/img/Java2.jpg" alt="2"></p>
+<h4 id="1-13-多线程并发的实现"><a href="#1-13-多线程并发的实现" class="headerlink" title="1.13 多线程并发的实现"></a>1.13 多线程并发的实现</h4><p>区分线程和进程，通常一个程序有一个进程，而一个进程可以有多个线程。一个任务不一定对应一个线程可能是多个线程或是一个线程池</p>
+<p>区分并发和并行，并发是指在一段时间内同时做多个事情，而并行是指在同一时刻做多个事情。并发就是在单核处理中同时处理多个任务(这里的同时指的是逻辑上的同时)，并行就是在多核处理器中同时处理多个任务(这里的同时指的是物理上的同时)</p>
+<p>CPU采用时间片轮转等不同算法来对线程进行调度，从而实现多线程的并发</p>
+<h4 id="1-14-线程的创建方式"><a href="#1-14-线程的创建方式" class="headerlink" title="1.14 线程的创建方式"></a>1.14 线程的创建方式</h4><p>(1)继承Thread类创建线程：定义Thread类的子类，并重写该类的run()方法。创建Thread子类的实例，也就是创建了线程对象；启动线程即调用线程的start()方法</p>
+<p>(2)实现Runnable接口创建线程：定义Runnable接口的实现类，一样重写run()方法；创建Runnable实现类的实例，并用这个实例作为Thread的target来创建Thread对象，这个对象才是真正的线程对象；依然用start()启动</p>
+<p>(3)使用Callable和Future创建线程：创建Callable接口的实现类，并实现call()方法，然后创建该实现类的实例；使用FutureTask类来包装Callable对象，该FutureTask对象封装了Callable对象的call()方法的返回值；使用FutureTask对象作为Thread对象的target创建并启动线程；调用FuntureTask对象的get()方法来获得子线程执行结束后的返回值</p>
+<h4 id="1-15-线程池的使用"><a href="#1-15-线程池的使用" class="headerlink" title="1.15 线程池的使用"></a>1.15 线程池的使用</h4><p><a href="https://www.cnblogs.com/dolphin0520/p/3932921.html" target="_blank" rel="noopener">线程池的使用</a></p>
+<h4 id="1-16-Java作用域"><a href="#1-16-Java作用域" class="headerlink" title="1.16 Java作用域"></a>1.16 Java作用域</h4><table>
+<thead>
+<tr>
+<th>作用域、可见性</th>
+<th>同类</th>
+<th>同包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>可见</td>
+<td>可见</td>
+<td>可见</td>
+<td>可见</td>
+</tr>
+<tr>
+<td>private</td>
+<td>可见</td>
+<td>不可见</td>
+<td>不可见</td>
+<td>不可见</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>可见</td>
+<td>可见</td>
+<td>可见</td>
+<td>不可见</td>
+</tr>
+<tr>
+<td>default</td>
+<td>可见</td>
+<td>可见</td>
+<td>不可见</td>
+<td>不可见</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-17-final、static、native等特殊关键字的使用"><a href="#1-17-final、static、native等特殊关键字的使用" class="headerlink" title="1.17 final、static、native等特殊关键字的使用"></a>1.17 final、static、native等特殊关键字的使用</h4><p><a href="https://blog.csdn.net/m0_37241851/article/details/76473308" target="_blank" rel="noopener">static &amp; final &amp; native</a></p>
+<h4 id="1-18-Java按值传递的过程"><a href="#1-18-Java按值传递的过程" class="headerlink" title="1.18 Java按值传递的过程"></a>1.18 Java按值传递的过程</h4><ul>
+<li>按值传递：指的是在方法调用时，传递的参数是按值得拷贝传递</li>
+</ul>
+<p>​       特点：传递的是值的拷贝，也就是说传递后就互不相关了</p>
+<ul>
+<li><p>引用传递：指的是在方法调用时，传递的参数是按引用进行传递，其实传递的引用的地址，也就是变量所对应的内存空间的地址</p>
+<p>特点：传递的是值的引用，也就是说传递前后都指向同一个引用 </p>
+</li>
+</ul>
+<p>(1)”在Java里面参数传递都是按值传递”：按值传递是传递的值的拷贝，按引用传递其实传递的是引用的地址值，所以统称按值传递</p>
+<p>(2)在Java里面只有基本类型和按照下面这种定义方式的String是按值传递，其它的都是按引用传递。就是直接使用双引号定义字符串方式：String str = “Java”</p>
+<h4 id="1-19-重写、重构和重载"><a href="#1-19-重写、重构和重载" class="headerlink" title="1.19 重写、重构和重载"></a>1.19 重写、重构和重载</h4><p>方法重载：指在一个类中定义多个同名的方法，但要求每个方法具有不同的参数的类型或参数的个数</p>
+<p>方法重写：为了使子类的实例完全接替来自父类的类成员，父类必须将该成员声明为虚拟的，这需要在改成员的返回类型之前添加virtual关键字。然后子类使用override关键字，将父类的实现，替换为自己的实现</p>
+<p>(继承是原封不动的，全部照搬，无法体现多样性。即当针对父类的方法，在子类中需要有些修改的时候，就需要使用方法重写)</p>
+<p>重构：就是通过调整程序代码改软件的质量、性能，使其程序的设计模式和架构更趋合理，提高软件的扩展性和维护性</p>
+<h4 id="1-20-抽象类和接口"><a href="#1-20-抽象类和接口" class="headerlink" title="1.20 抽象类和接口"></a>1.20 抽象类和接口</h4><p><a href="https://www.cnblogs.com/dolphin0520/p/3811437.html" target="_blank" rel="noopener">深入理解抽象类和接口</a></p>
+<h4 id="1-21-内部类的使用：匿名内部类、静态内部类等"><a href="#1-21-内部类的使用：匿名内部类、静态内部类等" class="headerlink" title="1.21 内部类的使用：匿名内部类、静态内部类等"></a>1.21 内部类的使用：匿名内部类、静态内部类等</h4><p><a href="https://www.cnblogs.com/shen-hua/p/5440285.html" target="_blank" rel="noopener">Java中的内部类</a></p>
+<h4 id="1-22-Java多线程并发、生产者消费者的实现"><a href="#1-22-Java多线程并发、生产者消费者的实现" class="headerlink" title="1.22 Java多线程并发、生产者消费者的实现"></a>1.22 Java多线程并发、生产者消费者的实现</h4><p><a href="https://www.cnblogs.com/xiaoxi/p/7910868.html" target="_blank" rel="noopener">Java多线程之并发协作生产者消费者设计模式</a></p>
+<h4 id="1-23-Java连接数据库的过程"><a href="#1-23-Java连接数据库的过程" class="headerlink" title="1.23 Java连接数据库的过程"></a>1.23 Java连接数据库的过程</h4><p>JDBC是数据库连接的一套API，DBCP是一个常用的数据库连接池</p>
+<p><a href="https://blog.csdn.net/javaniuniu/article/details/52403509" target="_blank" rel="noopener">连接数据库步骤</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java基础 面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/vilce/2018/07/19/主要详细知识点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-重点知识大纲" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/vilce/2018/07/18/重点知识大纲/">面试知识大纲</a>
+    </h1>
+  
+
+        
+        <a href="/vilce/2018/07/18/重点知识大纲/" class="archive-article-date">
+  	<time datetime="2018-07-18T08:45:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="重点知识"><a href="#重点知识" class="headerlink" title="重点知识"></a>重点知识</h2><h3 id="1-JVM内存管理机制和垃圾回收机制（搞得透彻）"><a href="#1-JVM内存管理机制和垃圾回收机制（搞得透彻）" class="headerlink" title="1. JVM内存管理机制和垃圾回收机制（搞得透彻）"></a>1. JVM内存管理机制和垃圾回收机制（搞得透彻）</h3><h3 id="2-JVM内存调优（了解怎么回事，做项目中使用较多）"><a href="#2-JVM内存调优（了解怎么回事，做项目中使用较多）" class="headerlink" title="2. JVM内存调优（了解怎么回事，做项目中使用较多）"></a>2. JVM内存调优（了解怎么回事，做项目中使用较多）</h3><h3 id="3-设计模式（熟悉常见设计模式的应用场景）"><a href="#3-设计模式（熟悉常见设计模式的应用场景）" class="headerlink" title="3.  设计模式（熟悉常见设计模式的应用场景）"></a>3.  设计模式（熟悉常见设计模式的应用场景）</h3><h3 id="4-多线程（线程和进程、线程的状态、线程并发的操作等）"><a href="#4-多线程（线程和进程、线程的状态、线程并发的操作等）" class="headerlink" title="4. 多线程（线程和进程、线程的状态、线程并发的操作等）"></a>4. 多线程（线程和进程、线程的状态、线程并发的操作等）</h3><h3 id="5-JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）"><a href="#5-JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）" class="headerlink" title="5. JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）"></a>5. JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）</h3><h3 id="6-JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try-catch-finally的使用）"><a href="#6-JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try-catch-finally的使用）" class="headerlink" title="6. JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try catch finally的使用）"></a>6. JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try catch finally的使用）</h3><h3 id="7-JVM的运行机制（理解JVM是如何运行的）"><a href="#7-JVM的运行机制（理解JVM是如何运行的）" class="headerlink" title="7. JVM的运行机制（理解JVM是如何运行的）"></a>7. JVM的运行机制（理解JVM是如何运行的）</h3><h3 id="8-Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）"><a href="#8-Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）" class="headerlink" title="8. Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）"></a>8. Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）</h3><h2 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h2><p>常见的排序算法需要理解其原理和会写代码，还有时间空间复杂度也要知道</p>
+<p>队列、栈：需要理解其存取结构，并能在某些场景下使用</p>
+<p>二叉树：树的遍历、树的深度、按层次输出、平衡二叉树、逆序打印树等</p>
+<p>链表：逆序、合并两有序的链表、判断链表是否有环、链表倒数第K个元素等</p>
+<p>字符串：KMP算法、动态规划（这个是重点，需要理解动态规划，常见的题有：求解最长回文子串，求解最长公子串等）</p>
+<p>海量数据处理：Bit-map、分而治之、hash映射等</p>
+<h2 id="数据库相关"><a href="#数据库相关" class="headerlink" title="数据库相关"></a>数据库相关</h2><p>最基本的数据库CRUD操作要熟悉，能够根据表写出需要的SQL语句</p>
+<p>事务、零时表、索引、表锁、行列锁、视图、存储过程等都要深入理解</p>
+<p>Nosql和redis等非关系数据库</p>
+<h2 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h2><p>像SSH等的开源框架在面试过程中问的很少，但是也是有必要了解SSH的运行原理和使用。面试主要考察的是基础，所以更加偏向于考察数据结构、算法、数据库、JAVA基础知识等。所以，如果你时间有限，可以把精力放在基础知识的学习和复习上，如果你时间充裕，可以学习和复习开源框架相关知识。对于开源框架：最好还是看看源码，对自己的好处是很大的。 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">面试 大纲</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/vilce/2018/07/18/重点知识大纲/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SpringBoot 整合Redis实现缓存操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -772,71 +1046,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/04/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/vilce/2018/04/26/hello-world/" class="archive-article-date">
-  	<time datetime="2018-04-26T13:38:54.315Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/vilce/2018/04/26/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/04/26/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/vilce/page/2/">2</a><a class="extend next" rel="next" href="/vilce/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -942,7 +1155,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java基础 面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -950,7 +1171,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
             
             <div class="clearfix"></div>
