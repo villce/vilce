@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://villce.github.io">
   <title>面试知识点整理(1) | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要详细知识点(1)一、Java基础1.1 HashMap的存储机制（很重要，必看）HashMap是基于哈希表的Map接口的非同步实现。 HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。 对于HashMape而言，系统将key-value当成一个整体进行处理，系统根据Hash算法来计算key-value的存储位置，这样可以保证快速存取Map的key-value对。Entry">
+  <meta name="description" content="主要详细知识点(1)一、Java基础">
 <meta name="keywords" content="Java基础 面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试知识点整理(1)">
 <meta property="og:url" content="https://villce.github.io/2018/07/19/主要详细知识点/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="主要详细知识点(1)一、Java基础1.1 HashMap的存储机制（很重要，必看）HashMap是基于哈希表的Map接口的非同步实现。 HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。 对于HashMape而言，系统将key-value当成一个整体进行处理，系统根据Hash算法来计算key-value的存储位置，这样可以保证快速存取Map的key-value对。Entry">
+<meta property="og:description" content="主要详细知识点(1)一、Java基础">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://villce.github.io/vilce/img/java1.gif">
-<meta property="og:image" content="https://villce.github.io/vilce/img/Java2.jpg">
-<meta property="og:updated_time" content="2018-07-19T07:52:30.782Z">
+<meta property="og:image" content="https://villce.github.io/vilce/img/java/java1.gif">
+<meta property="og:image" content="https://villce.github.io/vilce/img/java/Java2.jpg">
+<meta property="og:updated_time" content="2018-07-19T07:55:18.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试知识点整理(1)">
-<meta name="twitter:description" content="主要详细知识点(1)一、Java基础1.1 HashMap的存储机制（很重要，必看）HashMap是基于哈希表的Map接口的非同步实现。 HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。 对于HashMape而言，系统将key-value当成一个整体进行处理，系统根据Hash算法来计算key-value的存储位置，这样可以保证快速存取Map的key-value对。Entry">
-<meta name="twitter:image" content="https://villce.github.io/vilce/img/java1.gif">
+<meta name="twitter:description" content="主要详细知识点(1)一、Java基础">
+<meta name="twitter:image" content="https://villce.github.io/vilce/img/java/java1.gif">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -182,7 +182,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="主要详细知识点-1"><a href="#主要详细知识点-1" class="headerlink" title="主要详细知识点(1)"></a>主要详细知识点(1)</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><h4 id="1-1-HashMap的存储机制（很重要，必看）"><a href="#1-1-HashMap的存储机制（很重要，必看）" class="headerlink" title="1.1 HashMap的存储机制（很重要，必看）"></a>1.1 HashMap的存储机制（很重要，必看）</h4><p>HashMap是基于哈希表的Map接口的非同步实现。</p>
+        <h2 id="主要详细知识点-1"><a href="#主要详细知识点-1" class="headerlink" title="主要详细知识点(1)"></a>主要详细知识点(1)</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><a id="more"></a>
+<h4 id="1-1-HashMap的存储机制（很重要，必看）"><a href="#1-1-HashMap的存储机制（很重要，必看）" class="headerlink" title="1.1 HashMap的存储机制（很重要，必看）"></a>1.1 HashMap的存储机制（很重要，必看）</h4><p>HashMap是基于哈希表的Map接口的非同步实现。</p>
 <p>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。</p>
 <p>对于HashMape而言，系统将key-value当成一个整体进行处理，系统根据Hash算法来计算key-value的存储位置，这样可以保证快速存取Map的key-value对。Entry就是数组中的元素 ，Map.Entry其实就是一个key-value对,系统在存储key-value对时，仅仅只是根据key来计算并决定每个Entry的存储位置。</p>
 <p>“Hash算法”：每个Java对象都有hashCode()方法，都可通过该方法获得它的hashCode值，系统根据该hashCode值来决定该元素的存储位置。</p>
@@ -209,7 +210,7 @@
 <h4 id="1-7-HashMap、TreeMap、LinkedHashMap"><a href="#1-7-HashMap、TreeMap、LinkedHashMap" class="headerlink" title="1.7 HashMap、TreeMap、LinkedHashMap"></a>1.7 HashMap、TreeMap、LinkedHashMap</h4><p>(1)HashMap：根据键的HashCode值存储数据，遍历时，取得数据的顺序是完全随机的，具有很快的访问速度；最多只允许一条记录的键为null，允许多条记录的值为null；不支持线程同步（通过哈希表实现）</p>
 <p>(2)TreeMap：将保存的记录根据键排序，默认是按键值的升序排序，也可以指定排序的比较器（通过红黑树实现）</p>
 <p>(3)LinkedHashMap：保存了记录的插入顺序，在遍历的时候会比HashMap慢，但当HashMap容量很大，实际数据较少时，遍历起来可能比LinkedHashMap慢</p>
-<h4 id="1-8-熟悉Java集合类的框架图"><a href="#1-8-熟悉Java集合类的框架图" class="headerlink" title="1.8 熟悉Java集合类的框架图"></a>1.8 熟悉Java集合类的框架图</h4><p><img src="/vilce/img/java1.gif" alt="1"></p>
+<h4 id="1-8-熟悉Java集合类的框架图"><a href="#1-8-熟悉Java集合类的框架图" class="headerlink" title="1.8 熟悉Java集合类的框架图"></a>1.8 熟悉Java集合类的框架图</h4><p><img src="/vilce/img/java/java1.gif" alt="1"></p>
 <h4 id="1-9-HashMap、ArrayList、StringBuffer、String等源码的熟悉"><a href="#1-9-HashMap、ArrayList、StringBuffer、String等源码的熟悉" class="headerlink" title="1.9 HashMap、ArrayList、StringBuffer、String等源码的熟悉"></a>1.9 HashMap、ArrayList、StringBuffer、String等源码的熟悉</h4><p><a href="http://www.cnblogs.com/xujian2014/tag/Java%E9%9B%86%E5%90%88%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">HashMap、ArrayList源码分析</a></p>
 <p><a href="https://www.cnblogs.com/Wilange/p/7570633.html" target="_blank" rel="noopener">StringBuffer、String源码分析</a></p>
 <h4 id="1-10-线程和进程"><a href="#1-10-线程和进程" class="headerlink" title="1.10 线程和进程"></a>1.10 线程和进程</h4><p>定义：进程时操作系统分配资源的最小单元，线程时操作系统调度的最小单元</p>
@@ -230,7 +231,7 @@
 <p>(4)<strong>等待(WAITING)</strong>：进入该状态的线程需要等待其他线程做出一些特定动作（通知或中断）。</p>
 <p>(5)<strong>超时等待(TIME_WAITING)</strong>：该状态不同于WAITING，它可以在指定的时间内自行返回。</p>
 <p>(6) <strong>终止(TERMINATED)</strong>：表示该线程已经执行完毕。</p>
-<p><img src="/vilce/img/Java2.jpg" alt="2"></p>
+<p><img src="/vilce/img/java/Java2.jpg" alt="2"></p>
 <h4 id="1-13-多线程并发的实现"><a href="#1-13-多线程并发的实现" class="headerlink" title="1.13 多线程并发的实现"></a>1.13 多线程并发的实现</h4><p>区分线程和进程，通常一个程序有一个进程，而一个进程可以有多个线程。一个任务不一定对应一个线程可能是多个线程或是一个线程池</p>
 <p>区分并发和并行，并发是指在一段时间内同时做多个事情，而并行是指在同一时刻做多个事情。并发就是在单核处理中同时处理多个任务(这里的同时指的是逻辑上的同时)，并行就是在多核处理器中同时处理多个任务(这里的同时指的是物理上的同时)</p>
 <p>CPU采用时间片轮转等不同算法来对线程进行调度，从而实现多线程的并发</p>
@@ -563,11 +564,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
