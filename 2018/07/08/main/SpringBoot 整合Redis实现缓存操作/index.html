@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://villce.github.io">
-  <title>面试知识大纲 | vilce</title>
+  <title>SpringBoot 整合Redis实现缓存操作 | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重点知识1. JVM内存管理机制和垃圾回收机制（搞得透彻）">
-<meta name="keywords" content="面试 大纲">
+  <meta name="description" content="1. 缓存的应用场景">
+<meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试知识大纲">
-<meta property="og:url" content="https://villce.github.io/2018/07/18/重点知识大纲/index.html">
+<meta property="og:title" content="SpringBoot 整合Redis实现缓存操作">
+<meta property="og:url" content="https://villce.github.io/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="重点知识1. JVM内存管理机制和垃圾回收机制（搞得透彻）">
+<meta property="og:description" content="1. 缓存的应用场景">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-19T07:54:28.853Z">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis11.png">
+<meta property="og:updated_time" content="2018-07-19T07:59:40.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试知识大纲">
-<meta name="twitter:description" content="重点知识1. JVM内存管理机制和垃圾回收机制（搞得透彻）">
+<meta name="twitter:title" content="SpringBoot 整合Redis实现缓存操作">
+<meta name="twitter:description" content="1. 缓存的应用场景">
+<meta name="twitter:image" content="https://villce.github.io/vilce/img/redis/redis11.png">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -159,37 +161,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-重点知识大纲" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-main/SpringBoot 整合Redis实现缓存操作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      面试知识大纲
+      SpringBoot 整合Redis实现缓存操作
     </h1>
   
 
         
-        <a href="/vilce/2018/07/18/重点知识大纲/" class="archive-article-date">
-  	<time datetime="2018-07-18T08:45:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+        <a href="/vilce/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/" class="archive-article-date">
+  	<time datetime="2018-07-08T07:42:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="重点知识"><a href="#重点知识" class="headerlink" title="重点知识"></a>重点知识</h2><h3 id="1-JVM内存管理机制和垃圾回收机制（搞得透彻）"><a href="#1-JVM内存管理机制和垃圾回收机制（搞得透彻）" class="headerlink" title="1. JVM内存管理机制和垃圾回收机制（搞得透彻）"></a>1. JVM内存管理机制和垃圾回收机制（搞得透彻）</h3><a id="more"></a>
-<h3 id="2-JVM内存调优（了解怎么回事，做项目中使用较多）"><a href="#2-JVM内存调优（了解怎么回事，做项目中使用较多）" class="headerlink" title="2. JVM内存调优（了解怎么回事，做项目中使用较多）"></a>2. JVM内存调优（了解怎么回事，做项目中使用较多）</h3><h3 id="3-设计模式（熟悉常见设计模式的应用场景）"><a href="#3-设计模式（熟悉常见设计模式的应用场景）" class="headerlink" title="3.  设计模式（熟悉常见设计模式的应用场景）"></a>3.  设计模式（熟悉常见设计模式的应用场景）</h3><h3 id="4-多线程（线程和进程、线程的状态、线程并发的操作等）"><a href="#4-多线程（线程和进程、线程的状态、线程并发的操作等）" class="headerlink" title="4. 多线程（线程和进程、线程的状态、线程并发的操作等）"></a>4. 多线程（线程和进程、线程的状态、线程并发的操作等）</h3><h3 id="5-JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）"><a href="#5-JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）" class="headerlink" title="5. JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）"></a>5. JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）</h3><h3 id="6-JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try-catch-finally的使用）"><a href="#6-JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try-catch-finally的使用）" class="headerlink" title="6. JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try catch finally的使用）"></a>6. JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try catch finally的使用）</h3><h3 id="7-JVM的运行机制（理解JVM是如何运行的）"><a href="#7-JVM的运行机制（理解JVM是如何运行的）" class="headerlink" title="7. JVM的运行机制（理解JVM是如何运行的）"></a>7. JVM的运行机制（理解JVM是如何运行的）</h3><h3 id="8-Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）"><a href="#8-Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）" class="headerlink" title="8. Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）"></a>8. Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）</h3><h2 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h2><p>常见的排序算法需要理解其原理和会写代码，还有时间空间复杂度也要知道</p>
-<p>队列、栈：需要理解其存取结构，并能在某些场景下使用</p>
-<p>二叉树：树的遍历、树的深度、按层次输出、平衡二叉树、逆序打印树等</p>
-<p>链表：逆序、合并两有序的链表、判断链表是否有环、链表倒数第K个元素等</p>
-<p>字符串：KMP算法、动态规划（这个是重点，需要理解动态规划，常见的题有：求解最长回文子串，求解最长公子串等）</p>
-<p>海量数据处理：Bit-map、分而治之、hash映射等</p>
-<h2 id="数据库相关"><a href="#数据库相关" class="headerlink" title="数据库相关"></a>数据库相关</h2><p>最基本的数据库CRUD操作要熟悉，能够根据表写出需要的SQL语句</p>
-<p>事务、零时表、索引、表锁、行列锁、视图、存储过程等都要深入理解</p>
-<p>Nosql和redis等非关系数据库</p>
-<h2 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h2><p>像SSH等的开源框架在面试过程中问的很少，但是也是有必要了解SSH的运行原理和使用。面试主要考察的是基础，所以更加偏向于考察数据结构、算法、数据库、JAVA基础知识等。所以，如果你时间有限，可以把精力放在基础知识的学习和复习上，如果你时间充裕，可以学习和复习开源框架相关知识。对于开源框架：最好还是看看源码，对自己的好处是很大的。 </p>
+        <h3 id="1-缓存的应用场景"><a href="#1-缓存的应用场景" class="headerlink" title="1. 缓存的应用场景"></a>1. 缓存的应用场景</h3><a id="more"></a>
+<p>什么是缓存？</p>
+<p>在大流量场景下，需要将一些经常展现和不会频繁变更的数据，存放在存取速率更快的地方。缓存就是一个存储器。Redis是一个高性能的key-value数据库。</p>
+<p>缓存的应用场景有哪些？</p>
+<p>比如常见的电商场景，根据商品ID获取商品信息时，店铺信息和商品详情信息就可以缓存在Redis，直接从Redis获取。减少了去数据库查询的次数。但会出现新的问题，就是如何对缓存进行更新？</p>
+<h3 id="2-更新缓存的策略"><a href="#2-更新缓存的策略" class="headerlink" title="2. 更新缓存的策略"></a>2. 更新缓存的策略</h3><p>缓存更新的模式有四种：Cache aside，Read through，Write through，Write behind caching</p>
+<p><strong>这里我们使用的是Cache Aside策略，从三个方面：</strong></p>
+<p>失效：应用程序先从cache取数据，没有得到，则从数据库中取数据，成功后，放到缓存中。</p>
+<p>命中：应用程序从cache中取数据，取到后返回。</p>
+<p>更新：先把数据存到数据库中，成功后，再让缓存失效。</p>
+<p><strong>大致流程如下：</strong></p>
+<p>获取商品详情举例</p>
+<p>a. 从商品Cache中获取商品详情，如果存在，则返回获取Cache数据返回。</p>
+<p>b. 如果不存在，则从商品DB中获取，获取成功后，将数据存到Cache中。则下次获取商品详情就可以从Cache中获取商品详情数据。</p>
+<p>c. 从商品DB中更新或者删除商品详情成功后，则从缓存中删除对应商品的详情缓存。</p>
+<h3 id="3-运行工程案例"><a href="#3-运行工程案例" class="headerlink" title="3. 运行工程案例"></a>3. 运行工程案例</h3><p><strong>（1）<a href="https://villce.github.io/vilce/2018/06/28/Springboot整合Redis/#more">数据库和Redis准备</a></strong></p>
+<p>  <strong>(2)利用Redis进行数据存储读取</strong></p>
+<p>a.首先需要注意的是，对于实体类需要对象序列化后才存储到Redis中，所以实体类对象需要实现序列化，否则就会爆出下面的异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable payload but received an object of type [com.capsp.model.Language]</span><br></pre></td></tr></table></figure>
+<p>如果需要自定义序列化实现，只要实现RedisSerializer接口去实现即可，然后在使用RedisTemplate.setValueSerializer方法去设置你实现的序列化实现。</p>
+<p>b.对于接口的业务逻辑实现类LanguageServiceImpl.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">package com.capsp.service.Impl;</span><br><span class="line"></span><br><span class="line">import com.capsp.mapper.LanguageMapper;</span><br><span class="line">import com.capsp.model.Language;</span><br><span class="line">import com.capsp.service.LanguageService;</span><br><span class="line">import com.capsp.tools.LogUtils;</span><br><span class="line">import org.apache.log4j.Logger;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.data.redis.core.ListOperations;</span><br><span class="line">import org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line">@Service(value = &quot;LanguageServiceImpl&quot;)</span><br><span class="line">public class LanguageServiceImpl implements LanguageService&#123;</span><br><span class="line"></span><br><span class="line">    private static Logger logger = Logger.getLogger(LogUtils.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private LanguageMapper languageMapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    //从缓存中获取信息，返回List</span><br><span class="line">    public  List&lt;Language&gt; getListFromRedis(String key)&#123;</span><br><span class="line">        ListOperations&lt;String,Language&gt; operations = redisTemplate.opsForList();</span><br><span class="line">        List&lt;Language&gt; list = new ArrayList&lt;Language&gt;();</span><br><span class="line">        //判断缓存中是否存在</span><br><span class="line">        boolean hasKey = redisTemplate.hasKey(key);</span><br><span class="line">        if (hasKey)&#123;</span><br><span class="line">            //存在时，从缓存中获取信息，遍历获取，从第0位获取到倒数-1位的序列化后的对象</span><br><span class="line">            list = operations.range(key,0,-1);</span><br><span class="line">            logger.info(&quot;从缓存中获取信息&gt;&gt;&quot;);</span><br><span class="line">            return list;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;Language&gt; getAllLanguage() &#123;</span><br><span class="line">        List&lt;Language&gt; list = new ArrayList&lt;Language&gt;();</span><br><span class="line">        String key = &quot;allLanguage&quot;;</span><br><span class="line">        //从缓存中获取信息</span><br><span class="line">        list = getListFromRedis(key);</span><br><span class="line">        if (list == null)&#123;</span><br><span class="line">            //缓存不存在时</span><br><span class="line">            list = languageMapper.getAllLanguage();</span><br><span class="line">            //插入缓存</span><br><span class="line">            redisTemplate.opsForList().leftPushAll(key,list);</span><br><span class="line">            //设置过期时间</span><br><span class="line">            redisTemplate.expire(key,1, TimeUnit.MINUTES);</span><br><span class="line">            logger.info(&quot;信息存入缓存&gt;&gt;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先这里注入了RedisTemplate对象。RedisTemplate封装了RedisConnection，具有连接功能，序列化和Redis操作等功能。还有针对Sting的支持对象StringRedisTemplata.</p>
+<p>Redis 操作视图接口类用的是 ValueOperations，对应的是 Redis String/Value 操作。还有其他的操作视图，ListOperations、SetOperations、ZSetOperations 和 HashOperations 。ValueOperations 插入缓存是可以设置失效时间，这里设置的失效时间是 1m。</p>
+<p>对于一个接口访问两次，效果如下：</p>
+<p><img src="/vilce/img/redis/redis11.png" alt="11"></p>
+<p>可以很明显的发现提速了近10倍。</p>
 
       
 
@@ -234,7 +252,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">面试 大纲</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
         		</li>
       		
 		</ul>
@@ -290,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/07/18/重点知识大纲/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +322,18 @@
   
 <nav id="article-nav">
   
-    <a href="/vilce/2018/07/19/主要详细知识点/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/vilce/2018/07/18/main/重点知识大纲/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          面试知识点整理(一)
+          面试知识大纲
         
       </div>
     </a>
   
   
-    <a href="/vilce/2018/07/08/SpringBoot 整合Redis实现缓存操作/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringBoot 整合Redis实现缓存操作</div>
+    <a href="/vilce/2018/06/28/main/Springboot整合Redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Springboot整合Redis</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +360,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#重点知识"><span class="toc-number">1.</span> <span class="toc-text">重点知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-JVM内存管理机制和垃圾回收机制（搞得透彻）"><span class="toc-number">1.1.</span> <span class="toc-text">1. JVM内存管理机制和垃圾回收机制（搞得透彻）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-JVM内存调优（了解怎么回事，做项目中使用较多）"><span class="toc-number">1.2.</span> <span class="toc-text">2. JVM内存调优（了解怎么回事，做项目中使用较多）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-设计模式（熟悉常见设计模式的应用场景）"><span class="toc-number">1.3.</span> <span class="toc-text">3.  设计模式（熟悉常见设计模式的应用场景）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-多线程（线程和进程、线程的状态、线程并发的操作等）"><span class="toc-number">1.4.</span> <span class="toc-text">4. 多线程（线程和进程、线程的状态、线程并发的操作等）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）"><span class="toc-number">1.5.</span> <span class="toc-text">5. JAVA集合类框架（理解框架图、HashMap、ArrayList、HashSet等的关系和区别，其中HashMap的存储机制很重要）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try-catch-finally的使用）"><span class="toc-number">1.6.</span> <span class="toc-text">6. JAVA的异常处理机制（异常的分类、常见的异常有哪些、Try catch finally的使用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-JVM的运行机制（理解JVM是如何运行的）"><span class="toc-number">1.7.</span> <span class="toc-text">7. JVM的运行机制（理解JVM是如何运行的）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）"><span class="toc-number">1.8.</span> <span class="toc-text">8. Linux基础（有一定需求，搭建Linux虚拟机，并练习常用的命令）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构和算法"><span class="toc-number">2.</span> <span class="toc-text">数据结构和算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库相关"><span class="toc-number">3.</span> <span class="toc-text">数据库相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源框架"><span class="toc-number">4.</span> <span class="toc-text">开源框架</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-缓存的应用场景"><span class="toc-number">1.</span> <span class="toc-text">1. 缓存的应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-更新缓存的策略"><span class="toc-number">2.</span> <span class="toc-text">2. 更新缓存的策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-运行工程案例"><span class="toc-number">3.</span> <span class="toc-text">3. 运行工程案例</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -454,10 +472,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -466,11 +480,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +492,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础 面试问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
             
             <div class="clearfix"></div>

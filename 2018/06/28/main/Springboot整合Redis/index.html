@@ -6,32 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://villce.github.io">
-  <title>SpringBoot搭建 | vilce</title>
+  <title>Springboot整合Redis | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="需要： 15分钟">
-<meta name="keywords" content="SpringBoot">
+  <meta name="description" content="1.Redis概述">
+<meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot搭建">
-<meta property="og:url" content="https://villce.github.io/2018/05/09/SpringBoot搭建/index.html">
+<meta property="og:title" content="Springboot整合Redis">
+<meta property="og:url" content="https://villce.github.io/2018/06/28/main/Springboot整合Redis/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="需要： 15分钟">
+<meta property="og:description" content="1.Redis概述">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot1.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot2.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot3.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot4.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot5.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot6.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot10.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot11.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot12.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot7.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/springboot8.png">
-<meta property="og:updated_time" content="2018-07-19T07:57:23.243Z">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis1.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis2.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis3.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis4.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis5.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis6.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis7.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis9.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis10.png">
+<meta property="og:image" content="https://villce.github.io/vilce/img/redis/redis8.png">
+<meta property="og:updated_time" content="2018-07-19T07:59:27.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot搭建">
-<meta name="twitter:description" content="需要： 15分钟">
-<meta name="twitter:image" content="https://villce.github.io/vilce/img/springboot1.png">
+<meta name="twitter:title" content="Springboot整合Redis">
+<meta name="twitter:description" content="1.Redis概述">
+<meta name="twitter:image" content="https://villce.github.io/vilce/img/redis/redis1.png">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -171,74 +170,85 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-main/Springboot整合Redis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot搭建
+      Springboot整合Redis
     </h1>
   
 
         
-        <a href="/vilce/2018/05/09/SpringBoot搭建/" class="archive-article-date">
-  	<time datetime="2018-05-09T08:22:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-09</time>
+        <a href="/vilce/2018/06/28/main/Springboot整合Redis/" class="archive-article-date">
+  	<time datetime="2018-06-28T09:14:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="需要："><a href="#需要：" class="headerlink" title="需要："></a>需要：</h5><ul>
-<li><h5 id="15分钟"><a href="#15分钟" class="headerlink" title="15分钟"></a>15分钟</h5></li>
-</ul>
-<a id="more"></a>
+        <h3 id="1-Redis概述"><a href="#1-Redis概述" class="headerlink" title="1.Redis概述"></a>1.Redis概述</h3><a id="more"></a>
+<p>redis是一个开源的，先进的 key-value 存储可用于构建高性能的存储解决方案。它支持数据结构有字符串，哈希，列表，集合，带有范围查询的排序集，位图，超文本和具有半径查询的地理空间索引。 NoSQL，Not Only [SQL]，泛指非关系型的数据库。所以redis是一种nosql。<em>敲黑板画重点：redis是一种nosql.</em></p>
+<p>redis的优点：</p>
 <ul>
-<li><h5 id="jdk-1-8以上"><a href="#jdk-1-8以上" class="headerlink" title="jdk 1.8以上"></a>jdk 1.8以上</h5></li>
-<li><h5 id="maven-3-0"><a href="#maven-3-0" class="headerlink" title="maven 3.0+"></a>maven 3.0+</h5></li>
-<li><h5 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h5></li>
+<li>异常快速</li>
+<li>支持丰富的数据类型</li>
+<li>操作都是原子的</li>
 </ul>
-<h5 id="打开Idea-gt-new-Project-gt-Spring-Initializr-gt-填写group、artifact-gt-钩上web-开启web功能）-gt-点下一步就行了。"><a href="#打开Idea-gt-new-Project-gt-Spring-Initializr-gt-填写group、artifact-gt-钩上web-开启web功能）-gt-点下一步就行了。" class="headerlink" title="打开Idea-&gt; new Project -&gt;Spring Initializr -&gt;填写group、artifact -&gt;钩上web(开启web功能）-&gt;点下一步就行了。"></a>打开Idea-&gt; new Project -&gt;Spring Initializr -&gt;填写group、artifact -&gt;钩上web(开启web功能）-&gt;点下一步就行了。</h5><p><img src="/vilce/img/springboot1.png" alt="1"></p>
-<ul>
-<li><h5 id="pom文件为基本的依赖管理文件"><a href="#pom文件为基本的依赖管理文件" class="headerlink" title="pom文件为基本的依赖管理文件"></a>pom文件为基本的依赖管理文件</h5></li>
-<li><h5 id="resouces资源文件"><a href="#resouces资源文件" class="headerlink" title="resouces资源文件"></a>resouces资源文件</h5><ul>
-<li><h5 id="statics静态资源"><a href="#statics静态资源" class="headerlink" title="statics静态资源"></a>statics静态资源</h5></li>
-<li><h5 id="templates模版资源"><a href="#templates模版资源" class="headerlink" title="templates模版资源"></a>templates模版资源</h5></li>
-<li><h5 id="application-properties配置文件"><a href="#application-properties配置文件" class="headerlink" title="application.properties配置文件"></a>application.properties配置文件</h5></li>
-</ul>
-</li>
-<li><h5 id="SpringbootApplication程序的入口"><a href="#SpringbootApplication程序的入口" class="headerlink" title="SpringbootApplication程序的入口"></a>SpringbootApplication程序的入口</h5></li>
-</ul>
-<h2 id="功能演示"><a href="#功能演示" class="headerlink" title="功能演示"></a>功能演示</h2><h5 id="创建一个controller："><a href="#创建一个controller：" class="headerlink" title="创建一个controller："></a>创建一个controller：</h5><p><img src="/vilce/img/springboot2.png" alt="2"></p>
-<h5 id="注意这里的controller文件要么与Application程序同级要么放在其下级文件夹内。"><a href="#注意这里的controller文件要么与Application程序同级要么放在其下级文件夹内。" class="headerlink" title="注意这里的controller文件要么与Application程序同级要么放在其下级文件夹内。"></a><font color="ff0000">注意这里的controller文件要么与Application程序同级要么放在其下级文件夹内。<font></font></font></h5><h5 id="启动SpringbootApplication的main方法，打开浏览器localhost-8080，浏览器显示："><a href="#启动SpringbootApplication的main方法，打开浏览器localhost-8080，浏览器显示：" class="headerlink" title="启动SpringbootApplication的main方法，打开浏览器localhost:8080，浏览器显示："></a>启动SpringbootApplication的main方法，打开浏览器localhost:8080，浏览器显示：</h5><h2 id="神奇之处："><a href="#神奇之处：" class="headerlink" title="神奇之处："></a>神奇之处：</h2><ul>
-<li><h5 id="没有做任何的web-xml配置"><a href="#没有做任何的web-xml配置" class="headerlink" title="没有做任何的web.xml配置"></a>没有做任何的web.xml配置</h5></li>
-<li><h5 id="没有做任何的spring-nvc的配置-springboot为你做了"><a href="#没有做任何的spring-nvc的配置-springboot为你做了" class="headerlink" title="没有做任何的spring nvc的配置;springboot为你做了"></a>没有做任何的spring nvc的配置;springboot为你做了</h5></li>
-<li><h5 id="没有配置tomcat-springboot内嵌tomcat"><a href="#没有配置tomcat-springboot内嵌tomcat" class="headerlink" title="没有配置tomcat;springboot内嵌tomcat"></a>没有配置tomcat;springboot内嵌tomcat</h5></li>
-</ul>
-<h2 id="启动Springboot方式："><a href="#启动Springboot方式：" class="headerlink" title="启动Springboot方式："></a>启动Springboot方式：</h2><h5 id="1-IDE-运行Applciation这个类的main方法："><a href="#1-IDE-运行Applciation这个类的main方法：" class="headerlink" title="1. IDE 运行Applciation这个类的main方法："></a>1. IDE 运行Applciation这个类的main方法：</h5><p><img src="/vilce/img/springboot3.png" alt="3"></p>
-<h5 id="2-在springboot的应用的根目录下运行mvn-spring-boot-run"><a href="#2-在springboot的应用的根目录下运行mvn-spring-boot-run" class="headerlink" title="2. 在springboot的应用的根目录下运行mvn spring-boot:run"></a>2. 在springboot的应用的根目录下运行mvn spring-boot:run</h5><p><img src="/vilce/img/springboot4.png" alt="4"></p>
-<h5 id="3-使用mvn-install-生成-jar-后运行"><a href="#3-使用mvn-install-生成-jar-后运行" class="headerlink" title="3. 使用mvn install 生成 jar 后运行"></a>3. 使用mvn install 生成 jar 后运行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">先到项目根目录</span><br><span class="line">mvn install</span><br><span class="line">cd target</span><br><span class="line">java -jar XXXX.jar</span><br></pre></td></tr></table></figure>
-<p><img src="/vilce/img/springboot5.png" alt="5"></p>
-<p><img src="/vilce/img/springboot6.png" alt="6"></p>
-<h5 id="（将项目打包成-jar-包，还可以直接用IDE进行项目打包。过程如下图）"><a href="#（将项目打包成-jar-包，还可以直接用IDE进行项目打包。过程如下图）" class="headerlink" title="（将项目打包成 jar 包，还可以直接用IDE进行项目打包。过程如下图）"></a>（将项目打包成 jar 包，还可以直接用IDE进行项目打包。过程如下图）</h5><p><img src="/vilce/img/springboot10.png" alt="10"></p>
-<p><img src="/vilce/img/springboot11.png" alt="11"></p>
-<p><img src="/vilce/img/springboot12.png" alt="12"></p>
-<h5 id="每次重新部署时一定要重新打包"><a href="#每次重新部署时一定要重新打包" class="headerlink" title="(每次重新部署时一定要重新打包)"></a>(每次重新部署时一定要重新打包)</h5><h2 id="Spring-Boot配置文件详解"><a href="#Spring-Boot配置文件详解" class="headerlink" title="Spring Boot配置文件详解"></a>Spring Boot配置文件详解</h2><h5 id="在现实的开发环境中，我们需要不同的配置环境；格式为application-profile-propreties-其中-profile-对应你的环境标识，比如："><a href="#在现实的开发环境中，我们需要不同的配置环境；格式为application-profile-propreties-其中-profile-对应你的环境标识，比如：" class="headerlink" title="在现实的开发环境中，我们需要不同的配置环境；格式为application-{profile}.propreties,其中{profile}对应你的环境标识，比如："></a>在现实的开发环境中，我们需要不同的配置环境；格式为application-{profile}.propreties,其中{profile}对应你的环境标识，比如：</h5><blockquote>
-<ul>
-<li>application-test.properties: 测试环境</li>
-<li>application-dev.properties: 开发环境</li>
-<li>application-prod.properties: 生产环境</li>
-</ul>
-</blockquote>
-<h5 id="这里可以将后缀改为-yml，两种文件格式都支持"><a href="#这里可以将后缀改为-yml，两种文件格式都支持" class="headerlink" title="这里可以将后缀改为.yml，两种文件格式都支持"></a>这里可以将后缀改为.yml，两种文件格式都支持</h5><h5 id="如何使用？只需要我们在application-yml中加："><a href="#如何使用？只需要我们在application-yml中加：" class="headerlink" title="如何使用？只需要我们在application.yml中加："></a>如何使用？只需要我们在application.yml中加：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  profiles:</span><br><span class="line">    active: dev</span><br></pre></td></tr></table></figure>
-<h5 id="其中application-dev-yml"><a href="#其中application-dev-yml" class="headerlink" title="其中application-dev.yml:"></a>其中application-dev.yml:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8082</span><br></pre></td></tr></table></figure>
-<h5 id="启动工程，发现程序的端口不再是8080，而是8082。"><a href="#启动工程，发现程序的端口不再是8080，而是8082。" class="headerlink" title="启动工程，发现程序的端口不再是8080，而是8082。"></a>启动工程，发现程序的端口不再是8080，而是8082。</h5><h5 id="（启动出错，如果修改配置文件之前可以启动，先检查配置时是否留有空格，再检查该端口是否被占用）"><a href="#（启动出错，如果修改配置文件之前可以启动，先检查配置时是否留有空格，再检查该端口是否被占用）" class="headerlink" title="（启动出错，如果修改配置文件之前可以启动，先检查配置时是否留有空格，再检查该端口是否被占用）"></a>（启动出错，如果修改配置文件之前可以启动，先检查配置时是否留有空格，再检查该端口是否被占用）</h5><h2 id="SpringBoot用JdbcTemplates访问Mysql"><a href="#SpringBoot用JdbcTemplates访问Mysql" class="headerlink" title="SpringBoot用JdbcTemplates访问Mysql"></a>SpringBoot用JdbcTemplates访问Mysql</h2><h5 id="1-在创建项目的时候，不光勾上web，还可以勾上MySQL和JDBC。引入依赖后必须先配置连接MySQL的配置文件成功连接数据库，不然项目会启动失败。"><a href="#1-在创建项目的时候，不光勾上web，还可以勾上MySQL和JDBC。引入依赖后必须先配置连接MySQL的配置文件成功连接数据库，不然项目会启动失败。" class="headerlink" title="1. 在创建项目的时候，不光勾上web，还可以勾上MySQL和JDBC。引入依赖后必须先配置连接MySQL的配置文件成功连接数据库，不然项目会启动失败。"></a>1. 在创建项目的时候，不光勾上web，还可以勾上MySQL和JDBC。引入依赖后必须先配置连接MySQL的配置文件成功连接数据库，不然项目会启动失败。</h5><p><img src="/vilce/img/springboot7.png" alt="7"></p>
-<h5 id="2-也可以在项目创建后在pom文件引入spring-boot-start-jdbc的依赖："><a href="#2-也可以在项目创建后在pom文件引入spring-boot-start-jdbc的依赖：" class="headerlink" title="2. 也可以在项目创建后在pom文件引入spring-boot-start-jdbc的依赖："></a>2. 也可以在项目创建后在pom文件引入spring-boot-start-jdbc的依赖：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="引入mysql连接类和连接池："><a href="#引入mysql连接类和连接池：" class="headerlink" title="引入mysql连接类和连接池："></a>引入mysql连接类和连接池：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.0.29&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="配置相关文件"><a href="#配置相关文件" class="headerlink" title="配置相关文件"></a>配置相关文件</h2><h5 id="在application-yml文件配置mysql的驱动类，数据库地址，数据库帐号，密码信息。"><a href="#在application-yml文件配置mysql的驱动类，数据库地址，数据库帐号，密码信息。" class="headerlink" title="在application.yml文件配置mysql的驱动类，数据库地址，数据库帐号，密码信息。"></a>在application.yml文件配置mysql的驱动类，数据库地址，数据库帐号，密码信息。</h5><p><img src="/vilce/img/springboot8.png" alt="8"></p>
-<h5 id="这样springboot就可以访问数据库类了。"><a href="#这样springboot就可以访问数据库类了。" class="headerlink" title="这样springboot就可以访问数据库类了。"></a>这样springboot就可以访问数据库类了。</h5><h2 id="SpringBoot的优缺点"><a href="#SpringBoot的优缺点" class="headerlink" title="SpringBoot的优缺点"></a>SpringBoot的优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h4 id="（1）快速构建项目"><a href="#（1）快速构建项目" class="headerlink" title="（1）快速构建项目"></a>（1）快速构建项目</h4><h4 id="（2）对主流开发框架的无配置集成"><a href="#（2）对主流开发框架的无配置集成" class="headerlink" title="（2）对主流开发框架的无配置集成"></a>（2）对主流开发框架的无配置集成</h4><h4 id="（3）项目可独立运行，无须外部依赖Servlet容器"><a href="#（3）项目可独立运行，无须外部依赖Servlet容器" class="headerlink" title="（3）项目可独立运行，无须外部依赖Servlet容器"></a>（3）项目可独立运行，无须外部依赖Servlet容器</h4><h4 id="（4）提供运行时的应用监控"><a href="#（4）提供运行时的应用监控" class="headerlink" title="（4）提供运行时的应用监控"></a>（4）提供运行时的应用监控</h4><h4 id="（5）极大地提高了开发、部署效率"><a href="#（5）极大地提高了开发、部署效率" class="headerlink" title="（5）极大地提高了开发、部署效率"></a>（5）极大地提高了开发、部署效率</h4><h4 id="（6）与云计算的天然集成"><a href="#（6）与云计算的天然集成" class="headerlink" title="（6）与云计算的天然集成"></a>（6）与云计算的天然集成</h4><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h4 id="（1）书籍文档较少且不够深入"><a href="#（1）书籍文档较少且不够深入" class="headerlink" title="（1）书籍文档较少且不够深入"></a>（1）书籍文档较少且不够深入</h4><h4 id="（2）发展很快，版本更迭很快"><a href="#（2）发展很快，版本更迭很快" class="headerlink" title="（2）发展很快，版本更迭很快"></a>（2）发展很快，版本更迭很快</h4>
+<h3 id="2-Redis下载安装"><a href="#2-Redis下载安装" class="headerlink" title="2.Redis下载安装"></a>2.Redis下载安装</h3><p>####linux系统下安装：</p>
+<p>$ wget <a href="http://download.redis.io/releases/redis-3.2.6.tar.gz" target="_blank" rel="noopener">http://download.redis.io/releases/redis-3.2.6.tar.gz</a>  []</p>
+<p>tarxzfredis−3.2.6.tar.gztarxzfredis−3.2.6.tar.gz cd redis-3.2.6  </p>
+<p>$ make </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">启动服务器：</span><br><span class="line"> $ src/redis-server</span><br><span class="line">    </span><br><span class="line">启动客户端</span><br><span class="line"> $ src/redis-cli</span><br><span class="line">mac下安装: </span><br><span class="line"> brew install redis</span><br></pre></td></tr></table></figure>
+<p>启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br><span class="line">redis-cli</span><br></pre></td></tr></table></figure>
+<h4 id="windows下安装："><a href="#windows下安装：" class="headerlink" title="windows下安装："></a>windows下安装：</h4><p>由于官方并没有提供windows 版本，不过微软为了能够应用redis 到 windows服务器，由微软维护了windows版的redis，下载地址：<a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="noopener">点击进入</a>.建议下载msi 版本，直接安装即可。 </p>
+<p><img src="/vilce/img/redis/redis1.png" alt="1"></p>
+<p>根据电脑系统选择32位还是64位，安装后找到安装文件夹：</p>
+<p><img src="/vilce/img/redis/redis2.png" alt="2"></p>
+<p>测试运行：</p>
+<p>打开cmd窗口（管理员身份运行），使用命令切换到安装的文件夹下，然后运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+<p>可能出现如下问题：</p>
+<p><img src="/vilce/img/redis/redis3.png" alt="3"></p>
+<p>解决方案：如下按顺序输入命令就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. redis-cli.exe</span><br><span class="line">2. shutdown</span><br><span class="line">3. exit</span><br><span class="line">4. redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+<p>（目的应该是删除上次redis错误启动，生成的aof、dump文件）</p>
+<p>正常启动如下：</p>
+<p><img src="/vilce/img/redis/redis4.png" alt="4"></p>
+<p>这时候另外开启一个cmd窗口，原来的窗口不要关闭，不然redis服务端就关闭了，就无法访问了。</p>
+<p>还是一样的切到安装目录下，运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-cli.exe -h 127.0.0.1 -p 6379 </span><br><span class="line">设置键值对 </span><br><span class="line">set key 123</span><br><span class="line">取出键值对</span><br><span class="line">get key</span><br></pre></td></tr></table></figure>
+<p><img src="/vilce/img/redis/redis5.png" alt="5"></p>
+<p>问题：但这样执行redis-server.exe redis.windows.conf命令开启Redis服务不切合实际，应该设置在服务中启动。 </p>
+<h4 id="安装成Windows服务-开机自启："><a href="#安装成Windows服务-开机自启：" class="headerlink" title="安装成Windows服务-开机自启："></a>安装成Windows服务-开机自启：</h4><p>打开cmd窗口（管理员身份运行），切换到安装目录下，运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf</span><br></pre></td></tr></table></figure>
+<p>出现成功安装，则表明已经作为windows服务了 :</p>
+<p><img src="/vilce/img/redis/redis6.png" alt="6"></p>
+<p>打开cmd窗口输入services.msc，Redis出现在服务中，自行启动该服务.</p>
+<p><img src="/vilce/img/redis/redis7.png" alt="7"></p>
+<h3 id="3-Spingboot引入依赖："><a href="#3-Spingboot引入依赖：" class="headerlink" title="3.Spingboot引入依赖："></a>3.Spingboot引入依赖：</h3><p>####在pom文件中添加redis依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>####配置数据源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring.redis.host=localhost</span><br><span class="line">spring.redis.port=6379</span><br><span class="line">#spring.redis.password=</span><br><span class="line">spring.redis.database=1</span><br><span class="line">spring.redis.pool.max-active=8</span><br><span class="line">spring.redis.pool.max-wait=-1</span><br><span class="line">spring.redis.pool.max-idle=500</span><br><span class="line">spring.redis.pool.min-idle=0</span><br><span class="line">spring.redis.timeout=0</span><br></pre></td></tr></table></figure>
+<p>如果redis有密码，配置一下就可以了，现在就可以访问redis数据了。</p>
+<h4 id="数据访问层dao"><a href="#数据访问层dao" class="headerlink" title="数据访问层dao"></a>数据访问层dao</h4><p>通过redisTemplate来访问redis</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Repository</span><br><span class="line">public class RedisDao &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StringRedisTemplate template;</span><br><span class="line"></span><br><span class="line">    public  void setKey(String key,String value)&#123;</span><br><span class="line">        ValueOperations&lt;String, String&gt; ops = template.opsForValue();</span><br><span class="line">        ops.set(key,value,1, TimeUnit.MINUTES);//1分钟过期</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getValue(String key)&#123;</span><br><span class="line">        ValueOperations&lt;String, String&gt; ops = this.template.opsForValue();</span><br><span class="line">        return ops.get(key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">public class SpringbootRedisApplicationTests &#123;</span><br><span class="line"></span><br><span class="line">    public static Logger logger= LoggerFactory.getLogger(SpringbootRedisApplicationTests.class);</span><br><span class="line">    @Test</span><br><span class="line">    public void contextLoads() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    RedisDao redisDao;</span><br><span class="line">    @Test</span><br><span class="line">    public void testRedis()&#123;</span><br><span class="line">        redisDao.setKey(&quot;name&quot;,&quot;vilce&quot;);</span><br><span class="line">        redisDao.setKey(&quot;age&quot;,&quot;11&quot;);</span><br><span class="line">        logger.info(redisDao.getValue(&quot;name&quot;));</span><br><span class="line">        logger.info(redisDao.getValue(&quot;age&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>启动单元测试，可能出现如图错误：</p>
+<p><img src="/vilce/img/redis/redis9.png" alt="9"></p>
+<p>此时是由于junit版本过低，将依赖版本改为4.12或更高就行了，继续运行出现：</p>
+<p><img src="/vilce/img/redis/redis10.png" alt="10"></p>
+<p>这里断言工具Assert报错，发现SpringJUit4ClassRunner这个导入的工具类出错了，找到其导入依赖的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-test&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;5.0.4.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>将其版本回退或者隐掉为默认。</p>
+<p>再次启动单元测试，控制台打印：</p>
+<p><img src="/vilce/img/redis/redis8.png" alt="8"></p>
+<p>单元测试通过。</p>
+
       
 
       
@@ -282,7 +292,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
         		</li>
       		
 		</ul>
@@ -338,7 +348,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/05/09/SpringBoot搭建/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/06/28/main/Springboot整合Redis/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -352,18 +362,18 @@
   
 <nav id="article-nav">
   
-    <a href="/vilce/2018/05/30/SQL语句映射文件（1）resultMap/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/vilce/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          MyBatis映射文件SQL语句学习(1)
+          SpringBoot 整合Redis实现缓存操作
         
       </div>
     </a>
   
   
-    <a href="/vilce/2018/04/27/搭建微博/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">搭建微博</div>
+    <a href="/vilce/2018/06/13/main/Swagger常用注解说明/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Swagger常用注解学习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -390,7 +400,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#需要："><span class="toc-number">1.</span> <span class="toc-text">需要：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#15分钟"><span class="toc-number">2.</span> <span class="toc-text">15分钟</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jdk-1-8以上"><span class="toc-number">3.</span> <span class="toc-text">jdk 1.8以上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven-3-0"><span class="toc-number">4.</span> <span class="toc-text">maven 3.0+</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#idea"><span class="toc-number">5.</span> <span class="toc-text">idea</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#打开Idea-gt-new-Project-gt-Spring-Initializr-gt-填写group、artifact-gt-钩上web-开启web功能）-gt-点下一步就行了。"><span class="toc-number">6.</span> <span class="toc-text">打开Idea-&gt; new Project -&gt;Spring Initializr -&gt;填写group、artifact -&gt;钩上web(开启web功能）-&gt;点下一步就行了。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#pom文件为基本的依赖管理文件"><span class="toc-number">7.</span> <span class="toc-text">pom文件为基本的依赖管理文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#resouces资源文件"><span class="toc-number">8.</span> <span class="toc-text">resouces资源文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#statics静态资源"><span class="toc-number">9.</span> <span class="toc-text">statics静态资源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#templates模版资源"><span class="toc-number">10.</span> <span class="toc-text">templates模版资源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#application-properties配置文件"><span class="toc-number">11.</span> <span class="toc-text">application.properties配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SpringbootApplication程序的入口"><span class="toc-number">12.</span> <span class="toc-text">SpringbootApplication程序的入口</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能演示"><span class="toc-number"></span> <span class="toc-text">功能演示</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个controller："><span class="toc-number">1.</span> <span class="toc-text">创建一个controller：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注意这里的controller文件要么与Application程序同级要么放在其下级文件夹内。"><span class="toc-number">2.</span> <span class="toc-text">注意这里的controller文件要么与Application程序同级要么放在其下级文件夹内。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#启动SpringbootApplication的main方法，打开浏览器localhost-8080，浏览器显示："><span class="toc-number">3.</span> <span class="toc-text">启动SpringbootApplication的main方法，打开浏览器localhost:8080，浏览器显示：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#神奇之处："><span class="toc-number"></span> <span class="toc-text">神奇之处：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#没有做任何的web-xml配置"><span class="toc-number">1.</span> <span class="toc-text">没有做任何的web.xml配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#没有做任何的spring-nvc的配置-springboot为你做了"><span class="toc-number">2.</span> <span class="toc-text">没有做任何的spring nvc的配置;springboot为你做了</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#没有配置tomcat-springboot内嵌tomcat"><span class="toc-number">3.</span> <span class="toc-text">没有配置tomcat;springboot内嵌tomcat</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动Springboot方式："><span class="toc-number"></span> <span class="toc-text">启动Springboot方式：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-IDE-运行Applciation这个类的main方法："><span class="toc-number">1.</span> <span class="toc-text">1. IDE 运行Applciation这个类的main方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-在springboot的应用的根目录下运行mvn-spring-boot-run"><span class="toc-number">2.</span> <span class="toc-text">2. 在springboot的应用的根目录下运行mvn spring-boot:run</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-使用mvn-install-生成-jar-后运行"><span class="toc-number">3.</span> <span class="toc-text">3. 使用mvn install 生成 jar 后运行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#（将项目打包成-jar-包，还可以直接用IDE进行项目打包。过程如下图）"><span class="toc-number">4.</span> <span class="toc-text">（将项目打包成 jar 包，还可以直接用IDE进行项目打包。过程如下图）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#每次重新部署时一定要重新打包"><span class="toc-number">5.</span> <span class="toc-text">(每次重新部署时一定要重新打包)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot配置文件详解"><span class="toc-number"></span> <span class="toc-text">Spring Boot配置文件详解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在现实的开发环境中，我们需要不同的配置环境；格式为application-profile-propreties-其中-profile-对应你的环境标识，比如："><span class="toc-number">1.</span> <span class="toc-text">在现实的开发环境中，我们需要不同的配置环境；格式为application-{profile}.propreties,其中{profile}对应你的环境标识，比如：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#这里可以将后缀改为-yml，两种文件格式都支持"><span class="toc-number">2.</span> <span class="toc-text">这里可以将后缀改为.yml，两种文件格式都支持</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何使用？只需要我们在application-yml中加："><span class="toc-number">3.</span> <span class="toc-text">如何使用？只需要我们在application.yml中加：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#其中application-dev-yml"><span class="toc-number">4.</span> <span class="toc-text">其中application-dev.yml:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#启动工程，发现程序的端口不再是8080，而是8082。"><span class="toc-number">5.</span> <span class="toc-text">启动工程，发现程序的端口不再是8080，而是8082。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#（启动出错，如果修改配置文件之前可以启动，先检查配置时是否留有空格，再检查该端口是否被占用）"><span class="toc-number">6.</span> <span class="toc-text">（启动出错，如果修改配置文件之前可以启动，先检查配置时是否留有空格，再检查该端口是否被占用）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringBoot用JdbcTemplates访问Mysql"><span class="toc-number"></span> <span class="toc-text">SpringBoot用JdbcTemplates访问Mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-在创建项目的时候，不光勾上web，还可以勾上MySQL和JDBC。引入依赖后必须先配置连接MySQL的配置文件成功连接数据库，不然项目会启动失败。"><span class="toc-number">1.</span> <span class="toc-text">1. 在创建项目的时候，不光勾上web，还可以勾上MySQL和JDBC。引入依赖后必须先配置连接MySQL的配置文件成功连接数据库，不然项目会启动失败。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-也可以在项目创建后在pom文件引入spring-boot-start-jdbc的依赖："><span class="toc-number">2.</span> <span class="toc-text">2. 也可以在项目创建后在pom文件引入spring-boot-start-jdbc的依赖：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#引入mysql连接类和连接池："><span class="toc-number">3.</span> <span class="toc-text">引入mysql连接类和连接池：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置相关文件"><span class="toc-number"></span> <span class="toc-text">配置相关文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在application-yml文件配置mysql的驱动类，数据库地址，数据库帐号，密码信息。"><span class="toc-number">1.</span> <span class="toc-text">在application.yml文件配置mysql的驱动类，数据库地址，数据库帐号，密码信息。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#这样springboot就可以访问数据库类了。"><span class="toc-number">2.</span> <span class="toc-text">这样springboot就可以访问数据库类了。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringBoot的优缺点"><span class="toc-number"></span> <span class="toc-text">SpringBoot的优缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number"></span> <span class="toc-text">优点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）快速构建项目"><span class="toc-number"></span> <span class="toc-text">（1）快速构建项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）对主流开发框架的无配置集成"><span class="toc-number"></span> <span class="toc-text">（2）对主流开发框架的无配置集成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）项目可独立运行，无须外部依赖Servlet容器"><span class="toc-number"></span> <span class="toc-text">（3）项目可独立运行，无须外部依赖Servlet容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）提供运行时的应用监控"><span class="toc-number"></span> <span class="toc-text">（4）提供运行时的应用监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）极大地提高了开发、部署效率"><span class="toc-number"></span> <span class="toc-text">（5）极大地提高了开发、部署效率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（6）与云计算的天然集成"><span class="toc-number"></span> <span class="toc-text">（6）与云计算的天然集成</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺点"><span class="toc-number"></span> <span class="toc-text">缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）书籍文档较少且不够深入"><span class="toc-number"></span> <span class="toc-text">（1）书籍文档较少且不够深入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）发展很快，版本更迭很快"><span class="toc-number"></span> <span class="toc-text">（2）发展很快，版本更迭很快</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Redis概述"><span class="toc-number">1.</span> <span class="toc-text">1.Redis概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Redis下载安装"><span class="toc-number">2.</span> <span class="toc-text">2.Redis下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#windows下安装："><span class="toc-number">2.1.</span> <span class="toc-text">windows下安装：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装成Windows服务-开机自启："><span class="toc-number">2.2.</span> <span class="toc-text">安装成Windows服务-开机自启：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Spingboot引入依赖："><span class="toc-number">3.</span> <span class="toc-text">3.Spingboot引入依赖：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据访问层dao"><span class="toc-number">3.1.</span> <span class="toc-text">数据访问层dao</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单元测试"><span class="toc-number">3.2.</span> <span class="toc-text">单元测试</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -502,10 +512,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -514,11 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +532,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础 面试问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
             
             <div class="clearfix"></div>

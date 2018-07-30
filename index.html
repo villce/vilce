@@ -159,19 +159,126 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-主要详细知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-suibi/阿里初面问题：" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/07/19/主要详细知识点/">面试知识点整理(一)</a>
+      <a class="article-title" href="/vilce/2018/07/22/suibi/阿里初面问题：/">阿里初面问题</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/07/19/主要详细知识点/" class="archive-article-date">
+        <a href="/vilce/2018/07/22/suibi/阿里初面问题：/" class="archive-article-date">
+  	<time datetime="2018-07-22T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##阿里初面问题：</p>
+<p>###<strong>1. AOP实现原理</strong></p>
+<p><a href="https://blog.csdn.net/yuexianchang/article/details/77018603" target="_blank" rel="noopener">AOP原理分析</a></p>
+<p>AOP技术利用“横切”技术，破解开封装的对象内部，将影响多个类的公共行为封装到一个可重用模块，名为“Aspect”，即方面。使用“横向”技术，AOP把软件系统分为两个部分：核心关注点和横切关注点。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。AOP的核心思想就是“将应用程序中的商业逻辑同对其提供支持的通用服务进行分离”</p>
+<p>实现AOP的技术，主要分为两大类：一是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；二是采用静态织入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码</p>
+<p>###<strong>2. SpringBoot和Spring的区别</strong></p>
+<p>SpringBoot实现了自动配置，降低了项目搭建的复杂度。集成了大量常用的第三方库配置，内嵌tomcat。</p>
+<p>Spring是一个“引擎”，SpringMVC是基于Spring的一个MVC框架，SpringBoot是基于Spring4的条件注册的一套快速开发整合包</p>
+<p>###<strong>3. SpringBoot的启动流程</strong></p>
+<p>###<strong>4. SpringBoot内嵌tomact是如何运行的</strong></p>
+<p>###<strong>5. SpringBoot如何整合第三方框架，start是如何启动的</strong></p>
+<p>###<strong>6. 多线程的死锁是什么原理，死锁时多线程处于什么状态</strong></p>
+<p>###<strong>7. 阻塞和等待有什么区别，举一个场景解释一下</strong></p>
+<p>###<strong>8. Mysql索引，符合索引等是怎么回事</strong></p>
+<p>###<strong>9. 了解Redis集群吗，介绍一下</strong></p>
+<p>###<strong>10. Spring与mybatis是怎么实现执行sql语句的</strong></p>
+<p>###<strong>11. 讲一下设计的表结构</strong></p>
+<p>###<strong>12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志</strong></p>
+<p>AOP常用的实现方式有两种，一种是采用声明的方式来实现（基于XML），一种是采用注解的方式来实现（基于AspectJ）。</p>
+<p>AOP中的重要概念：</p>
+<p>Joinpoint(连接点)：程序执行时的某个特定的点，在Spring中就是某一个方法的执行</p>
+<p>Pointcut(切点)：说的通俗点，spring中AOP的切点就是指一些方法的集合，而这些方法是需要被增强、被代理的。一般都是按照一定的约定规则来表示的，如正则表达式等。切点是由一类连接点组成。</p>
+<p>Advice(通知)：就是指定切点上要做些什么</p>
+<p>Advisor(通知器)：其实就是切点和通知的结合</p>
+<p><strong>一、基于XML配置的Spring AOP</strong></p>
+<p>采用声明的方式实现(在XML文件中配置)，大致步骤为：配置文件中配置pointcut，在java中用编写实际的aspect类，针对对切入点进行相关的业务处理。</p>
+<p><strong>二、使用注解配置AOP</strong></p>
+<p>采用注解来做AOP，主要是将写在Spring配置文件中的连接点写到注解里面。</p>
+<p>###<strong>13. spring aop和aspectJ的具体区别是什么</strong></p>
+<p>###<strong>14. spring aop实现的限制</strong></p>
+<p>###<strong>15. hashmap的具体实现</strong></p>
+<p>###<strong>16. hashcode与equal的关系</strong></p>
+<p>###<strong>17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些</strong></p>
+<p>###<strong>18. 了解了什么web技术</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础 面试问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/vilce/2018/07/22/suibi/阿里初面问题：/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-main/主要详细知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/vilce/2018/07/19/main/主要详细知识点/">面试知识点整理(一)</a>
+    </h1>
+  
+
+        
+        <a href="/vilce/2018/07/19/main/主要详细知识点/" class="archive-article-date">
   	<time datetime="2018-07-19T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
 </a>
         
@@ -181,7 +288,7 @@
       
         <h2 id="主要详细知识点-一"><a href="#主要详细知识点-一" class="headerlink" title="主要详细知识点(一)"></a>主要详细知识点(一)</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3>
         
-          <a class="article-more-a" href="/vilce/2018/07/19/主要详细知识点/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/07/19/main/主要详细知识点/#more">more >></a>
         
       
 
@@ -205,7 +312,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/07/19/主要详细知识点/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/07/19/main/主要详细知识点/">展开全文 >></a>
         </p>
       
 
@@ -235,19 +342,19 @@
 
 
   
-    <article id="post-重点知识大纲" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/重点知识大纲" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/07/18/重点知识大纲/">面试知识大纲</a>
+      <a class="article-title" href="/vilce/2018/07/18/main/重点知识大纲/">面试知识大纲</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/07/18/重点知识大纲/" class="archive-article-date">
+        <a href="/vilce/2018/07/18/main/重点知识大纲/" class="archive-article-date">
   	<time datetime="2018-07-18T08:45:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
 </a>
         
@@ -257,7 +364,7 @@
       
         <h2 id="重点知识"><a href="#重点知识" class="headerlink" title="重点知识"></a>重点知识</h2><h3 id="1-JVM内存管理机制和垃圾回收机制（搞得透彻）"><a href="#1-JVM内存管理机制和垃圾回收机制（搞得透彻）" class="headerlink" title="1. JVM内存管理机制和垃圾回收机制（搞得透彻）"></a>1. JVM内存管理机制和垃圾回收机制（搞得透彻）</h3>
         
-          <a class="article-more-a" href="/vilce/2018/07/18/重点知识大纲/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/07/18/main/重点知识大纲/#more">more >></a>
         
       
 
@@ -281,7 +388,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/07/18/重点知识大纲/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/07/18/main/重点知识大纲/">展开全文 >></a>
         </p>
       
 
@@ -311,19 +418,19 @@
 
 
   
-    <article id="post-SpringBoot 整合Redis实现缓存操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/SpringBoot 整合Redis实现缓存操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/07/08/SpringBoot 整合Redis实现缓存操作/">SpringBoot 整合Redis实现缓存操作</a>
+      <a class="article-title" href="/vilce/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/">SpringBoot 整合Redis实现缓存操作</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/07/08/SpringBoot 整合Redis实现缓存操作/" class="archive-article-date">
+        <a href="/vilce/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/" class="archive-article-date">
   	<time datetime="2018-07-08T07:42:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
 </a>
         
@@ -333,7 +440,7 @@
       
         <h3 id="1-缓存的应用场景"><a href="#1-缓存的应用场景" class="headerlink" title="1. 缓存的应用场景"></a>1. 缓存的应用场景</h3>
         
-          <a class="article-more-a" href="/vilce/2018/07/08/SpringBoot 整合Redis实现缓存操作/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/#more">more >></a>
         
       
 
@@ -357,7 +464,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/07/08/SpringBoot 整合Redis实现缓存操作/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/07/08/main/SpringBoot 整合Redis实现缓存操作/">展开全文 >></a>
         </p>
       
 
@@ -387,19 +494,19 @@
 
 
   
-    <article id="post-Springboot整合Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/Springboot整合Redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/06/28/Springboot整合Redis/">Springboot整合Redis</a>
+      <a class="article-title" href="/vilce/2018/06/28/main/Springboot整合Redis/">Springboot整合Redis</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/06/28/Springboot整合Redis/" class="archive-article-date">
+        <a href="/vilce/2018/06/28/main/Springboot整合Redis/" class="archive-article-date">
   	<time datetime="2018-06-28T09:14:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-28</time>
 </a>
         
@@ -409,7 +516,7 @@
       
         <h3 id="1-Redis概述"><a href="#1-Redis概述" class="headerlink" title="1.Redis概述"></a>1.Redis概述</h3>
         
-          <a class="article-more-a" href="/vilce/2018/06/28/Springboot整合Redis/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/06/28/main/Springboot整合Redis/#more">more >></a>
         
       
 
@@ -433,7 +540,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/06/28/Springboot整合Redis/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/06/28/main/Springboot整合Redis/">展开全文 >></a>
         </p>
       
 
@@ -463,19 +570,19 @@
 
 
   
-    <article id="post-Swagger常用注解说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/Swagger常用注解说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/06/13/Swagger常用注解说明/">Swagger常用注解学习</a>
+      <a class="article-title" href="/vilce/2018/06/13/main/Swagger常用注解说明/">Swagger常用注解学习</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/06/13/Swagger常用注解说明/" class="archive-article-date">
+        <a href="/vilce/2018/06/13/main/Swagger常用注解说明/" class="archive-article-date">
   	<time datetime="2018-06-13T12:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
 </a>
         
@@ -485,7 +592,7 @@
       
         <p>常用注解有：<br>
         
-          <a class="article-more-a" href="/vilce/2018/06/13/Swagger常用注解说明/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/06/13/main/Swagger常用注解说明/#more">more >></a>
         
       
 
@@ -509,7 +616,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/06/13/Swagger常用注解说明/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/06/13/main/Swagger常用注解说明/">展开全文 >></a>
         </p>
       
 
@@ -539,19 +646,19 @@
 
 
   
-    <article id="post-SpringMVC常用注解@Controller,@Service,@Repository,@Component" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/SpringMVC常用注解@Controller,@Service,@Repository,@Component" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/">SpringMVC常用注解学习</a>
+      <a class="article-title" href="/vilce/2018/06/05/main/SpringMVC常用注解@Controller,@Service,@Repository,@Component/">SpringMVC常用注解学习</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/" class="archive-article-date">
+        <a href="/vilce/2018/06/05/main/SpringMVC常用注解@Controller,@Service,@Repository,@Component/" class="archive-article-date">
   	<time datetime="2018-06-05T07:45:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
 </a>
         
@@ -561,7 +668,7 @@
       
         <h2 id="SpringMVC常用注解-Controller-Service-Repository-Component"><a href="#SpringMVC常用注解-Controller-Service-Repository-Component" class="headerlink" title="SpringMVC常用注解@Controller,@Service,@Repository,@Component"></a>SpringMVC常用注解@Controller,@Service,@Repository,@Component</h2><h3 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h3>
         
-          <a class="article-more-a" href="/vilce/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/06/05/main/SpringMVC常用注解@Controller,@Service,@Repository,@Component/#more">more >></a>
         
       
 
@@ -585,7 +692,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/06/05/SpringMVC常用注解@Controller,@Service,@Repository,@Component/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/06/05/main/SpringMVC常用注解@Controller,@Service,@Repository,@Component/">展开全文 >></a>
         </p>
       
 
@@ -615,19 +722,19 @@
 
 
   
-    <article id="post-SQL语句映射文件（2）增删改查、参数、缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/SQL语句映射文件（2）增删改查、参数、缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/05/31/SQL语句映射文件（2）增删改查、参数、缓存/">MyBatis映射文件SQL语句学习(2)</a>
+      <a class="article-title" href="/vilce/2018/05/31/main/SQL语句映射文件（2）增删改查、参数、缓存/">MyBatis映射文件SQL语句学习(2)</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/05/31/SQL语句映射文件（2）增删改查、参数、缓存/" class="archive-article-date">
+        <a href="/vilce/2018/05/31/main/SQL语句映射文件（2）增删改查、参数、缓存/" class="archive-article-date">
   	<time datetime="2018-05-31T07:11:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
 </a>
         
@@ -637,7 +744,7 @@
       
         <h2 id="SQL语句映射文件（2）增删改查、参数、缓存"><a href="#SQL语句映射文件（2）增删改查、参数、缓存" class="headerlink" title="SQL语句映射文件（2）增删改查、参数、缓存"></a>SQL语句映射文件（2）增删改查、参数、缓存</h2><h3 id="1-select"><a href="#1-select" class="headerlink" title="1. select"></a>1. select</h3><p>一个select元素非常简单：<br>
         
-          <a class="article-more-a" href="/vilce/2018/05/31/SQL语句映射文件（2）增删改查、参数、缓存/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/05/31/main/SQL语句映射文件（2）增删改查、参数、缓存/#more">more >></a>
         
       
 
@@ -661,7 +768,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/05/31/SQL语句映射文件（2）增删改查、参数、缓存/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/05/31/main/SQL语句映射文件（2）增删改查、参数、缓存/">展开全文 >></a>
         </p>
       
 
@@ -691,19 +798,19 @@
 
 
   
-    <article id="post-SQL语句映射文件（1）resultMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/SQL语句映射文件（1）resultMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/05/30/SQL语句映射文件（1）resultMap/">MyBatis映射文件SQL语句学习(1)</a>
+      <a class="article-title" href="/vilce/2018/05/30/main/SQL语句映射文件（1）resultMap/">MyBatis映射文件SQL语句学习(1)</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/05/30/SQL语句映射文件（1）resultMap/" class="archive-article-date">
+        <a href="/vilce/2018/05/30/main/SQL语句映射文件（1）resultMap/" class="archive-article-date">
   	<time datetime="2018-05-30T09:09:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
 </a>
         
@@ -713,7 +820,7 @@
       
         <h2 id="SQL语句映射文件（1）resultMap"><a href="#SQL语句映射文件（1）resultMap" class="headerlink" title="SQL语句映射文件（1）resultMap"></a>SQL语句映射文件（1）resultMap</h2><p>SQL映射XML文件一些初级的元素：<br>
         
-          <a class="article-more-a" href="/vilce/2018/05/30/SQL语句映射文件（1）resultMap/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/05/30/main/SQL语句映射文件（1）resultMap/#more">more >></a>
         
       
 
@@ -737,7 +844,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/05/30/SQL语句映射文件（1）resultMap/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/05/30/main/SQL语句映射文件（1）resultMap/">展开全文 >></a>
         </p>
       
 
@@ -767,19 +874,19 @@
 
 
   
-    <article id="post-SpringBoot搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-main/SpringBoot搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/05/09/SpringBoot搭建/">SpringBoot搭建</a>
+      <a class="article-title" href="/vilce/2018/05/09/main/SpringBoot搭建/">SpringBoot搭建</a>
     </h1>
   
 
         
-        <a href="/vilce/2018/05/09/SpringBoot搭建/" class="archive-article-date">
+        <a href="/vilce/2018/05/09/main/SpringBoot搭建/" class="archive-article-date">
   	<time datetime="2018-05-09T08:22:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-09</time>
 </a>
         
@@ -791,7 +898,7 @@
 <li><h5 id="15分钟"><a href="#15分钟" class="headerlink" title="15分钟"></a>15分钟</h5></li>
 </ul>
         
-          <a class="article-more-a" href="/vilce/2018/05/09/SpringBoot搭建/#more">more >></a>
+          <a class="article-more-a" href="/vilce/2018/05/09/main/SpringBoot搭建/#more">more >></a>
         
       
 
@@ -815,86 +922,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/05/09/SpringBoot搭建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-搭建微博" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/vilce/2018/04/27/搭建微博/">搭建微博</a>
-    </h1>
-  
-
-        
-        <a href="/vilce/2018/04/27/搭建微博/" class="archive-article-date">
-  	<time datetime="2018-04-27T07:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul>
-<li><h5 id="node-js-因为-hexo-整个博客框架是基于node-js的，所以必须安装node-js环境。我安装的是最新的版本，v4-5-0，安装过程一路-next-即可。"><a href="#node-js-因为-hexo-整个博客框架是基于node-js的，所以必须安装node-js环境。我安装的是最新的版本，v4-5-0，安装过程一路-next-即可。" class="headerlink" title="node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。"></a><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a>:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。</h5></li>
-<li><h5 id="git客户端-用来将hexo相关文件提交到github上去，安装过程一路next。"><a href="#git客户端-用来将hexo相关文件提交到github上去，安装过程一路next。" class="headerlink" title="git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。"></a><a href="https://git-scm.com/downloads/" target="_blank" rel="noopener">git客户端</a>:用来将hexo相关文件提交到github上去，安装过程一路next。</h5></li>
-</ul>
-        
-          <a class="article-more-a" href="/vilce/2018/04/27/搭建微博/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/vilce/2018/04/27/搭建微博/">展开全文 >></a>
+          <a class="article-more-a" href="/vilce/2018/05/09/main/SpringBoot搭建/">展开全文 >></a>
         </p>
       
 
@@ -1021,10 +1049,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -1033,11 +1057,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1045,11 +1069,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础 面试问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
             
             <div class="clearfix"></div>

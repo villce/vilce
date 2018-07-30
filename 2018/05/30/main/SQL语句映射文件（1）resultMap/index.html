@@ -6,30 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://villce.github.io">
-  <title>搭建微博 | vilce</title>
+  <title>MyBatis映射文件SQL语句学习(1) | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.环境准备 node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。 git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。">
-<meta name="keywords" content="hexo github">
+  <meta name="description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：">
+<meta name="keywords" content="mybatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建微博">
-<meta property="og:url" content="https://villce.github.io/2018/04/27/搭建微博/index.html">
+<meta property="og:title" content="MyBatis映射文件SQL语句学习(1)">
+<meta property="og:url" content="https://villce.github.io/2018/05/30/main/SQL语句映射文件（1）resultMap/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="1.环境准备 node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。 git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。">
+<meta property="og:description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://villce.github.io/vilce/img/1.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/2.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/3.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/4.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/5.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/6.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/7.jpg">
-<meta property="og:image" content="https://villce.github.io/vilce/img/8.png">
-<meta property="og:image" content="https://villce.github.io/vilce/img/9.png">
-<meta property="og:updated_time" content="2018-04-27T09:35:16.380Z">
+<meta property="og:updated_time" content="2018-07-10T02:31:53.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建微博">
-<meta name="twitter:description" content="1.环境准备 node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。 git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。">
-<meta name="twitter:image" content="https://villce.github.io/vilce/img/1.png">
+<meta name="twitter:title" content="MyBatis映射文件SQL语句学习(1)">
+<meta name="twitter:description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -169,72 +159,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-搭建微博" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-main/SQL语句映射文件（1）resultMap" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      搭建微博
+      MyBatis映射文件SQL语句学习(1)
     </h1>
   
 
         
-        <a href="/vilce/2018/04/27/搭建微博/" class="archive-article-date">
-  	<time datetime="2018-04-27T07:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+        <a href="/vilce/2018/05/30/main/SQL语句映射文件（1）resultMap/" class="archive-article-date">
+  	<time datetime="2018-05-30T09:09:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul>
-<li><h5 id="node-js-因为-hexo-整个博客框架是基于node-js的，所以必须安装node-js环境。我安装的是最新的版本，v4-5-0，安装过程一路-next-即可。"><a href="#node-js-因为-hexo-整个博客框架是基于node-js的，所以必须安装node-js环境。我安装的是最新的版本，v4-5-0，安装过程一路-next-即可。" class="headerlink" title="node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。"></a><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a>:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。</h5></li>
-<li><h5 id="git客户端-用来将hexo相关文件提交到github上去，安装过程一路next。"><a href="#git客户端-用来将hexo相关文件提交到github上去，安装过程一路next。" class="headerlink" title="git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。"></a><a href="https://git-scm.com/downloads/" target="_blank" rel="noopener">git客户端</a>:用来将hexo相关文件提交到github上去，安装过程一路next。</h5></li>
-</ul>
-<a id="more"></a>
-<h2 id="2-安装hexo框架"><a href="#2-安装hexo框架" class="headerlink" title="2.安装hexo框架"></a>2.安装hexo框架</h2><h5 id="环境准备好以后，我们便可以安装hexo博客框架。"><a href="#环境准备好以后，我们便可以安装hexo博客框架。" class="headerlink" title="环境准备好以后，我们便可以安装hexo博客框架。"></a>环境准备好以后，我们便可以安装hexo博客框架。</h5><h5 id="首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）"><a href="#首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）" class="headerlink" title="首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）"></a>首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）</h5><h5 id="！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹"><a href="#！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹" class="headerlink" title="！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹"></a><font color="ff0000">！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹<font></font></font></h5><p><img src="/vilce/img/1.png" alt="图一"></p>
-<h5 id="然后在文件夹中右键打开git命令框"><a href="#然后在文件夹中右键打开git命令框" class="headerlink" title="然后在文件夹中右键打开git命令框"></a>然后在文件夹中右键打开git命令框</h5><p><img src="/vilce/img/2.png" alt="图二"></p>
-<h5 id="在git命令框中安装Hexo-npm-install-g-hexo"><a href="#在git命令框中安装Hexo-npm-install-g-hexo" class="headerlink" title="在git命令框中安装Hexo(npm install -g hexo)"></a>在git命令框中安装Hexo(npm install -g hexo)</h5><p><img src="/vilce/img/3.png" alt="图三"></p>
-<h5 id="初始化（hexo-init）"><a href="#初始化（hexo-init）" class="headerlink" title="初始化（hexo init）"></a>初始化（hexo init）</h5><p><img src="/vilce/img/4.png" alt="图四"></p>
-<h5 id="安装相关的依赖包（npm-install）"><a href="#安装相关的依赖包（npm-install）" class="headerlink" title="安装相关的依赖包（npm install）"></a>安装相关的依赖包（npm install）</h5><p><img src="/vilce/img/5.png" alt="图五"></p>
-<h5 id="此时文件夹如下图"><a href="#此时文件夹如下图" class="headerlink" title="此时文件夹如下图"></a>此时文件夹如下图</h5><p><img src="/vilce/img/6.png" alt="图六"></p>
-<ul>
-<li><h5 id="config-yml：用来配置站点信息，大多数配置都在这里进行。"><a href="#config-yml：用来配置站点信息，大多数配置都在这里进行。" class="headerlink" title="_config.yml：用来配置站点信息，大多数配置都在这里进行。"></a><code>_config.yml</code>：用来配置站点信息，大多数配置都在这里进行。</h5></li>
-<li><h5 id="package-json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。"><a href="#package-json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。" class="headerlink" title="package.json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。"></a><code>package.json</code>：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。</h5></li>
-<li><h5 id="scaffolds：模板文件夹。"><a href="#scaffolds：模板文件夹。" class="headerlink" title="scaffolds：模板文件夹。"></a><code>scaffolds</code>：模板文件夹。</h5></li>
-<li><h5 id="source：源文件夹是存放用户资源的地方-他下面有一个-posts，文件夹，我们发表的文件就存放在这个文件夹下。"><a href="#source：源文件夹是存放用户资源的地方-他下面有一个-posts，文件夹，我们发表的文件就存放在这个文件夹下。" class="headerlink" title="source：源文件夹是存放用户资源的地方,他下面有一个_posts，文件夹，我们发表的文件就存放在这个文件夹下。"></a><code>source</code>：源文件夹是存放用户资源的地方,他下面有一个_posts，文件夹，我们发表的文件就存放在这个文件夹下。</h5></li>
-<li><h5 id="themes：主题文件夹，Hexo-会根据主题来生成静态页面。"><a href="#themes：主题文件夹，Hexo-会根据主题来生成静态页面。" class="headerlink" title="themes：主题文件夹，Hexo 会根据主题来生成静态页面。"></a><code>themes</code>：主题文件夹，Hexo 会根据主题来生成静态页面。</h5></li>
-</ul>
-<h5 id="接下来在文件夹下执行"><a href="#接下来在文件夹下执行" class="headerlink" title="接下来在文件夹下执行"></a>接下来在文件夹下执行</h5><blockquote>
-<p>hexo g</p>
-<p>hexo s</p>
-</blockquote>
-<h5 id="然后用浏览器访问http-localhost-4000，就能看到hexo初始化界面。"><a href="#然后用浏览器访问http-localhost-4000，就能看到hexo初始化界面。" class="headerlink" title="然后用浏览器访问http://localhost:4000，就能看到hexo初始化界面。"></a>然后用浏览器访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a>，就能看到hexo初始化界面。</h5><p><img src="/vilce/img/7.jpg" alt="图七"></p>
-<h2 id="3-部署微博到github"><a href="#3-部署微博到github" class="headerlink" title="3.部署微博到github"></a>3.部署微博到github</h2><blockquote>
-<p>已有帐号的暂时忽略这一步，传送门: <a href="https://github.com/" target="_blank" rel="noopener">github</a>，没有的话就老老实实创建一个吧。</p>
-</blockquote>
-<h5 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h5><p><img src="/vilce/img/8.png" alt="图八"></p>
-<h5 id="部署文件到github"><a href="#部署文件到github" class="headerlink" title="部署文件到github"></a>部署文件到github</h5><blockquote>
-<p>这里在上次文件代码时最好用ssh地址，需要为帐号<a href="https://www.cnblogs.com/yehui-mmd/p/5962254.html" target="_blank" rel="noopener">配置ssh密钥</a>，已经配置好的请忽略这一步。</p>
-</blockquote>
-<h5 id="找到文件夹下的-config-yml-文件，找到关键字-deploy-，然后修改成如下，我就用我自己的做示例："><a href="#找到文件夹下的-config-yml-文件，找到关键字-deploy-，然后修改成如下，我就用我自己的做示例：" class="headerlink" title="找到文件夹下的_config.yml 文件，找到关键字 deploy ，然后修改成如下，我就用我自己的做示例："></a>找到文件夹下的<code>_config.yml</code> 文件，找到关键字 deploy ，然后修改成如下，我就用我自己的做示例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:villce/vilce.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<h5 id="执行一下命令部署项目到github"><a href="#执行一下命令部署项目到github" class="headerlink" title="执行一下命令部署项目到github"></a>执行一下命令部署项目到github</h5><blockquote>
-<p>hexo g</p>
-<p>hexo d</p>
-</blockquote>
-<h5 id="但是输入hexo-d-可能会报-ERROR-Deployer-not-fount：-git-错误-这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令："><a href="#但是输入hexo-d-可能会报-ERROR-Deployer-not-fount：-git-错误-这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令：" class="headerlink" title="但是输入hexo d 可能会报 ERROR Deployer not fount： git 错误,这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令："></a>但是输入hexo d 可能会报 <strong>ERROR Deployer not fount： git</strong> 错误,这是因为没有安装<code>hexo-deployer-git</code>这个模块，无法识别该指令，安装该模块即可，输入如下命令：</h5><blockquote>
-<p>npm install hexo-deployer-git –save</p>
-</blockquote>
-<h5 id="浏览器输入villce-github-io-vilce即可访问-但可能出现图中情况，没有加载css样式。"><a href="#浏览器输入villce-github-io-vilce即可访问-但可能出现图中情况，没有加载css样式。" class="headerlink" title="浏览器输入villce.github.io/vilce即可访问,但可能出现图中情况，没有加载css样式。"></a>浏览器输入<a href="vilce.github.io/vilce">villce.github.io/vilce</a>即可访问,但可能出现图中情况，没有加载css样式。</h5><p><img src="/vilce/img/9.png" alt="图九"></p>
-<h5 id="更改一下-config-yml文件，其中的url和root属性"><a href="#更改一下-config-yml文件，其中的url和root属性" class="headerlink" title="更改一下_config.yml文件，其中的url和root属性"></a>更改一下<code>_config.yml</code>文件，其中的url和root属性</h5><pre><code>url: https://villce.github.io
-root: /vilce/
-</code></pre><h5 id="root下面应该设置成-项目名-而不是"><a href="#root下面应该设置成-项目名-而不是" class="headerlink" title="root下面应该设置成 /项目名 ,而不是 /"></a>root下面应该设置成 /项目名 ,而不是 /</h5><h2 id="4-参考"><a href="#4-参考" class="headerlink" title="4.参考"></a>4.参考</h2><ul>
-<li><a href="http://www.leeyom.top/2016/09/25/tech-hexo-github/" target="_blank" rel="noopener">http://www.leeyom.top/2016/09/25/tech-hexo-github/</a> </li>
-<li><a href="https://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="noopener">https://www.jianshu.com/p/e99ed60390a8</a></li>
-<li><a href="https://blog.csdn.net/nathan1987_/article/details/50322493" target="_blank" rel="noopener">https://blog.csdn.net/nathan1987_/article/details/50322493</a></li>
-</ul>
+        <h2 id="SQL语句映射文件（1）resultMap"><a href="#SQL语句映射文件（1）resultMap" class="headerlink" title="SQL语句映射文件（1）resultMap"></a>SQL语句映射文件（1）resultMap</h2><p>SQL映射XML文件一些初级的元素：<br><a id="more"></a><br> 1.cache - 配置给定模式的缓存<br> 2.cache-ref - 从别的模式中引用一个缓存<br> 3.resultMap - 这是最复杂而却强大的一个元素了，它描述如何从结果集中加载对象<br> 4.sql - 一个可以被其他语句复用的SQL块<br> 5.insert - 映射INSERT语句<br> 6.update - 映射UPDATE语句<br> 7.delete - 映射DELETE语句<br> 8.select - 映射SELECT语句</p>
+<h3 id="一-resultMap"><a href="#一-resultMap" class="headerlink" title="一. resultMap"></a>一. resultMap</h3><p>​       resultMap是MyBatis中最重要最强大的元素了。可以让你比使用JDBC调用结果集省掉90%的代码，也可以让你做许多JDBC不支持的事。现实上，要写一个等同类似于交互的映射这样的复杂语句，可能要上千行的代码。ResultMap的目的就是这样简单的语句而不需要多余的结果映射，更多复杂的语句，除了只要一些绝对必须的语句描述关系以外，再也不需要其它的。</p>
+<p>resultMap属性：type为java实体类；id为此resultMap的标识<br>resultMap可以设置的映射：<br> 1.constructor - 用来将结果反射给一个实例化好的类的构造器<br>   a) idArg - ID 参数；将结果集标记为ID，以方便全局调用<br>   b) arg - 反射到构造器的通常结果<br> 2.id - ID 结果，将结果集标记为ID，以方便全局调用<br> 3.result - 反射到JavaBean属性的普通结果<br> 4.association - 复杂类型的结合；多个结果合成的类型<br>    a) nested result mappings - 几个resultMap自身嵌套关联，也可以引用到一个其它上<br> 5.collection - 复杂类型集合 a collection of complex types<br> 6.nested result mappings - resultMap的集合，也可以引用到一个其它上<br> 7.discriminator - 使用一个结果值以决定使用哪个resultMap<br>    a) case - 基本一些值的结果映射的case情形<br>       i. nested result mappings - 一个case情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap.</p>
+<h4 id="（1）id-、result"><a href="#（1）id-、result" class="headerlink" title="（1）id 、result"></a>（1）id 、result</h4><p>  id、result是最简单的映射，id为主键映射；result其他基本数据库表字段实体类属性的映射。</p>
+<p>  最简单的例子：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;com.capsp.model.Student&quot; id=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;id  property=&quot;studentId&quot; column=&quot;STUDENT_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot; column=&quot;STUDENT_NAME&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot; column=&quot;STUDENT_SEX&quot;  javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot; column=&quot;STUDENT_BIRTHDAY&quot;  javaType=&quot;Date&quot; jdbcType=&quot;DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentPhoto&quot; column=&quot;STUDENT_PHOTO&quot; javaType=&quot;byte[]&quot; jdbcType=&quot;BLOB&quot; typeHandler=&quot;org.apache.ibatis.type.BlobTypeHandler&quot; /&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<p>id、result语句属性配置细节：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>property</td>
+<td style="text-align:left">需要映射到JavaBean的属性名称</td>
+</tr>
+<tr>
+<td>column</td>
+<td style="text-align:left">数据表的列名或者标签名</td>
+</tr>
+<tr>
+<td>javaType</td>
+<td style="text-align:left">一个完整的类名，或者是一个类型别名。如果你匹配的是一个JavaBean，那MyBatis通常会自行检测到。然后，如果你是要映射到一个HashMap，那你需要指定javaType要达到的目的</td>
+</tr>
+<tr>
+<td>jdbcType</td>
+<td style="text-align:left">数据表支持的类型列表。这个属性只在insert、update或delete的时候针对允许空的列有用。JDBC需要这项，但MyBatis不需要。如果你是直接针对JDBC编码，且有允许空的列，而你要指定这项</td>
+</tr>
+<tr>
+<td>typeHandler</td>
+<td style="text-align:left">使用这个属性可以覆写类型处理器。这项值可以是一个完整的类名，也可以是一个类型别名</td>
+</tr>
+</tbody>
+</table>
+<p>支持的JDBC类型</p>
+<p>​       为了将来的引用，MyBatis支持下列JDBC类型，通过JdbcType枚举：</p>
+<p>BIT，FLOAT，CHAR，TIMESTAMP，OTHER，UNDEFINED，TINYINT，REAL，VARCHAR，BINARY，BLOB，NVARCHAR，SMALLINT，DOUBLE，LONGVARCHAR，VARBINARY，CLOB，NCHAR，INTEGER，NUMERIC，DATE，LONGVARBINARY，BOOLEAN，NCLOB，BIGINT，DECIMAL，TIME，NULL，CURSOR </p>
+<h4 id="（2）constructor"><a href="#（2）constructor" class="headerlink" title="（2）constructor"></a>（2）constructor</h4><p>​        我们使用id、result时候，需要定义java实体类的属性映射到数据库表的字段上。这时候是使用JavaBean实现的。当然我们也可以使用实体类的构造方法来实现值的映射，这个时候是通过构造方法参数的书写的顺序来进行幅值的。</p>
+<p>​        使用constructor功能有限（例如使用collection级联查询）。</p>
+<p>​        上面使用id、result实现的功能就可以改成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;StudentEntity&quot; id=&quot;studentResultMap&quot; &gt;  </span><br><span class="line">    &lt;constructor&gt;  </span><br><span class="line">        &lt;idArg javaType=&quot;String&quot; column=&quot;STUDENT_ID&quot;/&gt;  </span><br><span class="line">        &lt;arg javaType=&quot;String&quot; column=&quot;STUDENT_NAME&quot;/&gt;  </span><br><span class="line">        &lt;arg javaType=&quot;String&quot; column=&quot;STUDENT_SEX&quot;/&gt;  </span><br><span class="line">        &lt;arg javaType=&quot;Date&quot; column=&quot;STUDENT_BIRTHDAY&quot;/&gt;  </span><br><span class="line">    &lt;/constructor&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<p>​        当然，我们需要定义StudentEntity实体类的构造方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public StudentEntity(String studentID, String studentName, String studentSex, Date studentBirthday)&#123;  </span><br><span class="line">    this.studentID = studentID;  </span><br><span class="line">    this.studentName = studentName;  </span><br><span class="line">    this.studentSex = studentSex;  </span><br><span class="line">    this.studentBirthday = studentBirthday;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（3）association联合"><a href="#（3）association联合" class="headerlink" title="（3）association联合"></a>（3）association联合</h4><p>联合元素用来处理“一对一”的关系。需要指定映射的Java实体类的属性，属性的javaType（通常MyBatis 自己会识别）。对应的数据库表的列名称。如果想覆写的话返回结果的值，需要指定typeHandler。 不同情况需要告诉MyBatis 如何加载一个联合。MyBatis 可以用两种方式加载： </p>
+<ol>
+<li><p>select: 执行一个其它映射的SQL 语句返回一个Java实体类型。较灵活； </p>
+</li>
+<li><p>resultsMap: 使用一个嵌套的结果映射来处理通过join查询结果集，映射成Java实体类型。 </p>
+<p>例如，一个班级对应一个班主任。  首先定义好班级中的班主任属性： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private TeacherEntity teacherEntity;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="a-使用select实现联合"><a href="#a-使用select实现联合" class="headerlink" title="a. 使用select实现联合"></a>a. 使用select实现联合</h5><p>例：班级实体类中有班主任的属性，通过联合在得到一个班级实体时，同时映射出班主任实体。</p>
+<p> 这样可以直接复用在TeacherMapper.xml文件中定义好的查询teacher根据其ID的select语句。而且不需要修改写好的SQL语句，只需要直接修改resultMap即可。</p>
+<p> ClassMapper.xml文件部分内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;                                    select=&quot;getTeacher&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassByID&quot; parameterType=&quot;String&quot; resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT * FROM CLASS_TBL CT  </span><br><span class="line">    WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>TeacherMapper.xml文件部分内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;TeacherEntity&quot; id=&quot;teacherResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;teacherID&quot; column=&quot;TEACHER_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;teacherName&quot; column=&quot;TEACHER_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;teacherSex&quot; column=&quot;TEACHER_SEX&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;teacherBirthday&quot; column=&quot;TEACHER_BIRTHDAY&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;workDate&quot; column=&quot;WORK_DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;professional&quot; column=&quot;PROFESSIONAL&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getTeacher&quot; parameterType=&quot;String&quot;  resultMap=&quot;teacherResultMap&quot;&gt;  </span><br><span class="line">    SELECT *  </span><br><span class="line">      FROM TEACHER_TBL TT  </span><br><span class="line">     WHERE TT.TEACHER_ID = #&#123;teacherID&#125;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="b-使用resultMap实现联合"><a href="#b-使用resultMap实现联合" class="headerlink" title="b. 使用resultMap实现联合"></a>b. 使用resultMap实现联合</h5><p>与上面同样的功能，查询班级，同时查询器班主任。需在association中添加resultMap（在teacher的xml文件中定义好的），新写sql（查询班级表left join教师表），不需要teacher的select。</p>
+<p> 修改ClassMapper.xml文件部分内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;                                    resultMap=&quot;teacherResultMap&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassAndTeacher&quot; parameterType=&quot;String&quot;                                   resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT *  </span><br><span class="line">      FROM CLASS_TBL CT LEFT JOIN TEACHER_TBL TT ON CT.TEACHER_ID = TT.TEACHER_ID  </span><br><span class="line">     WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（4）collection聚集"><a href="#（4）collection聚集" class="headerlink" title="（4）collection聚集"></a>（4）collection聚集</h4><p>聚集元素用来处理“一对多”的关系。需要指定映射的Java实体类的属性，属性的javaType（一般为ArrayList）；列表中对象的类型ofType（Java实体类）；对应的数据库表的列名称；</p>
+<p>不同情况需要告诉MyBatis 如何加载一个聚集。MyBatis 可以用两种方式加载：</p>
+<ol>
+<li><p>select: 执行一个其它映射的SQL 语句返回一个Java实体类型。较灵活；</p>
+</li>
+<li><p>resultsMap: 使用一个嵌套的结果映射来处理通过join查询结果集，映射成Java实体类型。</p>
+<p>例如，一个班级有多个学生。 首先定义班级中的学生列表属性： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private List&lt;StudentEntity&gt; studentList;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="a-使用select实现聚集"><a href="#a-使用select实现聚集" class="headerlink" title="a. 使用select实现聚集"></a>a. 使用select实现聚集</h5><p>用法和联合很类似，区别在于，这是一对多，所以一般映射过来的都是列表。所以这里需要定义javaType为ArrayList，还需要定义列表中对象的类型ofType，以及必须设置的select的语句名称（需要注意的是，这里的查询student的select语句条件必须是外键classID）。</p>
+<p>ClassMapper.xml文件部分内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;  select=&quot;getTeacher&quot;/&gt;  </span><br><span class="line">    &lt;collection property=&quot;studentList&quot; column=&quot;CLASS_ID&quot; javaType=&quot;ArrayList&quot; ofType=&quot;StudentEntity&quot; select=&quot;getStudentByClassID&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassByID&quot; parameterType=&quot;String&quot; resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT * FROM CLASS_TBL CT  </span><br><span class="line">    WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>StudentMapper.xml文件部分内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- java属性，数据库表字段之间的映射定义 --&gt;  </span><br><span class="line">&lt;resultMap type=&quot;StudentEntity&quot; id=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;studentID&quot; column=&quot;STUDENT_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot; column=&quot;STUDENT_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot; column=&quot;STUDENT_SEX&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot; column=&quot;STUDENT_BIRTHDAY&quot; /&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;!-- 查询学生list，根据班级id --&gt;  </span><br><span class="line">&lt;select id=&quot;getStudentByClassID&quot; parameterType=&quot;String&quot; resultMap=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;include refid=&quot;selectStudentAll&quot; /&gt;  </span><br><span class="line">    WHERE ST.CLASS_ID = #&#123;classID&#125;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="b-使用resultMap实现聚集"><a href="#b-使用resultMap实现聚集" class="headerlink" title="b. 使用resultMap实现聚集"></a>b. 使用resultMap实现聚集</h5><p>使用resultMap，就需要重写一个sql，left join学生表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;  resultMap=&quot;teacherResultMap&quot;/&gt;  </span><br><span class="line">    &lt;collection property=&quot;studentList&quot; column=&quot;CLASS_ID&quot; javaType=&quot;ArrayList&quot; ofType=&quot;StudentEntity&quot; resultMap=&quot;studentResultMap&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassAndTeacherStudent&quot; parameterType=&quot;String&quot; resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT *  </span><br><span class="line">      FROM CLASS_TBL CT  </span><br><span class="line">           LEFT JOIN STUDENT_TBL ST  </span><br><span class="line">              ON CT.CLASS_ID = ST.CLASS_ID  </span><br><span class="line">           LEFT JOIN TEACHER_TBL TT  </span><br><span class="line">              ON CT.TEACHER_ID = TT.TEACHER_ID  </span><br><span class="line">      WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（5）discriminator鉴别器"><a href="#（5）discriminator鉴别器" class="headerlink" title="（5）discriminator鉴别器"></a>（5）discriminator鉴别器</h4><p>有时一个单独的数据库查询也许返回很多不同（但是希望有些关联）数据类型的结果集。鉴别器元素就是被设计来处理这个情况的，还有包括类的继承层次结构。鉴别器非常容易理解，因为它的表现很像Java语言中的switch语句。</p>
+<p>定义鉴别器指定了column和javaType属性。列是MyBatis查找比较值的地方。JavaType是需要被用来保证等价测试的合适类型（尽管字符串在很多情形下都会有用）。</p>
+<p>下面这个例子为，当classId为20000001时，才映射classId属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;liming.student.manager.data.model.StudentEntity&quot; id=&quot;resultMap_studentEntity_discriminator&quot;&gt;  </span><br><span class="line">    &lt;id  property=&quot;studentId&quot;        column=&quot;STUDENT_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot;       column=&quot;STUDENT_NAME&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot;        column=&quot;STUDENT_SEX&quot;  javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot;   column=&quot;STUDENT_BIRTHDAY&quot;  javaType=&quot;Date&quot; jdbcType=&quot;DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentPhoto&quot;  column=&quot;STUDENT_PHOTO&quot; javaType=&quot;byte[]&quot; jdbcType=&quot;BLOB&quot; typeHandler=&quot;org.apache.ibatis.type.BlobTypeHandler&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;placeId&quot;           column=&quot;PLACE_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;discriminator column=&quot;CLASS_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;&gt;  </span><br><span class="line">        &lt;case value=&quot;20000001&quot; resultType=&quot;liming.student.manager.data.model.StudentEntity&quot; &gt;  </span><br><span class="line">            &lt;result property=&quot;classId&quot; column=&quot;CLASS_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">        &lt;/case&gt;  </span><br><span class="line">    &lt;/discriminator&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -279,7 +308,7 @@ root: /vilce/
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
         		</li>
       		
 		</ul>
@@ -335,7 +364,7 @@ root: /vilce/
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/04/27/搭建微博/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/05/30/main/SQL语句映射文件（1）resultMap/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +378,18 @@ root: /vilce/
   
 <nav id="article-nav">
   
-    <a href="/vilce/2018/05/09/SpringBoot搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/vilce/2018/05/31/main/SQL语句映射文件（2）增删改查、参数、缓存/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SpringBoot搭建
+          MyBatis映射文件SQL语句学习(2)
         
       </div>
     </a>
   
   
-    <a href="/vilce/2018/04/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/vilce/2018/05/09/main/SpringBoot搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -387,7 +416,7 @@ root: /vilce/
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-环境准备"><span class="toc-number">1.</span> <span class="toc-text">1.环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#node-js-因为-hexo-整个博客框架是基于node-js的，所以必须安装node-js环境。我安装的是最新的版本，v4-5-0，安装过程一路-next-即可。"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">node.js:因为 hexo 整个博客框架是基于node.js的，所以必须安装node.js环境。我安装的是最新的版本，v4.5.0，安装过程一路 next 即可。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#git客户端-用来将hexo相关文件提交到github上去，安装过程一路next。"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">git客户端:用来将hexo相关文件提交到github上去，安装过程一路next。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装hexo框架"><span class="toc-number">2.</span> <span class="toc-text">2.安装hexo框架</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#环境准备好以后，我们便可以安装hexo博客框架。"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">环境准备好以后，我们便可以安装hexo博客框架。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">首先在本地磁盘中建立一个文件夹用来存放本地文件（可用于保存以及测试使用）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">！注意：强烈建议不要选择需要管理员权限才能创建文件（夹）的文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#然后在文件夹中右键打开git命令框"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">然后在文件夹中右键打开git命令框</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在git命令框中安装Hexo-npm-install-g-hexo"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">在git命令框中安装Hexo(npm install -g hexo)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化（hexo-init）"><span class="toc-number">2.0.0.6.</span> <span class="toc-text">初始化（hexo init）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装相关的依赖包（npm-install）"><span class="toc-number">2.0.0.7.</span> <span class="toc-text">安装相关的依赖包（npm install）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#此时文件夹如下图"><span class="toc-number">2.0.0.8.</span> <span class="toc-text">此时文件夹如下图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#config-yml：用来配置站点信息，大多数配置都在这里进行。"><span class="toc-number">2.0.0.9.</span> <span class="toc-text">_config.yml：用来配置站点信息，大多数配置都在这里进行。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#package-json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。"><span class="toc-number">2.0.0.10.</span> <span class="toc-text">package.json：管理我们安装的一些插件，我们要删除某些插件的时候，可以在这里进行。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#scaffolds：模板文件夹。"><span class="toc-number">2.0.0.11.</span> <span class="toc-text">scaffolds：模板文件夹。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#source：源文件夹是存放用户资源的地方-他下面有一个-posts，文件夹，我们发表的文件就存放在这个文件夹下。"><span class="toc-number">2.0.0.12.</span> <span class="toc-text">source：源文件夹是存放用户资源的地方,他下面有一个_posts，文件夹，我们发表的文件就存放在这个文件夹下。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#themes：主题文件夹，Hexo-会根据主题来生成静态页面。"><span class="toc-number">2.0.0.13.</span> <span class="toc-text">themes：主题文件夹，Hexo 会根据主题来生成静态页面。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接下来在文件夹下执行"><span class="toc-number">2.0.0.14.</span> <span class="toc-text">接下来在文件夹下执行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#然后用浏览器访问http-localhost-4000，就能看到hexo初始化界面。"><span class="toc-number">2.0.0.15.</span> <span class="toc-text">然后用浏览器访问http://localhost:4000，就能看到hexo初始化界面。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-部署微博到github"><span class="toc-number">3.</span> <span class="toc-text">3.部署微博到github</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建仓库"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">创建仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#部署文件到github"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">部署文件到github</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#找到文件夹下的-config-yml-文件，找到关键字-deploy-，然后修改成如下，我就用我自己的做示例："><span class="toc-number">3.0.0.3.</span> <span class="toc-text">找到文件夹下的_config.yml 文件，找到关键字 deploy ，然后修改成如下，我就用我自己的做示例：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#执行一下命令部署项目到github"><span class="toc-number">3.0.0.4.</span> <span class="toc-text">执行一下命令部署项目到github</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#但是输入hexo-d-可能会报-ERROR-Deployer-not-fount：-git-错误-这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令："><span class="toc-number">3.0.0.5.</span> <span class="toc-text">但是输入hexo d 可能会报 ERROR Deployer not fount： git 错误,这是因为没有安装hexo-deployer-git这个模块，无法识别该指令，安装该模块即可，输入如下命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浏览器输入villce-github-io-vilce即可访问-但可能出现图中情况，没有加载css样式。"><span class="toc-number">3.0.0.6.</span> <span class="toc-text">浏览器输入villce.github.io/vilce即可访问,但可能出现图中情况，没有加载css样式。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改一下-config-yml文件，其中的url和root属性"><span class="toc-number">3.0.0.7.</span> <span class="toc-text">更改一下_config.yml文件，其中的url和root属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#root下面应该设置成-项目名-而不是"><span class="toc-number">3.0.0.8.</span> <span class="toc-text">root下面应该设置成 /项目名 ,而不是 /</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-参考"><span class="toc-number">4.</span> <span class="toc-text">4.参考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL语句映射文件（1）resultMap"><span class="toc-number">1.</span> <span class="toc-text">SQL语句映射文件（1）resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-resultMap"><span class="toc-number">1.1.</span> <span class="toc-text">一. resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）id-、result"><span class="toc-number">1.1.1.</span> <span class="toc-text">（1）id 、result</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）constructor"><span class="toc-number">1.1.2.</span> <span class="toc-text">（2）constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）association联合"><span class="toc-number">1.1.3.</span> <span class="toc-text">（3）association联合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现联合"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">a. 使用select实现联合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现联合"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">b. 使用resultMap实现联合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）collection聚集"><span class="toc-number">1.1.4.</span> <span class="toc-text">（4）collection聚集</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现聚集"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">a. 使用select实现聚集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现聚集"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">b. 使用resultMap实现聚集</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）discriminator鉴别器"><span class="toc-number">1.1.5.</span> <span class="toc-text">（5）discriminator鉴别器</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -499,10 +528,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -511,11 +536,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +548,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础 面试问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
             
             <div class="clearfix"></div>
