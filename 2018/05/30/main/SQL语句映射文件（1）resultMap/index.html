@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://villce.github.io">
-  <title>阿里初面问题 | vilce</title>
+  <title>MyBatis映射文件SQL语句学习(1) | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿里初面问题：1. AOP实现原理">
-<meta name="keywords" content="essay">
+  <meta name="description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：">
+<meta name="keywords" content="mybatis article">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里初面问题">
-<meta property="og:url" content="https://villce.github.io/2018/07/22/suibi/阿里初面问题：/index.html">
+<meta property="og:title" content="MyBatis映射文件SQL语句学习(1)">
+<meta property="og:url" content="https://villce.github.io/2018/05/30/main/SQL语句映射文件（1）resultMap/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="阿里初面问题：1. AOP实现原理">
+<meta property="og:description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="e:/vilce/themes/yilia/source/img/SpringBoot/springboot1.jpg">
-<meta property="og:updated_time" content="2018-08-03T07:12:00.382Z">
+<meta property="og:updated_time" content="2018-08-03T07:11:42.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里初面问题">
-<meta name="twitter:description" content="阿里初面问题：1. AOP实现原理">
-<meta name="twitter:image" content="e:/vilce/themes/yilia/source/img/SpringBoot/springboot1.jpg">
+<meta name="twitter:title" content="MyBatis映射文件SQL语句学习(1)">
+<meta name="twitter:description" content="SQL语句映射文件（1）resultMapSQL映射XML文件一些初级的元素：">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -167,114 +165,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-suibi/阿里初面问题：" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-main/SQL语句映射文件（1）resultMap" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      阿里初面问题
+      MyBatis映射文件SQL语句学习(1)
     </h1>
   
 
         
-        <a href="/vilce/2018/07/22/suibi/阿里初面问题：/" class="archive-article-date">
-  	<time datetime="2018-07-22T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+        <a href="/vilce/2018/05/30/main/SQL语句映射文件（1）resultMap/" class="archive-article-date">
+  	<time datetime="2018-05-30T09:09:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="阿里初面问题："><a href="#阿里初面问题：" class="headerlink" title="阿里初面问题："></a>阿里初面问题：</h2><h3 id="1-AOP实现原理"><a href="#1-AOP实现原理" class="headerlink" title="1. AOP实现原理"></a><strong>1. AOP实现原理</strong></h3><a id="more"></a>
-<p><a href="https://blog.csdn.net/yuexianchang/article/details/77018603" target="_blank" rel="noopener">AOP原理分析</a></p>
-<p>AOP技术利用“横切”技术，破解开封装的对象内部，将影响多个类的公共行为封装到一个可重用模块，名为“Aspect”，即方面。使用“横向”技术，AOP把软件系统分为两个部分：核心关注点和横切关注点。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。AOP的核心思想就是“将应用程序中的商业逻辑同对其提供支持的通用服务进行分离”</p>
-<p>实现AOP的技术，主要分为两大类：一是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；二是采用静态织入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码</p>
-<h3 id="2-SpringBoot和Spring的区别"><a href="#2-SpringBoot和Spring的区别" class="headerlink" title="2. SpringBoot和Spring的区别"></a><strong>2. SpringBoot和Spring的区别</strong></h3><p>SpringBoot实现了自动配置，降低了项目搭建的复杂度。集成了大量常用的第三方库配置，内嵌tomcat。</p>
-<p>Spring是一个“引擎”，SpringMVC是基于Spring的一个MVC框架，SpringBoot是基于Spring4的条件注册的一套快速开发整合包</p>
-<ul>
-<li>Spring Boot可以建立独立的Spring应用程序</li>
-<li>内嵌了如Tomcat，Jetty和Undertow这样的容器，也就是说可以直接跑起来，用不着再做部署工作了</li>
-<li>无需再像Spring那样弄一堆繁琐的xml文件的配置</li>
-<li>可以自动配置Spring</li>
-<li>提供了一些现有的功能，如量度工具，表单数据验证以及一些外部配置这样的一些第三方功能</li>
-<li>提供的POM可以简化Maven的配置</li>
-</ul>
-<h3 id="3-SpringBoot的启动流程"><a href="#3-SpringBoot的启动流程" class="headerlink" title="3. SpringBoot的启动流程"></a><strong>3. SpringBoot的启动流程</strong></h3><p><a href="https://www.cnblogs.com/shamo89/p/8184960.html" target="_blank" rel="noopener">SpringBoot启动原理</a></p>
-<p><a href="https://www.processon.com/view/link/59812124e4b0de2518b32b6e" target="_blank" rel="noopener">SpringBoot启动结构图</a></p>
-<p><strong>启动类启动</strong></p>
-<p>可以发现一个Annotation定义(@SpringBootApplication)和类定义(SpringApplication.run)</p>
-<p>查看注解SpringBootApplication使用了多个Annotation进行了信息标注，但实际上重要的只有三个：</p>
-<ul>
-<li>@Configuration（@SpringBootConfiguration点开查看后发现里面还是应用了@Configuration）</li>
-<li>@EnableAutoConfiguration</li>
-<li>@ComponentScan</li>
-</ul>
-<p>可以将@SpringBootApplication替换为这三个进行启动，发现其功能时对等的。</p>
-<p><strong>@Configuration</strong></p>
-<p>就是JavaConfig形式的Spring IOC容器的配置类使用的那个@Configuration，SpringBoot社区推荐使用基于JavaConfig的配置形式，所以，这里的启动类标注了@Configuration之后，本身其实也是一个IOC容器的配置类。 </p>
-<p>任何一个标注了@Bean的方法，其返回值将作为一个bean定义注册到Spring的IoC容器，方法名将默认成该bean定义的id。 </p>
-<p><strong>@ComponentScan</strong></p>
-<p>对应XML配置中的元素，@ComponentScan的功能其实就是自动扫描并加载符合条件的组件（比如@Component和@Repository等）或者bean定义，最终将这些bean定义加载到IoC容器中。</p>
-<p>我们可以通过basePackages等属性来细粒度的定制@ComponentScan自动扫描的范围，如果不指定，则默认Spring框架实现会从声明@ComponentScan所在类的package进行扫描。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注：所以SpringBoot的启动类最好是放在root package下，因为默认不指定basePackages。</span><br></pre></td></tr></table></figure>
-<p><strong>所以SpringBoot主配置类只会扫描自己所在的包及其子包下面</strong></p>
-<p><strong>@EnableAutoConfiguration</strong></p>
-<p>最关键的是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Import(EnableAutoConfigurationImportSelector.class)</span><br></pre></td></tr></table></figure>
-<p>借助@Import的帮助，借助EnableAutoConfigurationImportSelector，@EnableAutoConfiguration可以帮助SpringBoot应用将所有符合条件的@Configuration配置都加载到当前SpringBoot创建并使用的IoC容器。 </p>
-<p>借助于Spring框架原有的一个工具类：SpringFactoriesLoader的支持，@EnableAutoConfiguration才可以智能的自动配置</p>
-<p><strong>深入探索SpringApplication执行流程</strong></p>
-<p>SpringApplication的run方法的实现主要流程：</p>
-<p>1） 如果我们使用的是SpringApplication的静态run方法，那么，这个方法里面首先要创建一个SpringApplication对象实例，然后调用这个创建好的SpringApplication的实例方法。在SpringApplication实例初始化的时候，它会提前做几件事情：</p>
-<ul>
-<li>根据classpath里面是否存在某个特征类（org.springframework.web.context.ConfigurableWebApplicationContext）来决定是否应该创建一个为Web应用使用的ApplicationContext类型。</li>
-<li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationContextInitializer。</li>
-<li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationListener。</li>
-<li>推断并设置main方法的定义类。</li>
-</ul>
-<p>2） SpringApplication实例初始化完成并且完成设置后，就开始执行run方法的逻辑了，方法执行伊始，首先遍历执行所有通过SpringFactoriesLoader可以查找到并加载的SpringApplicationRunListener。调用它们的started()方法，告诉这些SpringApplicationRunListener，“嘿，SpringBoot应用要开始执行咯！”。</p>
-<p>3） 创建并配置当前Spring Boot应用将要使用的Environment（包括配置要使用的PropertySource以及Profile）。</p>
-<p>4） 遍历调用所有SpringApplicationRunListener的environmentPrepared()的方法，告诉他们：“当前SpringBoot应用使用的Environment准备好了咯！”。</p>
-<p>5） 如果SpringApplication的showBanner属性被设置为true，则打印banner。</p>
-<p>6） 根据用户是否明确设置了applicationContextClass类型以及初始化阶段的推断结果，决定该为当前SpringBoot应用创建什么类型的ApplicationContext并创建完成，然后根据条件决定是否添加ShutdownHook，决定是否使用自定义的BeanNameGenerator，决定是否使用自定义的ResourceLoader，当然，最重要的，将之前准备好的Environment设置给创建好的ApplicationContext使用。</p>
-<p>7） ApplicationContext创建好之后，SpringApplication会再次借助Spring-FactoriesLoader，查找并加载classpath中所有可用的ApplicationContext-Initializer，然后遍历调用这些ApplicationContextInitializer的initialize（applicationContext）方法来对已经创建好的ApplicationContext进行进一步的处理。</p>
-<p>8） 遍历调用所有SpringApplicationRunListener的contextPrepared()方法。</p>
-<p>9） 最核心的一步，将之前通过@EnableAutoConfiguration获取的所有配置以及其他形式的IoC容器配置加载到已经准备完毕的ApplicationContext。</p>
-<p>10） 遍历调用所有SpringApplicationRunListener的contextLoaded()方法。</p>
-<p>11） 调用ApplicationContext的refresh()方法，完成IoC容器可用的最后一道工序。</p>
-<p>12） 查找当前ApplicationContext中是否注册有CommandLineRunner，如果有，则遍历执行它们。</p>
-<p>13） 正常情况下，遍历执行SpringApplicationRunListener的finished()方法、（如果整个过程出现异常，则依然调用所有SpringApplicationRunListener的finished()方法，只不过这种情况下会将异常信息一并传入处理）<br>去除事件通知点后，整个流程如下：</p>
-<p><img src="E:\vilce\themes\yilia\source\img\SpringBoot\springboot1.jpg" alt="1"></p>
-<h3 id="4-SpringBoot内嵌tomact是如何运行的"><a href="#4-SpringBoot内嵌tomact是如何运行的" class="headerlink" title="4. SpringBoot内嵌tomact是如何运行的"></a><strong>4. SpringBoot内嵌tomact是如何运行的</strong></h3><h3 id="5-SpringBoot如何整合第三方框架，start是如何启动的"><a href="#5-SpringBoot如何整合第三方框架，start是如何启动的" class="headerlink" title="5. SpringBoot如何整合第三方框架，start是如何启动的"></a><strong>5. SpringBoot如何整合第三方框架，start是如何启动的</strong></h3><h3 id="6-多线程的死锁是什么原理，死锁时多线程处于什么状态"><a href="#6-多线程的死锁是什么原理，死锁时多线程处于什么状态" class="headerlink" title="6. 多线程的死锁是什么原理，死锁时多线程处于什么状态"></a><strong>6. 多线程的死锁是什么原理，死锁时多线程处于什么状态</strong></h3><h3 id="7-阻塞和等待有什么区别，举一个场景解释一下"><a href="#7-阻塞和等待有什么区别，举一个场景解释一下" class="headerlink" title="7. 阻塞和等待有什么区别，举一个场景解释一下"></a><strong>7. 阻塞和等待有什么区别，举一个场景解释一下</strong></h3><h3 id="8-Mysql索引，符合索引等是怎么回事"><a href="#8-Mysql索引，符合索引等是怎么回事" class="headerlink" title="8. Mysql索引，符合索引等是怎么回事"></a><strong>8. Mysql索引，符合索引等是怎么回事</strong></h3><h3 id="9-了解Redis集群吗，介绍一下"><a href="#9-了解Redis集群吗，介绍一下" class="headerlink" title="9. 了解Redis集群吗，介绍一下"></a><strong>9. 了解Redis集群吗，介绍一下</strong></h3><h3 id="10-Spring与mybatis是怎么实现执行sql语句的"><a href="#10-Spring与mybatis是怎么实现执行sql语句的" class="headerlink" title="10. Spring与mybatis是怎么实现执行sql语句的"></a><strong>10. Spring与mybatis是怎么实现执行sql语句的</strong></h3><h3 id="11-讲一下设计的表结构"><a href="#11-讲一下设计的表结构" class="headerlink" title="11. 讲一下设计的表结构"></a><strong>11. 讲一下设计的表结构</strong></h3><h3 id="12-spring-aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志"><a href="#12-spring-aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志" class="headerlink" title="12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志"></a><strong>12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志</strong></h3><p>AOP常用的实现方式有两种，一种是采用声明的方式来实现（基于XML），一种是采用注解的方式来实现（基于AspectJ）。</p>
-<p>AOP中的重要概念：</p>
-<p>Joinpoint(连接点)：程序执行时的某个特定的点，在Spring中就是某一个方法的执行</p>
-<p>Pointcut(切点)：说的通俗点，spring中AOP的切点就是指一些方法的集合，而这些方法是需要被增强、被代理的。一般都是按照一定的约定规则来表示的，如正则表达式等。切点是由一类连接点组成。</p>
-<p>Advice(通知)：就是指定切点上要做些什么</p>
-<p>Advisor(通知器)：其实就是切点和通知的结合</p>
-<p><strong>一、基于XML配置的Spring AOP</strong></p>
-<p>采用声明的方式实现(在XML文件中配置)，大致步骤为：配置文件中配置pointcut，在java中用编写实际的aspect类，针对对切入点进行相关的业务处理。</p>
-<p><strong>二、使用注解配置AOP</strong></p>
-<p>采用注解来做AOP，主要是将写在Spring配置文件中的连接点写到注解里面。</p>
-<p><strong>Spring AOP中自我调用的问题</strong></p>
-<p>在使用AOP进行拦截的时候发现有哪些方法有时候能输出拦截的日志有时候不输出拦截的日志。发现在单独调用这些方法的时候是有日志输出的，在被同一类中的方法调用的时候没有日志输出。</p>
-<p><strong>现象描述：假设有一个service，其中有A B 两个方法，A B都被aop托管，且A中调用了B方法，这时请求方法A的时候只会触发A的aop逻辑而不会触发B的aop逻辑。 </strong></p>
-<p>假设有一个类是ServiceA，这个类中有一个A方法，A方法中又调用了B方法。当我们使用AOP进行拦截的时候，首先会创建一个ServiceA的代理类，其实在我们的系统中是存在两个ServiceA的对象的，一个是目标ServiceA对象，一个是生成的代理ServiceA对象，如果在代理类的A方法中调用代理类的B方法，这个时候AOP拦截是可以生效的，但是如果在代理类的A方法中调用目标类B方法，这个时候AOP拦截是不生效的，大多数情况下我们都是在代理类的A方法中直接调用目标类的B方法。</p>
-<h3 id="13-AOP的两种实现spring-aop和aspectJ的具体区别是什么"><a href="#13-AOP的两种实现spring-aop和aspectJ的具体区别是什么" class="headerlink" title="13. AOP的两种实现spring aop和aspectJ的具体区别是什么"></a><strong>13. AOP的两种实现spring aop和aspectJ的具体区别是什么</strong></h3><p><strong>AspectJ</strong></p>
-<p>AspectJ是一个面向切面的框架，它扩展了Java语言。AspectJ定义了<strong>AOP语法</strong>，所以它有一个<strong>专门的编译器</strong>用来生成遵守Java字节编码规范的Class文件。 </p>
-<p><strong>Spring AOP</strong></p>
-<p>Spring提供了四种类型的Aop支持  </p>
-<ul>
-<li>基于经典的SpringAOP  </li>
-<li>纯POJO切面  </li>
-<li>@ASpectJ注解驱动的切面  </li>
-<li>注入式AspectJ切面（其实与Spring并无多大的关系，这个就是使用AspectJ这个框架实现Aop编程） </li>
-</ul>
-<p><strong>Spring AOP不同于大多数其他AOP框架。Spring AOP的目的并不是为了提供最完整的AOP实现(虽然Sping AOP具有相当的能力)；而是为了要帮助解决企业应用中常见问题，提供一个AOP实现与Spring IOC之间的紧密集成。由于Spring AOP是容易实现的，如果你计划在Spring Beans之上将横切关注点模块化，Spring的这一目标将是要点之一。但同样的目标也可能成为一个限制，如果你用的是普通的Java对象而不是Spring Beans，并基于此将关注点模块化的话。另一方面，AspectJ可用于基于普通Java对象的模块化，但在实施之前需要良好的关于这个主题的知识。</strong></p>
-<p><strong>Spring AOP致力于提供一种能够与Spring IoC紧密集成的面向方面框架的实现，以便于解决在开发企业级项目时面临的常见问题。明确你在应用横切关注点(cross-cutting concern)时（例如事物管理、日志或性能评估），需要处理的是Spring beans还是POJO。如果正在开发新的应用，则选择Spring AOP就没有什么阻力。但是如果你正在维护一个现有的应用（该应用并没有使用Spring框架），AspectJ就将是一个自然的选择了。为了详细说明这一点，假如你正在使用Spring AOP，当你想将日志功能作为一个通知(advice)加入到你的应用中，用于追踪程序流程，那么该通知(Advice)就只能应用在Spring beans的连接点(Joinpoint)之上。 </strong></p>
-<h3 id="14-spring-aop实现的限制"><a href="#14-spring-aop实现的限制" class="headerlink" title="14. spring aop实现的限制"></a><strong>14. spring aop实现的限制</strong></h3><p><a href="https://blog.csdn.net/defonds/article/details/7178610" target="_blank" rel="noopener">AOP下的权限控制实现</a></p>
-<h3 id="15-hashmap的具体实现"><a href="#15-hashmap的具体实现" class="headerlink" title="15. hashmap的具体实现"></a><strong>15. hashmap的具体实现</strong></h3><h3 id="16-hashcode与equal的关系"><a href="#16-hashcode与equal的关系" class="headerlink" title="16. hashcode与equal的关系"></a><strong>16. hashcode与equal的关系</strong></h3><h3 id="17-mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些"><a href="#17-mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些" class="headerlink" title="17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些"></a><strong>17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些</strong></h3><h3 id="18-了解了什么web技术"><a href="#18-了解了什么web技术" class="headerlink" title="18. 了解了什么web技术"></a><strong>18. 了解了什么web技术</strong></h3>
+        <h2 id="SQL语句映射文件（1）resultMap"><a href="#SQL语句映射文件（1）resultMap" class="headerlink" title="SQL语句映射文件（1）resultMap"></a>SQL语句映射文件（1）resultMap</h2><p>SQL映射XML文件一些初级的元素：<br><a id="more"></a><br> 1.cache - 配置给定模式的缓存<br> 2.cache-ref - 从别的模式中引用一个缓存<br> 3.resultMap - 这是最复杂而却强大的一个元素了，它描述如何从结果集中加载对象<br> 4.sql - 一个可以被其他语句复用的SQL块<br> 5.insert - 映射INSERT语句<br> 6.update - 映射UPDATE语句<br> 7.delete - 映射DELETE语句<br> 8.select - 映射SELECT语句</p>
+<h3 id="一-resultMap"><a href="#一-resultMap" class="headerlink" title="一. resultMap"></a>一. resultMap</h3><p>​       resultMap是MyBatis中最重要最强大的元素了。可以让你比使用JDBC调用结果集省掉90%的代码，也可以让你做许多JDBC不支持的事。现实上，要写一个等同类似于交互的映射这样的复杂语句，可能要上千行的代码。ResultMap的目的就是这样简单的语句而不需要多余的结果映射，更多复杂的语句，除了只要一些绝对必须的语句描述关系以外，再也不需要其它的。</p>
+<p>resultMap属性：type为java实体类；id为此resultMap的标识<br>resultMap可以设置的映射：<br> 1.constructor - 用来将结果反射给一个实例化好的类的构造器<br>   a) idArg - ID 参数；将结果集标记为ID，以方便全局调用<br>   b) arg - 反射到构造器的通常结果<br> 2.id - ID 结果，将结果集标记为ID，以方便全局调用<br> 3.result - 反射到JavaBean属性的普通结果<br> 4.association - 复杂类型的结合；多个结果合成的类型<br>    a) nested result mappings - 几个resultMap自身嵌套关联，也可以引用到一个其它上<br> 5.collection - 复杂类型集合 a collection of complex types<br> 6.nested result mappings - resultMap的集合，也可以引用到一个其它上<br> 7.discriminator - 使用一个结果值以决定使用哪个resultMap<br>    a) case - 基本一些值的结果映射的case情形<br>       i. nested result mappings - 一个case情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap.</p>
+<h4 id="（1）id-、result"><a href="#（1）id-、result" class="headerlink" title="（1）id 、result"></a>（1）id 、result</h4><p>  id、result是最简单的映射，id为主键映射；result其他基本数据库表字段实体类属性的映射。</p>
+<p>  最简单的例子：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;com.capsp.model.Student&quot; id=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;id  property=&quot;studentId&quot; column=&quot;STUDENT_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot; column=&quot;STUDENT_NAME&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot; column=&quot;STUDENT_SEX&quot;  javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot; column=&quot;STUDENT_BIRTHDAY&quot;  javaType=&quot;Date&quot; jdbcType=&quot;DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentPhoto&quot; column=&quot;STUDENT_PHOTO&quot; javaType=&quot;byte[]&quot; jdbcType=&quot;BLOB&quot; typeHandler=&quot;org.apache.ibatis.type.BlobTypeHandler&quot; /&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<p>id、result语句属性配置细节：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>property</td>
+<td style="text-align:left">需要映射到JavaBean的属性名称</td>
+</tr>
+<tr>
+<td>column</td>
+<td style="text-align:left">数据表的列名或者标签名</td>
+</tr>
+<tr>
+<td>javaType</td>
+<td style="text-align:left">一个完整的类名，或者是一个类型别名。如果你匹配的是一个JavaBean，那MyBatis通常会自行检测到。然后，如果你是要映射到一个HashMap，那你需要指定javaType要达到的目的</td>
+</tr>
+<tr>
+<td>jdbcType</td>
+<td style="text-align:left">数据表支持的类型列表。这个属性只在insert、update或delete的时候针对允许空的列有用。JDBC需要这项，但MyBatis不需要。如果你是直接针对JDBC编码，且有允许空的列，而你要指定这项</td>
+</tr>
+<tr>
+<td>typeHandler</td>
+<td style="text-align:left">使用这个属性可以覆写类型处理器。这项值可以是一个完整的类名，也可以是一个类型别名</td>
+</tr>
+</tbody>
+</table>
+<p>支持的JDBC类型</p>
+<p>​       为了将来的引用，MyBatis支持下列JDBC类型，通过JdbcType枚举：</p>
+<p>BIT，FLOAT，CHAR，TIMESTAMP，OTHER，UNDEFINED，TINYINT，REAL，VARCHAR，BINARY，BLOB，NVARCHAR，SMALLINT，DOUBLE，LONGVARCHAR，VARBINARY，CLOB，NCHAR，INTEGER，NUMERIC，DATE，LONGVARBINARY，BOOLEAN，NCLOB，BIGINT，DECIMAL，TIME，NULL，CURSOR </p>
+<h4 id="（2）constructor"><a href="#（2）constructor" class="headerlink" title="（2）constructor"></a>（2）constructor</h4><p>​        我们使用id、result时候，需要定义java实体类的属性映射到数据库表的字段上。这时候是使用JavaBean实现的。当然我们也可以使用实体类的构造方法来实现值的映射，这个时候是通过构造方法参数的书写的顺序来进行幅值的。</p>
+<p>​        使用constructor功能有限（例如使用collection级联查询）。</p>
+<p>​        上面使用id、result实现的功能就可以改成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;StudentEntity&quot; id=&quot;studentResultMap&quot; &gt;  </span><br><span class="line">    &lt;constructor&gt;  </span><br><span class="line">        &lt;idArg javaType=&quot;String&quot; column=&quot;STUDENT_ID&quot;/&gt;  </span><br><span class="line">        &lt;arg javaType=&quot;String&quot; column=&quot;STUDENT_NAME&quot;/&gt;  </span><br><span class="line">        &lt;arg javaType=&quot;String&quot; column=&quot;STUDENT_SEX&quot;/&gt;  </span><br><span class="line">        &lt;arg javaType=&quot;Date&quot; column=&quot;STUDENT_BIRTHDAY&quot;/&gt;  </span><br><span class="line">    &lt;/constructor&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<p>​        当然，我们需要定义StudentEntity实体类的构造方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public StudentEntity(String studentID, String studentName, String studentSex, Date studentBirthday)&#123;  </span><br><span class="line">    this.studentID = studentID;  </span><br><span class="line">    this.studentName = studentName;  </span><br><span class="line">    this.studentSex = studentSex;  </span><br><span class="line">    this.studentBirthday = studentBirthday;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（3）association联合"><a href="#（3）association联合" class="headerlink" title="（3）association联合"></a>（3）association联合</h4><p>联合元素用来处理“一对一”的关系。需要指定映射的Java实体类的属性，属性的javaType（通常MyBatis 自己会识别）。对应的数据库表的列名称。如果想覆写的话返回结果的值，需要指定typeHandler。 不同情况需要告诉MyBatis 如何加载一个联合。MyBatis 可以用两种方式加载： </p>
+<ol>
+<li><p>select: 执行一个其它映射的SQL 语句返回一个Java实体类型。较灵活； </p>
+</li>
+<li><p>resultsMap: 使用一个嵌套的结果映射来处理通过join查询结果集，映射成Java实体类型。 </p>
+<p>例如，一个班级对应一个班主任。  首先定义好班级中的班主任属性： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private TeacherEntity teacherEntity;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="a-使用select实现联合"><a href="#a-使用select实现联合" class="headerlink" title="a. 使用select实现联合"></a>a. 使用select实现联合</h5><p>例：班级实体类中有班主任的属性，通过联合在得到一个班级实体时，同时映射出班主任实体。</p>
+<p> 这样可以直接复用在TeacherMapper.xml文件中定义好的查询teacher根据其ID的select语句。而且不需要修改写好的SQL语句，只需要直接修改resultMap即可。</p>
+<p> ClassMapper.xml文件部分内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;                                    select=&quot;getTeacher&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassByID&quot; parameterType=&quot;String&quot; resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT * FROM CLASS_TBL CT  </span><br><span class="line">    WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>TeacherMapper.xml文件部分内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;TeacherEntity&quot; id=&quot;teacherResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;teacherID&quot; column=&quot;TEACHER_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;teacherName&quot; column=&quot;TEACHER_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;teacherSex&quot; column=&quot;TEACHER_SEX&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;teacherBirthday&quot; column=&quot;TEACHER_BIRTHDAY&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;workDate&quot; column=&quot;WORK_DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;professional&quot; column=&quot;PROFESSIONAL&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getTeacher&quot; parameterType=&quot;String&quot;  resultMap=&quot;teacherResultMap&quot;&gt;  </span><br><span class="line">    SELECT *  </span><br><span class="line">      FROM TEACHER_TBL TT  </span><br><span class="line">     WHERE TT.TEACHER_ID = #&#123;teacherID&#125;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="b-使用resultMap实现联合"><a href="#b-使用resultMap实现联合" class="headerlink" title="b. 使用resultMap实现联合"></a>b. 使用resultMap实现联合</h5><p>与上面同样的功能，查询班级，同时查询器班主任。需在association中添加resultMap（在teacher的xml文件中定义好的），新写sql（查询班级表left join教师表），不需要teacher的select。</p>
+<p> 修改ClassMapper.xml文件部分内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;                                    resultMap=&quot;teacherResultMap&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassAndTeacher&quot; parameterType=&quot;String&quot;                                   resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT *  </span><br><span class="line">      FROM CLASS_TBL CT LEFT JOIN TEACHER_TBL TT ON CT.TEACHER_ID = TT.TEACHER_ID  </span><br><span class="line">     WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（4）collection聚集"><a href="#（4）collection聚集" class="headerlink" title="（4）collection聚集"></a>（4）collection聚集</h4><p>聚集元素用来处理“一对多”的关系。需要指定映射的Java实体类的属性，属性的javaType（一般为ArrayList）；列表中对象的类型ofType（Java实体类）；对应的数据库表的列名称；</p>
+<p>不同情况需要告诉MyBatis 如何加载一个聚集。MyBatis 可以用两种方式加载：</p>
+<ol>
+<li><p>select: 执行一个其它映射的SQL 语句返回一个Java实体类型。较灵活；</p>
+</li>
+<li><p>resultsMap: 使用一个嵌套的结果映射来处理通过join查询结果集，映射成Java实体类型。</p>
+<p>例如，一个班级有多个学生。 首先定义班级中的学生列表属性： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private List&lt;StudentEntity&gt; studentList;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="a-使用select实现聚集"><a href="#a-使用select实现聚集" class="headerlink" title="a. 使用select实现聚集"></a>a. 使用select实现聚集</h5><p>用法和联合很类似，区别在于，这是一对多，所以一般映射过来的都是列表。所以这里需要定义javaType为ArrayList，还需要定义列表中对象的类型ofType，以及必须设置的select的语句名称（需要注意的是，这里的查询student的select语句条件必须是外键classID）。</p>
+<p>ClassMapper.xml文件部分内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;  select=&quot;getTeacher&quot;/&gt;  </span><br><span class="line">    &lt;collection property=&quot;studentList&quot; column=&quot;CLASS_ID&quot; javaType=&quot;ArrayList&quot; ofType=&quot;StudentEntity&quot; select=&quot;getStudentByClassID&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassByID&quot; parameterType=&quot;String&quot; resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT * FROM CLASS_TBL CT  </span><br><span class="line">    WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>StudentMapper.xml文件部分内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- java属性，数据库表字段之间的映射定义 --&gt;  </span><br><span class="line">&lt;resultMap type=&quot;StudentEntity&quot; id=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;studentID&quot; column=&quot;STUDENT_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot; column=&quot;STUDENT_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot; column=&quot;STUDENT_SEX&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot; column=&quot;STUDENT_BIRTHDAY&quot; /&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;!-- 查询学生list，根据班级id --&gt;  </span><br><span class="line">&lt;select id=&quot;getStudentByClassID&quot; parameterType=&quot;String&quot; resultMap=&quot;studentResultMap&quot;&gt;  </span><br><span class="line">    &lt;include refid=&quot;selectStudentAll&quot; /&gt;  </span><br><span class="line">    WHERE ST.CLASS_ID = #&#123;classID&#125;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="b-使用resultMap实现聚集"><a href="#b-使用resultMap实现聚集" class="headerlink" title="b. 使用resultMap实现聚集"></a>b. 使用resultMap实现聚集</h5><p>使用resultMap，就需要重写一个sql，left join学生表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;ClassEntity&quot; id=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    &lt;id property=&quot;classID&quot; column=&quot;CLASS_ID&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;className&quot; column=&quot;CLASS_NAME&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;classYear&quot; column=&quot;CLASS_YEAR&quot; /&gt;  </span><br><span class="line">    &lt;association property=&quot;teacherEntity&quot; column=&quot;TEACHER_ID&quot;  resultMap=&quot;teacherResultMap&quot;/&gt;  </span><br><span class="line">    &lt;collection property=&quot;studentList&quot; column=&quot;CLASS_ID&quot; javaType=&quot;ArrayList&quot; ofType=&quot;StudentEntity&quot; resultMap=&quot;studentResultMap&quot;/&gt;  </span><br><span class="line">&lt;/resultMap&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;select id=&quot;getClassAndTeacherStudent&quot; parameterType=&quot;String&quot; resultMap=&quot;classResultMap&quot;&gt;  </span><br><span class="line">    SELECT *  </span><br><span class="line">      FROM CLASS_TBL CT  </span><br><span class="line">           LEFT JOIN STUDENT_TBL ST  </span><br><span class="line">              ON CT.CLASS_ID = ST.CLASS_ID  </span><br><span class="line">           LEFT JOIN TEACHER_TBL TT  </span><br><span class="line">              ON CT.TEACHER_ID = TT.TEACHER_ID  </span><br><span class="line">      WHERE CT.CLASS_ID = #&#123;classID&#125;;  </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="（5）discriminator鉴别器"><a href="#（5）discriminator鉴别器" class="headerlink" title="（5）discriminator鉴别器"></a>（5）discriminator鉴别器</h4><p>有时一个单独的数据库查询也许返回很多不同（但是希望有些关联）数据类型的结果集。鉴别器元素就是被设计来处理这个情况的，还有包括类的继承层次结构。鉴别器非常容易理解，因为它的表现很像Java语言中的switch语句。</p>
+<p>定义鉴别器指定了column和javaType属性。列是MyBatis查找比较值的地方。JavaType是需要被用来保证等价测试的合适类型（尽管字符串在很多情形下都会有用）。</p>
+<p>下面这个例子为，当classId为20000001时，才映射classId属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type=&quot;liming.student.manager.data.model.StudentEntity&quot; id=&quot;resultMap_studentEntity_discriminator&quot;&gt;  </span><br><span class="line">    &lt;id  property=&quot;studentId&quot;        column=&quot;STUDENT_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentName&quot;       column=&quot;STUDENT_NAME&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentSex&quot;        column=&quot;STUDENT_SEX&quot;  javaType=&quot;int&quot; jdbcType=&quot;INTEGER&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentBirthday&quot;   column=&quot;STUDENT_BIRTHDAY&quot;  javaType=&quot;Date&quot; jdbcType=&quot;DATE&quot;/&gt;  </span><br><span class="line">    &lt;result property=&quot;studentPhoto&quot;  column=&quot;STUDENT_PHOTO&quot; javaType=&quot;byte[]&quot; jdbcType=&quot;BLOB&quot; typeHandler=&quot;org.apache.ibatis.type.BlobTypeHandler&quot; /&gt;  </span><br><span class="line">    &lt;result property=&quot;placeId&quot;           column=&quot;PLACE_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">    &lt;discriminator column=&quot;CLASS_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;&gt;  </span><br><span class="line">        &lt;case value=&quot;20000001&quot; resultType=&quot;liming.student.manager.data.model.StudentEntity&quot; &gt;  </span><br><span class="line">            &lt;result property=&quot;classId&quot; column=&quot;CLASS_ID&quot; javaType=&quot;String&quot; jdbcType=&quot;VARCHAR&quot;/&gt;  </span><br><span class="line">        &lt;/case&gt;  </span><br><span class="line">    &lt;/discriminator&gt;  </span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -318,7 +314,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">essay</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mybatis article</a>
         		</li>
       		
 		</ul>
@@ -374,7 +370,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/07/22/suibi/阿里初面问题：/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/05/30/main/SQL语句映射文件（1）resultMap/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -388,18 +384,18 @@
   
 <nav id="article-nav">
   
-    <a href="/vilce/2018/08/01/main/Spring事务处理时自我调用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/vilce/2018/05/31/main/SQL语句映射文件（2）增删改查、参数、缓存/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Spring学习
+          MyBatis映射文件SQL语句学习(2)
         
       </div>
     </a>
   
   
-    <a href="/vilce/2018/07/19/main/主要详细知识点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面试知识点整理(一)</div>
+    <a href="/vilce/2018/05/09/main/SpringBoot搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -426,7 +422,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#阿里初面问题："><span class="toc-number">1.</span> <span class="toc-text">阿里初面问题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AOP实现原理"><span class="toc-number">1.1.</span> <span class="toc-text">1. AOP实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SpringBoot和Spring的区别"><span class="toc-number">1.2.</span> <span class="toc-text">2. SpringBoot和Spring的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SpringBoot的启动流程"><span class="toc-number">1.3.</span> <span class="toc-text">3. SpringBoot的启动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SpringBoot内嵌tomact是如何运行的"><span class="toc-number">1.4.</span> <span class="toc-text">4. SpringBoot内嵌tomact是如何运行的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-SpringBoot如何整合第三方框架，start是如何启动的"><span class="toc-number">1.5.</span> <span class="toc-text">5. SpringBoot如何整合第三方框架，start是如何启动的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-多线程的死锁是什么原理，死锁时多线程处于什么状态"><span class="toc-number">1.6.</span> <span class="toc-text">6. 多线程的死锁是什么原理，死锁时多线程处于什么状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-阻塞和等待有什么区别，举一个场景解释一下"><span class="toc-number">1.7.</span> <span class="toc-text">7. 阻塞和等待有什么区别，举一个场景解释一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Mysql索引，符合索引等是怎么回事"><span class="toc-number">1.8.</span> <span class="toc-text">8. Mysql索引，符合索引等是怎么回事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-了解Redis集群吗，介绍一下"><span class="toc-number">1.9.</span> <span class="toc-text">9. 了解Redis集群吗，介绍一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Spring与mybatis是怎么实现执行sql语句的"><span class="toc-number">1.10.</span> <span class="toc-text">10. Spring与mybatis是怎么实现执行sql语句的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-讲一下设计的表结构"><span class="toc-number">1.11.</span> <span class="toc-text">11. 讲一下设计的表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-spring-aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志"><span class="toc-number">1.12.</span> <span class="toc-text">12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-AOP的两种实现spring-aop和aspectJ的具体区别是什么"><span class="toc-number">1.13.</span> <span class="toc-text">13. AOP的两种实现spring aop和aspectJ的具体区别是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-spring-aop实现的限制"><span class="toc-number">1.14.</span> <span class="toc-text">14. spring aop实现的限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-hashmap的具体实现"><span class="toc-number">1.15.</span> <span class="toc-text">15. hashmap的具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-hashcode与equal的关系"><span class="toc-number">1.16.</span> <span class="toc-text">16. hashcode与equal的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些"><span class="toc-number">1.17.</span> <span class="toc-text">17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-了解了什么web技术"><span class="toc-number">1.18.</span> <span class="toc-text">18. 了解了什么web技术</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL语句映射文件（1）resultMap"><span class="toc-number">1.</span> <span class="toc-text">SQL语句映射文件（1）resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-resultMap"><span class="toc-number">1.1.</span> <span class="toc-text">一. resultMap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）id-、result"><span class="toc-number">1.1.1.</span> <span class="toc-text">（1）id 、result</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）constructor"><span class="toc-number">1.1.2.</span> <span class="toc-text">（2）constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）association联合"><span class="toc-number">1.1.3.</span> <span class="toc-text">（3）association联合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现联合"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">a. 使用select实现联合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现联合"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">b. 使用resultMap实现联合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）collection聚集"><span class="toc-number">1.1.4.</span> <span class="toc-text">（4）collection聚集</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#a-使用select实现聚集"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">a. 使用select实现聚集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#b-使用resultMap实现聚集"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">b. 使用resultMap实现聚集</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）discriminator鉴别器"><span class="toc-number">1.1.5.</span> <span class="toc-text">（5）discriminator鉴别器</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
