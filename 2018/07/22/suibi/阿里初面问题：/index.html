@@ -17,7 +17,7 @@
 <meta property="og:description" content="阿里初面问题：1. AOP实现原理">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://villce.github.io/vilce/img/SpringBoot/springboot1.jpg">
-<meta property="og:updated_time" content="2018-08-11T06:17:35.676Z">
+<meta property="og:updated_time" content="2018-08-28T02:30:16.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里初面问题">
 <meta name="twitter:description" content="阿里初面问题：1. AOP实现原理">
@@ -219,12 +219,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Import(EnableAutoConfigurationImportSelector.class)</span><br></pre></td></tr></table></figure>
 <p>借助@Import的帮助，借助EnableAutoConfigurationImportSelector，@EnableAutoConfiguration可以帮助SpringBoot应用将所有符合条件的@Configuration配置都加载到当前SpringBoot创建并使用的IoC容器。 </p>
 <p>借助于Spring框架原有的一个工具类：SpringFactoriesLoader的支持，@EnableAutoConfiguration才可以智能的自动配置</p>
+<p>从classpath中搜索所有的META-INF/spring.factories配置文件，并将其中org.springframework.boot.autoconfigure.EnableAutoConfiguration对应的配置项通过反射(Java Refletion)实例化为对应的标注了@Configuration的JavaConfig形式的IOC容器配置类，然后汇总为一个并加载到IOC容器。</p>
 <p><strong>深入探索SpringApplication执行流程</strong></p>
 <p>SpringApplication的run方法的实现主要流程：</p>
 <p>1） 如果我们使用的是SpringApplication的静态run方法，那么，这个方法里面首先要创建一个SpringApplication对象实例，然后调用这个创建好的SpringApplication的实例方法。在SpringApplication实例初始化的时候，它会提前做几件事情：</p>
 <ul>
-<li>根据classpath里面是否存在某个特征类</li>
-<li>（org.springframework.web.context.ConfigurableWebApplicationContext）来决定是否应该创建一个为Web应用使用的ApplicationContext类型。</li>
+<li>根据classpath里面是否存在某个特征类(org.springframework.web.context.ConfigurableWebApplicationContext)来决定是否应该创建一个为Web应用使用的ApplicationContext类型。</li>
 <li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationContextInitializer。</li>
 <li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationListener。</li>
 <li>推断并设置main方法的定义类。</li>
@@ -561,15 +561,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
