@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://villce.github.io/vilce/img/java/java1.gif">
 <meta property="og:image" content="https://villce.github.io/vilce/img/java/Java2.jpg">
-<meta property="og:updated_time" content="2018-09-04T07:21:09.332Z">
+<meta property="og:updated_time" content="2018-09-12T06:43:15.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试知识点整理(一)">
 <meta name="twitter:description" content="主要详细知识点(一)一、Java基础">
@@ -214,7 +214,7 @@
 <p>(3)String：适用于少量字符串操作的情况</p>
 <p>​    StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
 <p>​    StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
-<h4 id="1-6-HashSet、TreeSet、LinkedHashSet区别"><a href="#1-6-HashSet、TreeSet、LinkedHashSet区别" class="headerlink" title="1.6 HashSet、TreeSet、LinkedHashSet区别"></a><strong>1.6 HashSet、TreeSet、LinkedHashSet区别</strong></h4><p>(1)HashSet：不能保证元素的怕排列顺序，顺序有可能发生变化，且是不同步的，集合元素可以是null但只能放入一个null（和HashMap实现的接口规范不同，但底层的Hash存储机制完全一样）</p>
+<h4 id="1-6-HashSet、TreeSet、LinkedHashSet区别"><a href="#1-6-HashSet、TreeSet、LinkedHashSet区别" class="headerlink" title="1.6 HashSet、TreeSet、LinkedHashSet区别"></a><strong>1.6 HashSet、TreeSet、LinkedHashSet区别</strong></h4><p>(1)HashSet：不能保证元素的排列顺序，顺序有可能发生变化，且是不同步的，集合元素可以是null但只能放入一个null（和HashMap实现的接口规范不同，但底层的Hash存储机制完全一样）</p>
 <p>(2)TreeSet：是J2SE中唯一可实现自动排序的类型，是SortedSet接口的唯一实现类，集合元素处于排序状态。支持自然排序和定制排序（通过红黑树实现）</p>
 <p>(3)LinkedHashSet：根据元素的HashCode值来决定元素的存储位置，但它同时使用链表维护元素的次序。在访问Set中的全部元素时，性能比HashSet好，但是插入时性能稍微逊色于HashSet</p>
 <h4 id="1-7-HashMap、TreeMap、LinkedHashMap"><a href="#1-7-HashMap、TreeMap、LinkedHashMap" class="headerlink" title="1.7 HashMap、TreeMap、LinkedHashMap"></a><strong>1.7 HashMap、TreeMap、LinkedHashMap</strong></h4><p>(1)HashMap：根据键的HashCode值存储数据，遍历时，取得数据的顺序是完全随机的，具有很快的访问速度；最多只允许一条记录的键为null，允许多条记录的值为null；不支持线程同步（通过哈希表实现）</p>
@@ -249,8 +249,7 @@
 <p>(2)实现Runnable接口创建线程：定义Runnable接口的实现类，一样重写run()方法；创建Runnable实现类的实例，并用这个实例作为Thread的target来创建Thread对象，这个对象才是真正的线程对象；依然用start()启动</p>
 <p>(3)使用Callable和Future创建线程：创建Callable接口的实现类，并实现call()方法，然后创建该实现类的实例；使用FutureTask类来包装Callable对象，该FutureTask对象封装了Callable对象的call()方法的返回值；使用FutureTask对象作为Thread对象的target创建并启动线程；调用FuntureTask对象的get()方法来获得子线程执行结束后的返回值</p>
 <h4 id="1-15-线程池的使用"><a href="#1-15-线程池的使用" class="headerlink" title="1.15 线程池的使用"></a><strong>1.15 线程池的使用</strong></h4><p><a href="https://www.cnblogs.com/dolphin0520/p/3932921.html" target="_blank" rel="noopener">线程池的使用</a></p>
-<p>优势：提高</p>
-<p>了系统的效率。线程执行完一个任务并不被销毁而是可以继续执行其他的任务</p>
+<p>优势：提高了系统的效率。线程执行完一个任务并不被销毁而是可以继续执行其他的任务</p>
 <h4 id="1-16-Java作用域"><a href="#1-16-Java作用域" class="headerlink" title="1.16 Java作用域"></a><strong>1.16 Java作用域</strong></h4><table>
 <thead>
 <tr>
@@ -322,8 +321,7 @@
 <li>基本数据类型只能按值传递，而封装类按引用传递</li>
 <li>基本类型在堆栈中创建；而对于对象类型，对象在堆中创建，对象的引用在堆栈中创建。基本类型由于在堆栈中，效率会比较高，但是可能会存在内存泄漏的问题</li>
 </ul>
-<h4 id="2-Switch能否用String做参数"><a href="#2-Switch能否用String做参数" class="headerlink" title="2. Switch能否用String做参数"></a><strong>2. Switch能否用String做参数</strong></h4><p>在Java7之前无法使用</p>
-<p>字符串，只能支持byte、short、char、int这几个基本数据类型和其对应的封装类型。Java7以及以后的版本中可以使用字符串，查看源码后可以发现，其实Switch实现对String的操作，主要是对其做了一次hashCode()，而且hashCode()正好返回的是int.</p>
+<h4 id="2-Switch能否用String做参数"><a href="#2-Switch能否用String做参数" class="headerlink" title="2. Switch能否用String做参数"></a><strong>2. Switch能否用String做参数</strong></h4><p>在Java7之前无法使用字符串，只能支持byte、short、char、int这几个基本数据类型和其对应的封装类型。Java7以及以后的版本中可以使用字符串，查看源码后可以发现，其实Switch实现对String的操作，主要是对其做了一次hashCode()，而且hashCode()正好返回的是int.</p>
 <h4 id="3-equals与-的区别"><a href="#3-equals与-的区别" class="headerlink" title="3. equals与==的区别"></a><strong>3. equals与==的区别</strong></h4><p>equals：用来比较的是两个对象的内容是否相等，由于所有的类都是继承自java.lang.Object类，所以适用于所有对象，如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，而Object中的equals方法返回的却是==的判断</p>
 <p>==：比较的是变量(栈)内存中存放的对象的(堆)内存地址，用来判断两个对象的地址是否相同，即是否是指相同一个对象。比较的是真正意义上的指针操作</p>
 <h4 id="4-Object有哪些公用方法"><a href="#4-Object有哪些公用方法" class="headerlink" title="4. Object有哪些公用方法"></a><strong>4. Object有哪些公用方法</strong></h4><p>clone：保护方法，实现对象的浅复制，只有实现了Cloneable接口才可以调用该方法，否则抛出CloneNotSupportedException异常 </p>
@@ -332,7 +330,7 @@
 <p>getClass：final方法，获得运行时类型 </p>
 <p>wait：使当前线程等待该对象的锁，当前线程必须是该对象的拥有者，也就是具有该对象的锁。wait()方法一直等待，直到获得锁或者被中断。wait(long timeout)设定一个超时间隔，如果在规定时间内没有获得锁就返回。  </p>
 <p>notify：唤醒在该对象上等待的某个线程</p>
-<p>notify：唤醒在该对象上等待的所有线程</p>
+<p>notifyAll：唤醒在该对象上等待的所有线程</p>
 <p>toStrng：转换成字符串，一般子类都有重写，否则打印句柄</p>
 <h4 id="5-Java的四种引用，强弱软虚，用到的场景"><a href="#5-Java的四种引用，强弱软虚，用到的场景" class="headerlink" title="5. Java的四种引用，强弱软虚，用到的场景"></a><strong>5. Java的四种引用，强弱软虚，用到的场景</strong></h4><p><strong>强引用：</strong>以前我们使用的大部分引用实际上都是强引用，这是使用最普遍的引用。如果一个对象具有强引用，那就类似于必不可少的生活用品，垃圾回收器绝不会回收它。当内存空间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意回收具有强引用的对象来解决内存不足问题                例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object obj = new Object()</span><br><span class="line">//可直接通过obj取得对应的对象 如obj.equels(new Object());</span><br></pre></td></tr></table></figure>
@@ -721,6 +719,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">annotation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
@@ -733,11 +735,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">annotation</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,7 +743,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
               </li>
              
               <li class="article-tag-list-item">
