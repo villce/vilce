@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://villce.github.io">
-  <title>面经(一) | vilce</title>
+  <title>人人网 | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿里初面：1. AOP实现原理">
+  <meta name="description" content="人人网一面，手写代码，字符串回文判断，空格，标点符号不纳入计算，大小写字母忽略大小，求字母和数字是否构成回文。问题:项目中多线程怎么使用的。线程池中哪些地方是耗时操作，利用线程池的批处理中耗时的方面有哪些，分布式部署时如何监控摄像头信息，事务回滚的条件，手写jdbc事务回滚，对事务的理解，手写查询每门课的平均分，手写查询平均分大于80的课程.stringbuffer和stringbuilder的区">
 <meta name="keywords" content="essay">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面经(一)">
-<meta property="og:url" content="https://villce.github.io/2018/07/22/suibi/阿里初面问题：/index.html">
+<meta property="og:title" content="人人网">
+<meta property="og:url" content="https://villce.github.io/2018/09/18/suibi/人人网/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="阿里初面：1. AOP实现原理">
+<meta property="og:description" content="人人网一面，手写代码，字符串回文判断，空格，标点符号不纳入计算，大小写字母忽略大小，求字母和数字是否构成回文。问题:项目中多线程怎么使用的。线程池中哪些地方是耗时操作，利用线程池的批处理中耗时的方面有哪些，分布式部署时如何监控摄像头信息，事务回滚的条件，手写jdbc事务回滚，对事务的理解，手写查询每门课的平均分，手写查询平均分大于80的课程.stringbuffer和stringbuilder的区">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://villce.github.io/vilce/img/SpringBoot/springboot1.jpg">
-<meta property="og:updated_time" content="2018-09-15T06:29:13.660Z">
+<meta property="og:updated_time" content="2018-09-20T05:51:33.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面经(一)">
-<meta name="twitter:description" content="阿里初面：1. AOP实现原理">
-<meta name="twitter:image" content="https://villce.github.io/vilce/img/SpringBoot/springboot1.jpg">
+<meta name="twitter:title" content="人人网">
+<meta name="twitter:description" content="人人网一面，手写代码，字符串回文判断，空格，标点符号不纳入计算，大小写字母忽略大小，求字母和数字是否构成回文。问题:项目中多线程怎么使用的。线程池中哪些地方是耗时操作，利用线程池的批处理中耗时的方面有哪些，分布式部署时如何监控摄像头信息，事务回滚的条件，手写jdbc事务回滚，对事务的理解，手写查询每门课的平均分，手写查询平均分大于80的课程.stringbuffer和stringbuilder的区">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
   
@@ -161,143 +159,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-suibi/阿里初面问题：" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-suibi/人人网" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      面经(一)
+      人人网
     </h1>
   
 
         
-        <a href="/vilce/2018/07/22/suibi/阿里初面问题：/" class="archive-article-date">
-  	<time datetime="2018-07-22T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+        <a href="/vilce/2018/09/18/suibi/人人网/" class="archive-article-date">
+  	<time datetime="2018-09-18T07:47:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="阿里初面："><a href="#阿里初面：" class="headerlink" title="阿里初面："></a>阿里初面：</h2><h3 id="1-AOP实现原理"><a href="#1-AOP实现原理" class="headerlink" title="1. AOP实现原理"></a><strong>1. AOP实现原理</strong></h3><a id="more"></a>
-<p><a href="https://blog.csdn.net/yuexianchang/article/details/77018603" target="_blank" rel="noopener">AOP原理分析</a></p>
-<p>AOP技术利用“横切”技术，破解开封装的对象内部，将影响多个类的公共行为封装到一个可重用模块，名为“Aspect”，即方面。使用“横向”技术，AOP把软件系统分为两个部分：核心关注点和横切关注点。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。AOP的核心思想就是“将应用程序中的商业逻辑同对其提供支持的通用服务进行分离”</p>
-<p>实现AOP的技术，主要分为两大类：一是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；二是采用静态织入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码</p>
-<h3 id="2-SpringBoot和Spring的区别"><a href="#2-SpringBoot和Spring的区别" class="headerlink" title="2. SpringBoot和Spring的区别"></a><strong>2. SpringBoot和Spring的区别</strong></h3><p>SpringBoot实现了自动配置，降低了项目搭建的复杂度。集成了大量常用的第三方库配置，内嵌tomcat。</p>
-<p>Spring是一个“引擎”，SpringMVC是基于Spring的一个MVC框架，SpringBoot是基于Spring4的条件注册的一套快速开发整合包</p>
-<ul>
-<li>Spring Boot可以建立独立的Spring应用程序</li>
-<li>内嵌了如Tomcat，Jetty和Undertow这样的容器，也就是说可以直接跑起来，用不着再做部署工作了</li>
-<li>无需再像Spring那样弄一堆繁琐的xml文件的配置</li>
-<li>可以自动配置Spring</li>
-<li>提供了一些现有的功能，如量度工具，表单数据验证以及一些外部配置这样的一些第三方功能</li>
-<li>提供的POM可以简化Maven的配置</li>
-</ul>
-<h3 id="3-SpringBoot的启动流程"><a href="#3-SpringBoot的启动流程" class="headerlink" title="3. SpringBoot的启动流程"></a><strong>3. SpringBoot的启动流程</strong></h3><p><a href="https://www.cnblogs.com/shamo89/p/8184960.html" target="_blank" rel="noopener">SpringBoot启动原理</a></p>
-<p><a href="https://www.processon.com/view/link/59812124e4b0de2518b32b6e" target="_blank" rel="noopener">SpringBoot启动结构图</a></p>
-<p><strong>启动类启动</strong></p>
-<p>可以发现一个Annotation定义(@SpringBootApplication)和类定义(SpringApplication.run)</p>
-<p>查看注解SpringBootApplication使用了多个Annotation进行了信息标注，但实际上重要的只有三个：</p>
-<ul>
-<li>@Configuration（@SpringBootConfiguration点开查看后发现里面还是应用了@Configuration）</li>
-<li>@EnableAutoConfiguration</li>
-<li>@ComponentScan</li>
-</ul>
-<p>可以将@SpringBootApplication替换为这三个进行启动，发现其功能时对等的。</p>
-<p><strong>@Configuration</strong></p>
-<p>就是JavaConfig形式的Spring IOC容器的配置类使用的那个@Configuration，SpringBoot社区推荐使用基于JavaConfig的配置形式，所以，这里的启动类标注了@Configuration之后，本身其实也是一个IOC容器的配置类。 </p>
-<p>任何一个标注了@Bean的方法，其返回值将作为一个bean定义注册到Spring的IoC容器，方法名将默认成该bean定义的id。 </p>
-<p><strong>@ComponentScan</strong></p>
-<p>对应XML配置中的元素，@ComponentScan的功能其实就是自动扫描并加载符合条件的组件（比如@Component和@Repository等）或者bean定义，最终将这些bean定义加载到IoC容器中。</p>
-<p>我们可以通过basePackages等属性来细粒度的定制@ComponentScan自动扫描的范围，如果不指定，则默认Spring框架实现会从声明@ComponentScan所在类的package进行扫描。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注：所以SpringBoot的启动类最好是放在root package下，因为默认不指定basePackages。</span><br></pre></td></tr></table></figure>
-<p><strong>所以SpringBoot主配置类只会扫描自己所在的包及其子包下面</strong></p>
-<p><strong>@EnableAutoConfiguration</strong></p>
-<p>最关键的是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Import(EnableAutoConfigurationImportSelector.class)</span><br></pre></td></tr></table></figure>
-<p>借助@Import的帮助，借助EnableAutoConfigurationImportSelector，@EnableAutoConfiguration可以帮助SpringBoot应用将所有符合条件的@Configuration配置都加载到当前SpringBoot创建并使用的IoC容器。 </p>
-<p>借助于Spring框架原有的一个工具类：SpringFactoriesLoader的支持，@EnableAutoConfiguration才可以智能的自动配置</p>
-<p>从classpath中搜索所有的META-INF/spring.factories配置文件，并将其中org.springframework.boot.autoconfigure.EnableAutoConfiguration对应的配置项通过反射(Java Refletion)实例化为对应的标注了@Configuration的JavaConfig形式的IOC容器配置类，然后汇总为一个并加载到IOC容器。</p>
-<p><strong>深入探索SpringApplication执行流程</strong></p>
-<p>SpringApplication的run方法的实现主要流程：</p>
-<p>1） 如果我们使用的是SpringApplication的静态run方法，那么，这个方法里面首先要创建一个SpringApplication对象实例，然后调用这个创建好的SpringApplication的实例方法。在SpringApplication实例初始化的时候，它会提前做几件事情：</p>
-<ul>
-<li>根据classpath里面是否存在某个特征类(org.springframework.web.context.ConfigurableWebApplicationContext)来决定是否应该创建一个为Web应用使用的ApplicationContext类型。</li>
-<li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationContextInitializer。</li>
-<li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationListener。</li>
-<li>推断并设置main方法的定义类。</li>
-</ul>
-<p>2） SpringApplication实例初始化完成并且完成设置后，就开始执行run方法的逻辑了，方法执行伊始，首先遍历执行所有通过SpringFactoriesLoader可以查找到并加载的SpringApplicationRunListener。调用它们的started()方法，告诉这些SpringApplicationRunListener，“嘿，SpringBoot应用要开始执行咯！”。</p>
-<p>3） 创建并配置当前Spring Boot应用将要使用的Environment（包括配置要使用的PropertySource以及Profile）。</p>
-<p>4） 遍历调用所有SpringApplicationRunListener的environmentPrepared()的方法，告诉他们：“当前SpringBoot应用使用的Environment准备好了咯！”。</p>
-<p>5） 如果SpringApplication的showBanner属性被设置为true，则打印banner。</p>
-<p>6） 根据用户是否明确设置了applicationContextClass类型以及初始化阶段的推断结果，决定该为当前SpringBoot应用创建什么类型的ApplicationContext并创建完成，然后根据条件决定是否添加ShutdownHook，决定是否使用自定义的BeanNameGenerator，决定是否使用自定义的ResourceLoader，当然，最重要的，将之前准备好的Environment设置给创建好的ApplicationContext使用。</p>
-<p>7） ApplicationContext创建好之后，SpringApplication会再次借助Spring-FactoriesLoader，查找并加载classpath中所有可用的ApplicationContext-Initializer，然后遍历调用这些ApplicationContextInitializer的initialize（applicationContext）方法来对已经创建好的ApplicationContext进行进一步的处理。</p>
-<p>8） 遍历调用所有SpringApplicationRunListener的contextPrepared()方法。</p>
-<p>9） 最核心的一步，将之前通过@EnableAutoConfiguration获取的所有配置以及其他形式的IoC容器配置加载到已经准备完毕的ApplicationContext。</p>
-<p>10） 遍历调用所有SpringApplicationRunListener的contextLoaded()方法。</p>
-<p>11） 调用ApplicationContext的refresh()方法，完成IoC容器可用的最后一道工序。</p>
-<p>12） 查找当前ApplicationContext中是否注册有CommandLineRunner，如果有，则遍历执行它们。</p>
-<p>13） 正常情况下，遍历执行SpringApplicationRunListener的finished()方法、（如果整个过程出现异常，则依然调用所有SpringApplicationRunListener的finished()方法，只不过这种情况下会将异常信息一并传入处理）<br>去除事件通知点后，整个流程如下：</p>
-<p><img src="/vilce/img/SpringBoot/springboot1.jpg" alt="1"></p>
-<h3 id="4-SpringBoot内嵌tomact是如何运行的"><a href="#4-SpringBoot内嵌tomact是如何运行的" class="headerlink" title="4. SpringBoot内嵌tomact是如何运行的"></a><strong>4. SpringBoot内嵌tomact是如何运行的</strong></h3><p>使用tomcat时需要配置环境，在SpringBoot中，tomcat被内嵌在项目中，并不需要再去配置环境变量</p>
-<p>1). 初始化Tomcat，并且给分配端口号(8066)</p>
-<p>2). 启动Tomcat</p>
-<p>3). 启动Tomcat引擎(显示tomcat版本，SpringBoot1.5.9内嵌的是tomcat/8.5.23)</p>
-<p>4). SpringBoot项目前期环境准备完成，初始化SpringWeb内嵌的上下文容器</p>
-<p>5). RootWebSpring上下文初始化完成</p>
-<h3 id="5-SpringBoot如何整合第三方框架，start是如何启动的"><a href="#5-SpringBoot如何整合第三方框架，start是如何启动的" class="headerlink" title="5. SpringBoot如何整合第三方框架，start是如何启动的"></a><strong>5. SpringBoot如何整合第三方框架，start是如何启动的</strong></h3><h3 id="6-多线程的死锁是什么原理，死锁时多线程处于什么状态"><a href="#6-多线程的死锁是什么原理，死锁时多线程处于什么状态" class="headerlink" title="6. 多线程的死锁是什么原理，死锁时多线程处于什么状态"></a><strong>6. 多线程的死锁是什么原理，死锁时多线程处于什么状态</strong></h3><p>所谓死锁，是指多个进程在运行过程中因争夺资源而造成的一种僵局</p>
-<p>(1)竞争资源</p>
-<p>(2)进程间推进顺序非法（进程在运行中具有异步性）</p>
-<p><strong>死锁时多线程等待资源的释放，处于等待状态</strong></p>
-<h3 id="7-阻塞和等待有什么区别，举一个场景解释一下"><a href="#7-阻塞和等待有什么区别，举一个场景解释一下" class="headerlink" title="7. 阻塞和等待有什么区别，举一个场景解释一下"></a><strong>7. 阻塞和等待有什么区别，举一个场景解释一下</strong></h3><ul>
-<li><strong>阻塞：当一个线程试图获取一个内部的对象锁(非java.util.concurrent库中的锁)，而该锁被其他线程持有，则该线程进入阻塞状态</strong></li>
-<li><strong>等待：当一个线程等待另一个线程通知调度器一个条件时，该线程进入等待状态。例如调用：Object.wait()、Thread.join()以及等待Lock或Condition</strong></li>
-</ul>
-<p>两者都表示线程当前暂停执行的状态，而两者的区别，基本可以理解为：进入 waiting 状态是线程主动的，而进入 blocked 状态是被动的。更进一步的说，进入 blocked 状态是在同步（synchronized）代码之外，而进入 waiting 状态是在同步代码之内（然后马上退出同步）。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//验证阻塞</span><br><span class="line">try&#123;</span><br><span class="line">  // 等待主线程获取锁</span><br><span class="line">  Thread.sleep(10000);</span><br><span class="line">  // 请求locker对象的内部锁</span><br><span class="line">  synchronized (locker) &#123;</span><br><span class="line">	System.out.println(&quot;Get locker&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125; catch (InterruptedException e) &#123;</span><br><span class="line">  // TODO: handle exception</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//验证等待</span><br><span class="line">try&#123;</span><br><span class="line">  synchronized (locker) &#123;</span><br><span class="line">	System.out.println(&quot;wait locker&quot;);</span><br><span class="line">	locker.wait();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;catch (InterruptedException e) &#123;</span><br><span class="line">   // TODO: handle exception</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="8-Mysql索引，复合索引等是怎么回事"><a href="#8-Mysql索引，复合索引等是怎么回事" class="headerlink" title="8. Mysql索引，复合索引等是怎么回事"></a><strong>8. Mysql索引，复合索引等是怎么回事</strong></h3><p>索引是对数据库表中一列或多列的值进行排序的一种结构。例如employee表的姓(name)列，如果要按姓查找特定职员，与必须搜索表中的所有行相比，索引会帮助您更快地获得该信息。</p>
-<p>复合索引是指一个索引包含多个字段(表列)，比如index d1(s1)是单一索引，index d2(s1,s2)就是复合索引，复合索引中的第一个字段称为主索引码，决定了索引b树的结构</p>
-<p><a href="https://blog.csdn.net/suifeng3051/article/details/52669644" target="_blank" rel="noopener">索引原理</a></p>
-<h3 id="9-了解Redis集群吗，介绍一下"><a href="#9-了解Redis集群吗，介绍一下" class="headerlink" title="9. 了解Redis集群吗，介绍一下"></a><strong>9. 了解Redis集群吗，介绍一下</strong></h3><h3 id="10-Spring与mybatis是怎么实现执行sql语句的"><a href="#10-Spring与mybatis是怎么实现执行sql语句的" class="headerlink" title="10. Spring与mybatis是怎么实现执行sql语句的"></a><strong>10. Spring与mybatis是怎么实现执行sql语句的</strong></h3><h3 id="11-讲一下设计的表结构"><a href="#11-讲一下设计的表结构" class="headerlink" title="11. 讲一下设计的表结构"></a><strong>11. 讲一下设计的表结构</strong></h3><h3 id="12-spring-aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志"><a href="#12-spring-aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志" class="headerlink" title="12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志"></a><strong>12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志</strong></h3><p>AOP常用的实现方式有两种，一种是采用声明的方式来实现（基于XML），一种是采用注解的方式来实现（基于AspectJ）。</p>
-<p>AOP中的重要概念：</p>
-<p>Joinpoint(连接点)：程序执行时的某个特定的点，在Spring中就是某一个方法的执行</p>
-<p>Pointcut(切点)：说的通俗点，spring中AOP的切点就是指一些方法的集合，而这些方法是需要被增强、被代理的。一般都是按照一定的约定规则来表示的，如正则表达式等。切点是由一类连接点组成。</p>
-<p>Advice(通知)：就是指定切点上要做些什么</p>
-<p>Advisor(通知器)：其实就是切点和通知的结合</p>
-<p><strong>一、基于XML配置的Spring AOP</strong></p>
-<p>采用声明的方式实现(在XML文件中配置)，大致步骤为：配置文件中配置pointcut，在java中用编写实际的aspect类，针对对切入点进行相关的业务处理。</p>
-<p><strong>二、使用注解配置AOP</strong></p>
-<p>采用注解来做AOP，主要是将写在Spring配置文件中的连接点写到注解里面。</p>
-<p><strong>Spring AOP中自我调用的问题</strong></p>
-<p>在使用AOP进行拦截的时候发现有哪些方法有时候能输出拦截的日志有时候不输出拦截的日志。发现在单独调用这些方法的时候是有日志输出的，在被同一类中的方法调用的时候没有日志输出。</p>
-<p><strong>现象描述：假设有一个service，其中有A B 两个方法，A B都被aop托管，且A中调用了B方法，这时请求方法A的时候只会触发A的aop逻辑而不会触发B的aop逻辑。 </strong></p>
-<p>假设有一个类是ServiceA，这个类中有一个A方法，A方法中又调用了B方法。当我们使用AOP进行拦截的时候，首先会创建一个ServiceA的代理类，其实在我们的系统中是存在两个ServiceA的对象的，一个是目标ServiceA对象，一个是生成的代理ServiceA对象，如果在代理类的A方法中调用代理类的B方法，这个时候AOP拦截是可以生效的，但是如果在代理类的A方法中调用目标类B方法，这个时候AOP拦截是不生效的，大多数情况下我们都是在代理类的A方法中直接调用目标类的B方法。</p>
-<h3 id="13-AOP的两种实现spring-aop和aspectJ的具体区别是什么"><a href="#13-AOP的两种实现spring-aop和aspectJ的具体区别是什么" class="headerlink" title="13. AOP的两种实现spring aop和aspectJ的具体区别是什么"></a><strong>13. AOP的两种实现spring aop和aspectJ的具体区别是什么</strong></h3><p><strong>AspectJ</strong></p>
-<p>AspectJ是一个面向切面的框架，它扩展了Java语言。AspectJ定义了<strong>AOP语法</strong>，所以它有一个<strong>专门的编译器</strong>用来生成遵守Java字节编码规范的Class文件。 </p>
-<p><strong>Spring AOP</strong></p>
-<p>Spring提供了四种类型的Aop支持  </p>
-<ul>
-<li>基于经典的SpringAOP  </li>
-<li>纯POJO切面  </li>
-<li>@ASpectJ注解驱动的切面  </li>
-<li>注入式AspectJ切面（其实与Spring并无多大的关系，这个就是使用AspectJ这个框架实现Aop编程） </li>
-</ul>
-<p><strong>Spring AOP不同于大多数其他AOP框架。Spring AOP的目的并不是为了提供最完整的AOP实现(虽然Sping AOP具有相当的能力)；而是为了要帮助解决企业应用中常见问题，提供一个AOP实现与Spring IOC之间的紧密集成。由于Spring AOP是容易实现的，如果你计划在Spring Beans之上将横切关注点模块化，Spring的这一目标将是要点之一。但同样的目标也可能成为一个限制，如果你用的是普通的Java对象而不是Spring Beans，并基于此将关注点模块化的话。另一方面，AspectJ可用于基于普通Java对象的模块化，但在实施之前需要良好的关于这个主题的知识。</strong></p>
-<p><strong>Spring AOP致力于提供一种能够与Spring IoC紧密集成的面向方面框架的实现，以便于解决在开发企业级项目时面临的常见问题。明确你在应用横切关注点(cross-cutting concern)时（例如事物管理、日志或性能评估），需要处理的是Spring beans还是POJO。如果正在开发新的应用，则选择Spring AOP就没有什么阻力。但是如果你正在维护一个现有的应用（该应用并没有使用Spring框架），AspectJ就将是一个自然的选择了。为了详细说明这一点，假如你正在使用Spring AOP，当你想将日志功能作为一个通知(advice)加入到你的应用中，用于追踪程序流程，那么该通知(Advice)就只能应用在Spring beans的连接点(Joinpoint)之上。 </strong></p>
-<h3 id="14-spring-aop实现的限制"><a href="#14-spring-aop实现的限制" class="headerlink" title="14. spring aop实现的限制"></a><strong>14. spring aop实现的限制</strong></h3><p><a href="https://blog.csdn.net/defonds/article/details/7178610" target="_blank" rel="noopener">AOP下的权限控制实现</a></p>
-<h3 id="15-hashmap的具体实现"><a href="#15-hashmap的具体实现" class="headerlink" title="15. hashmap的具体实现"></a><strong>15. hashmap的具体实现</strong></h3><h3 id="16-hashcode与equal的关系"><a href="#16-hashcode与equal的关系" class="headerlink" title="16. hashcode与equal的关系"></a><strong>16. hashcode与equal的关系</strong></h3><p><strong>Java对于eqauls方法和hashCode方法是这样规定的：</strong> </p>
-<p><strong>(1)</strong>同一对象上多次调用hashCode()方法，总是返回相同的整型值。</p>
-<p><strong>(2)</strong>如果a.equals(b)，则一定有a.hashCode() 一定等于 b.hashCode()。 </p>
-<p><strong>(3)</strong>如果!a.equals(b)，则a.hashCode() 不一定等于 b.hashCode()。此时如果a.hashCode() 总是不等于 b.hashCode()，会提高hashtables的性能。</p>
-<p><strong>(4)</strong>a.hashCode()==b.hashCode() 则 a.equals(b)可真可假</p>
-<p><strong>(5)</strong>a.hashCode()！= b.hashCode() 则 a.equals(b)为假。 </p>
-<p><strong>上面结论简记：</strong></p>
-<p>1、如果两个对象equals，Java运行时环境会认为他们的hashcode一定相等。<br>2、如果两个对象不equals，他们的hashcode有可能相等。<br>3、如果两个对象hashcode相等，他们不一定equals。<br>4、如果两个对象hashcode不相等，他们一定不equals</p>
-<h3 id="17-mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些"><a href="#17-mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些" class="headerlink" title="17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些"></a><strong>17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些</strong></h3><h3 id="18-了解了什么web技术"><a href="#18-了解了什么web技术" class="headerlink" title="18. 了解了什么web技术"></a><strong>18. 了解了什么web技术</strong></h3>
+        <p>人人网<br>一面，手写代码，字符串回文判断，空格，标点符号不纳入计算，大小写字母忽略大小，求字母和数字是否构成回文。<br>问题:项目中多线程怎么使用的。线程池中哪些地方是耗时操作，利用线程池的批处理中耗时的方面有哪些，分布式部署时如何监控摄像头信息，事务回滚的条件，手写jdbc事务回滚，对事务的理解，手写查询每门课的平均分，手写查询平均分大于80的课程.stringbuffer和stringbuilder的区别，后者不安全的原因是什么，分析一遍</p>
+<p>二面，手写代码，两个二叉树合并，位置相同的且不为空计算两节点的和，存在为空的节点，则计算不为空的节点，构造一个新的二叉树出来。 问题:控制层的对象什么时候创建的，单例还是多例，默认是什么，equals和hashcode的区别，equals重写，hashcode不变会出现什么问题，举例分析，红黑树和平衡二叉树的区别，项目中的索引是怎么用的，有什么用，awk是什么，有什么用， </p>
+<p>三面:io多路复用，项目介绍，项目的实用性等等 </p>
+
       
 
       
@@ -397,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/07/22/suibi/阿里初面问题：/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://villce.github.io/2018/09/18/suibi/人人网/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -411,18 +296,9 @@
   
 <nav id="article-nav">
   
-    <a href="/vilce/2018/08/01/main/Spring事务处理时自我调用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spring学习
-        
-      </div>
-    </a>
   
-  
-    <a href="/vilce/2018/07/19/main/主要详细知识点(1)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面试知识点整理(一)</div>
+    <a href="/vilce/2018/09/17/suibi/海康/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">海康</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -449,7 +325,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#阿里初面："><span class="toc-number">1.</span> <span class="toc-text">阿里初面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AOP实现原理"><span class="toc-number">1.1.</span> <span class="toc-text">1. AOP实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SpringBoot和Spring的区别"><span class="toc-number">1.2.</span> <span class="toc-text">2. SpringBoot和Spring的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SpringBoot的启动流程"><span class="toc-number">1.3.</span> <span class="toc-text">3. SpringBoot的启动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SpringBoot内嵌tomact是如何运行的"><span class="toc-number">1.4.</span> <span class="toc-text">4. SpringBoot内嵌tomact是如何运行的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-SpringBoot如何整合第三方框架，start是如何启动的"><span class="toc-number">1.5.</span> <span class="toc-text">5. SpringBoot如何整合第三方框架，start是如何启动的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-多线程的死锁是什么原理，死锁时多线程处于什么状态"><span class="toc-number">1.6.</span> <span class="toc-text">6. 多线程的死锁是什么原理，死锁时多线程处于什么状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-阻塞和等待有什么区别，举一个场景解释一下"><span class="toc-number">1.7.</span> <span class="toc-text">7. 阻塞和等待有什么区别，举一个场景解释一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Mysql索引，复合索引等是怎么回事"><span class="toc-number">1.8.</span> <span class="toc-text">8. Mysql索引，复合索引等是怎么回事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-了解Redis集群吗，介绍一下"><span class="toc-number">1.9.</span> <span class="toc-text">9. 了解Redis集群吗，介绍一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Spring与mybatis是怎么实现执行sql语句的"><span class="toc-number">1.10.</span> <span class="toc-text">10. Spring与mybatis是怎么实现执行sql语句的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-讲一下设计的表结构"><span class="toc-number">1.11.</span> <span class="toc-text">11. 讲一下设计的表结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-spring-aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志"><span class="toc-number">1.12.</span> <span class="toc-text">12. spring aop的实现方法。如果aop配置了两个方法a、b，a调用了b拦截之后有几个日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-AOP的两种实现spring-aop和aspectJ的具体区别是什么"><span class="toc-number">1.13.</span> <span class="toc-text">13. AOP的两种实现spring aop和aspectJ的具体区别是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-spring-aop实现的限制"><span class="toc-number">1.14.</span> <span class="toc-text">14. spring aop实现的限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-hashmap的具体实现"><span class="toc-number">1.15.</span> <span class="toc-text">15. hashmap的具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-hashcode与equal的关系"><span class="toc-number">1.16.</span> <span class="toc-text">16. hashcode与equal的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些"><span class="toc-number">1.17.</span> <span class="toc-text">17. mongoDB与mysql的区别，是不是mongoDB只用设计一张表就行了，相对mysql优化了哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-了解了什么web技术"><span class="toc-number">1.18.</span> <span class="toc-text">18. 了解了什么web技术</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -577,19 +453,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java基础 面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">essay</a>
+                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java基础 面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,6 +470,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">essay</a>
               </li>
             
             <div class="clearfix"></div>
