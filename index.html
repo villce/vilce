@@ -179,27 +179,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="无端游戏"><a href="#无端游戏" class="headerlink" title="无端游戏"></a>无端游戏</h3><h4 id="1、画一下进程五态图"><a href="#1、画一下进程五态图" class="headerlink" title="1、画一下进程五态图"></a>1、画一下进程五态图</h4><p>进程(又称为进程实体)由三部分组成：PCB(进程控制块)、程序段和相关数据段</p>
-<p>进程的基本状态和转换</p>
-<p>1）三种基本状态及转换：</p>
-<p>a）就绪(Ready)状态：指进程已处于准备好运行的状态，及进程已经分配到需要的系统资源，只要在获得CPU就可以执行</p>
-<p>b）执行(Running)状态：指进程获得了CPU正在执行，在单处理机系统中，最多只有一个进程处于该状态</p>
-<p>c）堵塞(Block)状态：指正在执行的进程，在执行过程中发生了某时间(如：I/O请求、申请缓冲区失败等)</p>
-<p><img src="E:\vilce\themes\yilia\source\img\OS\os1.png" alt="1"></p>
-<p>2）五种状态及转换：</p>
-<p>为满足进程控制块对数据及操作的完整性要求以及增强管理的灵活性，通常再引入两种状态：创建和终止状态</p>
-<p><img src="E:\vilce\themes\yilia\source\img\OS\os2.png" alt="2"></p>
-<h4 id="2、Mysql有哪些锁，innodb使用行锁有什么限制条件"><a href="#2、Mysql有哪些锁，innodb使用行锁有什么限制条件" class="headerlink" title="2、Mysql有哪些锁，innodb使用行锁有什么限制条件"></a>2、Mysql有哪些锁，innodb使用行锁有什么限制条件</h4><p>MySQL的锁机制比较简单，最显著的特点是不同的存储引擎支持不同的锁机制。比如，MyISAM和MEMORY存储引擎采用的是表级锁；BDB存储引擎采用的是页面锁，但也支持表级锁；InnoDB存储引擎既支持行级锁也支持表级锁，但默认情况下是采用行级锁。</p>
-<p><strong>表级锁：</strong>开销小，加锁快；不会出现死锁；锁定粒度大，发生锁冲突的概率最高，并发度最低</p>
-<p><strong>行级锁：</strong>开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发度最高</p>
-<p><strong>页面锁：</strong>开销和加锁时间介于表锁和行锁之间；会出现死锁；锁定粒度介于表锁和行锁之间，并发度一般</p>
-<p><a href="https://blog.csdn.net/soonfly/article/details/70238902" target="_blank" rel="noopener">InnoDB锁</a></p>
-<h4 id="3、写一个SQL，查询选修多门课程的学生名字"><a href="#3、写一个SQL，查询选修多门课程的学生名字" class="headerlink" title="3、写一个SQL，查询选修多门课程的学生名字"></a>3、写一个SQL，查询选修多门课程的学生名字</h4><p>select 名字 from 表 group by 名字 having count(课程)&gt;1</p>
-<h4 id="4、讲一下TCP协议的三次握手"><a href="#4、讲一下TCP协议的三次握手" class="headerlink" title="4、讲一下TCP协议的三次握手"></a>4、讲一下TCP协议的三次握手</h4><p><a href="https://blog.csdn.net/qzcsu/article/details/72861891" target="_blank" rel="noopener">三次握手和四次挥手</a></p>
-<h4 id="5、写一个算法，找出同父节点的两个节点的最远距离"><a href="#5、写一个算法，找出同父节点的两个节点的最远距离" class="headerlink" title="5、写一个算法，找出同父节点的两个节点的最远距离"></a>5、写一个算法，找出同父节点的两个节点的最远距离</h4><h4 id="6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快"><a href="#6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快" class="headerlink" title="6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快"></a>6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快</h4><p>ArratList基础数据结构为数组，LinkedList基础数据结构为链表</p>
-<p>数组的物理地址是递增的，而链表的物理地址不是，只能通过指针一个个的进行查询</p>
-<h4 id="7、HashMap原理讲一下，为什么要在75-的时候进行扩容"><a href="#7、HashMap原理讲一下，为什么要在75-的时候进行扩容" class="headerlink" title="7、HashMap原理讲一下，为什么要在75%的时候进行扩容"></a>7、HashMap原理讲一下，为什么要在75%的时候进行扩容</h4><p>为了散列均匀，防止过多的哈希冲突导致链表过长</p>
-<h4 id="8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"><a href="#8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢" class="headerlink" title="8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"></a>8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢</h4>
+        <h3 id="无端游戏"><a href="#无端游戏" class="headerlink" title="无端游戏"></a>无端游戏</h3><h4 id="1、画一下进程五态图"><a href="#1、画一下进程五态图" class="headerlink" title="1、画一下进程五态图"></a>1、画一下进程五态图</h4>
+        
+          <a class="article-more-a" href="/vilce/2018/09/26/suibi/无端/#more">more >></a>
+        
       
 
       
@@ -1045,11 +1028,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
+                <a href="javascript:void(0)" class="js-tag color1">annotation</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">annotation</a>
+                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
               </li>
              
               <li class="article-tag-list-item">
