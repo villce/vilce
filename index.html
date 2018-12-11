@@ -179,46 +179,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="远程虚拟机搭建"><a href="#远程虚拟机搭建" class="headerlink" title="远程虚拟机搭建"></a>远程虚拟机搭建</h2><h3 id="一、创建虚拟机"><a href="#一、创建虚拟机" class="headerlink" title="一、创建虚拟机"></a>一、创建虚拟机</h3><h4 id="使用VMware-vSphere-Client连接服务器，新建服务器，步骤如下："><a href="#使用VMware-vSphere-Client连接服务器，新建服务器，步骤如下：" class="headerlink" title="使用VMware vSphere Client连接服务器，新建服务器，步骤如下："></a><strong>使用VMware vSphere Client连接服务器，新建服务器，步骤如下：</strong></h4><h4 id="1、选用典型配置"><a href="#1、选用典型配置" class="headerlink" title="1、选用典型配置"></a>1、选用典型配置</h4><p><img src="/vilce/img/centos/centos14.png" alt="1"></p>
-<h4 id="2、命名"><a href="#2、命名" class="headerlink" title="2、命名"></a>2、命名</h4><p><img src="/vilce/img/centos/centos15.png" alt="2"></p>
-<h4 id="3、选用存储器"><a href="#3、选用存储器" class="headerlink" title="3、选用存储器"></a>3、选用存储器</h4><p><img src="/vilce/img/centos/centos16.png" alt="3"></p>
-<h4 id="4、选择操作系统"><a href="#4、选择操作系统" class="headerlink" title="4、选择操作系统"></a>4、选择操作系统</h4><p>这里的系统应该和之后安装的镜像文件系统一致。</p>
-<p><img src="/vilce/img/centos/centos17.png" alt="4"></p>
-<h4 id="5、选用网卡"><a href="#5、选用网卡" class="headerlink" title="5、选用网卡"></a>5、选用网卡</h4><p>这里创建两个网卡，一个vlan172用于外网可以上网，一个vlan51用于内网可以内部连接，但是每次只能使用一个网卡，所以需要根据需求切换。(这里使用两个网卡仅是因为学校内部ip分配的原因)</p>
-<p><img src="/vilce/img/centos/centos18.png" alt="5"></p>
-<h4 id="6、创建磁盘"><a href="#6、创建磁盘" class="headerlink" title="6、创建磁盘"></a>6、创建磁盘</h4><p>根据需求选择大小，后面也可以修改，这里选用Thin Provision并继续配置虚拟机基础设置。</p>
-<p><img src="/vilce/img/centos/centos19.png" alt="6"></p>
-<p><img src="/vilce/img/centos/centos20.png" alt="7"></p>
-<h4 id="7、虚拟机基础设置"><a href="#7、虚拟机基础设置" class="headerlink" title="7、虚拟机基础设置"></a>7、虚拟机基础设置</h4><p>内存根据需求选择，也可以后面进行修改，CPU一样，这里选用基础的4核。在选用镜像时需要注意，这里选择的镜像文件是已经存放在服务器上的镜像文件，该方法不支持远程文件安装。勾选开启连接后，完成设置开启虚拟机后就可以自动安装了。</p>
-<p><img src="/vilce/img/centos/centos21.png" alt="8"></p>
-<p><img src="/vilce/img/centos/centos22.png" alt="9"></p>
-<h3 id="二、设置网络"><a href="#二、设置网络" class="headerlink" title="二、设置网络"></a>二、设置网络</h3><h4 id="1、配置外网"><a href="#1、配置外网" class="headerlink" title="1、配置外网"></a>1、配置外网</h4><p>输入如下命令进入网卡配置路径下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">cd sysconfig</span><br><span class="line">cd network-scripts</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
-<p>可以看到有两个网卡，分别是ifcfg-ens192和ifcfg-ens224:</p>
-<p><img src="/vilce/img/centos/centos23.png" alt="10"></p>
-<p>使用命令<strong>ip add</strong>查看网卡信息：</p>
-<p><img src="/vilce/img/centos/centos3.png" alt="11"></p>
-<p>使用命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ifcfg-ens192</span><br></pre></td></tr></table></figure>
-<p>进入ifcfg-ens192文件中查看设置：</p>
-<p><img src="/vilce/img/centos/centos7.png" alt="12"></p>
-<p>重要的是BOOTPROTO和ONBOOT两个设置，修改并配置静态ip如下：</p>
-<p><img src="/vilce/img/centos/centos1.png" alt="13"></p>
-<p>保存退出后重启网卡并查询网卡信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br><span class="line">ip add</span><br></pre></td></tr></table></figure>
-<p><img src="/vilce/img/centos/centos4.png" alt="14"></p>
-<p>测试外网的连接：</p>
-<p><img src="/vilce/img/centos/centos6.png" alt="15"></p>
-<p>但是本机还是无法连接虚拟机。</p>
-<h4 id="2、配置内网"><a href="#2、配置内网" class="headerlink" title="2、配置内网"></a>2、配置内网</h4><p>进入外网网卡ifcfg-ens192中，将ONBOOT重新修改为no，关闭网卡，重启网卡。进入内网网卡ifcfg-ens224中，<strong>此时仅修改ONBOOT属性为yes</strong>，保存退出后重启网卡，这时候校园网会自动分配一个静态ip出来，如下：</p>
-<p><img src="/vilce/img/centos/centos9.png" alt="16"></p>
-<p>随后重新进入网卡ifcfg-ens224进行配置如下：</p>
-<p><img src="/vilce/img/centos/centos2.png" alt="17"></p>
-<p>保存退出后重启网卡，测试内网：</p>
-<p><img src="/vilce/img/centos/centos5.png" alt="18"></p>
-<p>本地连接测试：</p>
-<p><img src="/vilce/img/centos/centos12.png" alt="19"></p>
-
+        <h2 id="远程虚拟机搭建"><a href="#远程虚拟机搭建" class="headerlink" title="远程虚拟机搭建"></a>远程虚拟机搭建</h2><h3 id="一、创建虚拟机"><a href="#一、创建虚拟机" class="headerlink" title="一、创建虚拟机"></a>一、创建虚拟机</h3>
+        
+          <a class="article-more-a" href="/vilce/2018/12/11/main/虚拟机搭建/#more">more >></a>
+        
       
 
       
@@ -1056,11 +1020,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1068,11 +1032,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,19 +1044,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">essay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
               </li>
             
             <div class="clearfix"></div>

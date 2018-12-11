@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://villce.github.io">
   <title>虚拟机搭建 | vilce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="远程虚拟机搭建一、创建虚拟机使用VMware vSphere Client连接服务器，新建服务器，步骤如下：1、选用典型配置 2、命名 3、选用存储器 4、选择操作系统这里的系统应该和之后安装的镜像文件系统一致。  5、选用网卡这里创建两个网卡，一个vlan172用于外网可以上网，一个vlan51用于内网可以内部连接，但是每次只能使用一个网卡，所以需要根据需求切换。(这里使用两个网卡仅是因为学校内">
+  <meta name="description" content="远程虚拟机搭建一、创建虚拟机">
 <meta name="keywords" content="CentOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟机搭建">
 <meta property="og:url" content="https://villce.github.io/2018/12/11/main/虚拟机搭建/index.html">
 <meta property="og:site_name" content="vilce">
-<meta property="og:description" content="远程虚拟机搭建一、创建虚拟机使用VMware vSphere Client连接服务器，新建服务器，步骤如下：1、选用典型配置 2、命名 3、选用存储器 4、选择操作系统这里的系统应该和之后安装的镜像文件系统一致。  5、选用网卡这里创建两个网卡，一个vlan172用于外网可以上网，一个vlan51用于内网可以内部连接，但是每次只能使用一个网卡，所以需要根据需求切换。(这里使用两个网卡仅是因为学校内">
+<meta property="og:description" content="远程虚拟机搭建一、创建虚拟机">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://villce.github.io/vilce/img/centos/centos14.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/centos/centos15.png">
@@ -35,10 +35,10 @@
 <meta property="og:image" content="https://villce.github.io/vilce/img/centos/centos2.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/centos/centos5.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/centos/centos12.png">
-<meta property="og:updated_time" content="2018-12-11T03:21:23.718Z">
+<meta property="og:updated_time" content="2018-12-11T03:24:13.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚拟机搭建">
-<meta name="twitter:description" content="远程虚拟机搭建一、创建虚拟机使用VMware vSphere Client连接服务器，新建服务器，步骤如下：1、选用典型配置 2、命名 3、选用存储器 4、选择操作系统这里的系统应该和之后安装的镜像文件系统一致。  5、选用网卡这里创建两个网卡，一个vlan172用于外网可以上网，一个vlan51用于内网可以内部连接，但是每次只能使用一个网卡，所以需要根据需求切换。(这里使用两个网卡仅是因为学校内">
+<meta name="twitter:description" content="远程虚拟机搭建一、创建虚拟机">
 <meta name="twitter:image" content="https://villce.github.io/vilce/img/centos/centos14.png">
   
     <link rel="alternative" href="/atom.xml" title="vilce" type="application/atom+xml">
@@ -199,7 +199,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="远程虚拟机搭建"><a href="#远程虚拟机搭建" class="headerlink" title="远程虚拟机搭建"></a>远程虚拟机搭建</h2><h3 id="一、创建虚拟机"><a href="#一、创建虚拟机" class="headerlink" title="一、创建虚拟机"></a>一、创建虚拟机</h3><h4 id="使用VMware-vSphere-Client连接服务器，新建服务器，步骤如下："><a href="#使用VMware-vSphere-Client连接服务器，新建服务器，步骤如下：" class="headerlink" title="使用VMware vSphere Client连接服务器，新建服务器，步骤如下："></a><strong>使用VMware vSphere Client连接服务器，新建服务器，步骤如下：</strong></h4><h4 id="1、选用典型配置"><a href="#1、选用典型配置" class="headerlink" title="1、选用典型配置"></a>1、选用典型配置</h4><p><img src="/vilce/img/centos/centos14.png" alt="1"></p>
+        <h2 id="远程虚拟机搭建"><a href="#远程虚拟机搭建" class="headerlink" title="远程虚拟机搭建"></a>远程虚拟机搭建</h2><h3 id="一、创建虚拟机"><a href="#一、创建虚拟机" class="headerlink" title="一、创建虚拟机"></a>一、创建虚拟机</h3><a id="more"></a>
+<h4 id="使用VMware-vSphere-Client连接服务器，新建服务器，步骤如下："><a href="#使用VMware-vSphere-Client连接服务器，新建服务器，步骤如下：" class="headerlink" title="使用VMware vSphere Client连接服务器，新建服务器，步骤如下："></a><strong>使用VMware vSphere Client连接服务器，新建服务器，步骤如下：</strong></h4><h4 id="1、选用典型配置"><a href="#1、选用典型配置" class="headerlink" title="1、选用典型配置"></a>1、选用典型配置</h4><p><img src="/vilce/img/centos/centos14.png" alt="1"></p>
 <h4 id="2、命名"><a href="#2、命名" class="headerlink" title="2、命名"></a>2、命名</h4><p><img src="/vilce/img/centos/centos15.png" alt="2"></p>
 <h4 id="3、选用存储器"><a href="#3、选用存储器" class="headerlink" title="3、选用存储器"></a>3、选用存储器</h4><p><img src="/vilce/img/centos/centos16.png" alt="3"></p>
 <h4 id="4、选择操作系统"><a href="#4、选择操作系统" class="headerlink" title="4、选择操作系统"></a>4、选择操作系统</h4><p>这里的系统应该和之后安装的镜像文件系统一致。</p>
@@ -497,11 +498,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,11 +510,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,19 +522,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">essay</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">面试 大纲</a>
               </li>
             
             <div class="clearfix"></div>
