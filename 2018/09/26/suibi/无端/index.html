@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://villce.github.io/vilce/img/OS/os1.png">
 <meta property="og:image" content="https://villce.github.io/vilce/img/OS/os2.png">
-<meta property="og:updated_time" content="2018-10-08T00:53:37.729Z">
+<meta property="og:updated_time" content="2018-10-08T11:08:59.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无端">
 <meta name="twitter:description" content="无端游戏1、画一下进程五态图">
@@ -203,7 +203,13 @@
 <h4 id="5、写一个算法，找出同父节点的两个节点的最远距离"><a href="#5、写一个算法，找出同父节点的两个节点的最远距离" class="headerlink" title="5、写一个算法，找出同父节点的两个节点的最远距离"></a>5、写一个算法，找出同父节点的两个节点的最远距离</h4><h4 id="6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快"><a href="#6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快" class="headerlink" title="6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快"></a>6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快</h4><p>ArratList基础数据结构为数组，LinkedList基础数据结构为链表</p>
 <p>数组的物理地址是递增的，而链表的物理地址不是，只能通过指针一个个的进行查询</p>
 <h4 id="7、HashMap原理讲一下，为什么要在75-的时候进行扩容"><a href="#7、HashMap原理讲一下，为什么要在75-的时候进行扩容" class="headerlink" title="7、HashMap原理讲一下，为什么要在75%的时候进行扩容"></a>7、HashMap原理讲一下，为什么要在75%的时候进行扩容</h4><p>为了散列均匀，防止过多的哈希冲突导致链表过长</p>
-<h4 id="8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"><a href="#8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢" class="headerlink" title="8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"></a>8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢</h4>
+<h4 id="8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"><a href="#8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢" class="headerlink" title="8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"></a>8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢</h4><h4 id="9、HashMap扩容机制（JDK1-7）"><a href="#9、HashMap扩容机制（JDK1-7）" class="headerlink" title="9、HashMap扩容机制（JDK1.7）"></a>9、HashMap扩容机制（JDK1.7）</h4><p>扩容必须满足两个条件：</p>
+<p>1）存放新值的时候当前已有元素的个数必须大于等于阈值</p>
+<p>2）存放新值的时候当前存放数据发生hash冲突（当前key计算的hash值换算出来的数组下标位置已存在值）</p>
+<p>因为这两个条件，所以存在下面这些情况：</p>
+<p>1）hashmap在存值的时候(默认大小为16，负载因子0.75，阈值12)，可能达到最后存满16个值的时候，再存入第17个值才会发生扩容现象，因为前16个值，每个值在底层数组中分别占据一个位置，并没有发生hash冲突</p>
+<p>2）当然也有可能存储更多值(超过16个值，最多可以 存放26个值)都还没有扩容。原理：前11个值全部hash冲突，存到数组的同一个位置(这时元素个数小于阈值12，不会扩容)，后面所有存入的15个值全部分散到数组剩下的15个位置(这时元素个数大于等于阈值，但是每次存入的元素并没有发生hash冲突，所以不会扩容)，前面11+15=26，所以在存入第27个值的时候才同时满足上面两个条件，这时候才会发生扩容现象。</p>
+
       
 
       
@@ -317,6 +323,15 @@
   
 <nav id="article-nav">
   
+    <a href="/vilce/2018/12/11/main/虚拟机搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          虚拟机搭建
+        
+      </div>
+    </a>
+  
   
     <a href="/vilce/2018/09/21/suibi/喜马拉雅/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">喜马拉雅</div>
@@ -346,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#无端游戏"><span class="toc-number">1.</span> <span class="toc-text">无端游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、画一下进程五态图"><span class="toc-number">1.1.</span> <span class="toc-text">1、画一下进程五态图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、Mysql有哪些锁，innodb使用行锁有什么限制条件"><span class="toc-number">1.2.</span> <span class="toc-text">2、Mysql有哪些锁，innodb使用行锁有什么限制条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、写一个SQL，查询选修多门课程的学生名字"><span class="toc-number">1.3.</span> <span class="toc-text">3、写一个SQL，查询选修多门课程的学生名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、讲一下TCP协议的三次握手"><span class="toc-number">1.4.</span> <span class="toc-text">4、讲一下TCP协议的三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、写一个算法，找出同父节点的两个节点的最远距离"><span class="toc-number">1.5.</span> <span class="toc-text">5、写一个算法，找出同父节点的两个节点的最远距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快"><span class="toc-number">1.6.</span> <span class="toc-text">6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、HashMap原理讲一下，为什么要在75-的时候进行扩容"><span class="toc-number">1.7.</span> <span class="toc-text">7、HashMap原理讲一下，为什么要在75%的时候进行扩容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"><span class="toc-number">1.8.</span> <span class="toc-text">8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#无端游戏"><span class="toc-number">1.</span> <span class="toc-text">无端游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、画一下进程五态图"><span class="toc-number">1.1.</span> <span class="toc-text">1、画一下进程五态图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、Mysql有哪些锁，innodb使用行锁有什么限制条件"><span class="toc-number">1.2.</span> <span class="toc-text">2、Mysql有哪些锁，innodb使用行锁有什么限制条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、写一个SQL，查询选修多门课程的学生名字"><span class="toc-number">1.3.</span> <span class="toc-text">3、写一个SQL，查询选修多门课程的学生名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、讲一下TCP协议的三次握手"><span class="toc-number">1.4.</span> <span class="toc-text">4、讲一下TCP协议的三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、写一个算法，找出同父节点的两个节点的最远距离"><span class="toc-number">1.5.</span> <span class="toc-text">5、写一个算法，找出同父节点的两个节点的最远距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快"><span class="toc-number">1.6.</span> <span class="toc-text">6、ArrayList和LinkedList分别是什么数据结构，为什么数组查询比链表快</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、HashMap原理讲一下，为什么要在75-的时候进行扩容"><span class="toc-number">1.7.</span> <span class="toc-text">7、HashMap原理讲一下，为什么要在75%的时候进行扩容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢"><span class="toc-number">1.8.</span> <span class="toc-text">8、SpringBoot简化了Spring的配置，但是SpringBoot使用哪些文件进行配置呢</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、HashMap扩容机制（JDK1-7）"><span class="toc-number">1.9.</span> <span class="toc-text">9、HashMap扩容机制（JDK1.7）</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -458,7 +473,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">essay</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,19 +481,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">annotation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">事务管理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,7 +497,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+                <a href="javascript:void(0)" class="js-tag color1">annotation</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CentOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,7 +513,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">essay</a>
+                <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
               </li>
             
             <div class="clearfix"></div>
