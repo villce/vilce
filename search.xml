@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Fvilce%2F2019%2F09%2F28%2Fmain%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[PIP版本问题]]></title>
     <url>%2Fvilce%2F2019%2F06%2F11%2Fmain%2FPIP%E7%89%88%E6%9C%AC%E5%86%B2%E7%AA%81%2F</url>
     <content type="text"><![CDATA[提示错误： 这个错误，解决有三点：1、在shell中输入pip -V查看版本，却被告知是19.1.1的版本（错误） 2、输入python -m pip install –upgrade pip 升级，提示如下：（错误） 3、一大串红色字体（错误） 其实，此时升级的是pip，它提示的是pip3这个旧的版本。所以解决方法是：1、输入pip3 -V 可以看到提示的版本是9.0.1: 2、输入pip3 install –upgrade pip 可能会出现错误： 拒绝访问，无法进行旧版本的卸载更新，需要使用管理者身份重新进行更新。 3、输入pip3 -V进行检查 如果报错，在重新尝试，由于是国外网站，非常的慢，可能对网络延迟进行报错。]]></content>
