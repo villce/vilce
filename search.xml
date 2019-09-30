@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Fvilce%2F2019%2F09%2F28%2Fmain%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[PIP版本问题]]></title>
+    <url>%2Fvilce%2F2019%2F06%2F11%2Fmain%2FPIP%E7%89%88%E6%9C%AC%E5%86%B2%E7%AA%81%2F</url>
+    <content type="text"><![CDATA[提示错误： 这个错误，解决有三点：1、在shell中输入pip -V查看版本，却被告知是19.1.1的版本（错误） 2、输入python -m pip install –upgrade pip 升级，提示如下：（错误） 3、一大串红色字体（错误） 其实，此时升级的是pip，它提示的是pip3这个旧的版本。所以解决方法是：1、输入pip3 -V 可以看到提示的版本是9.0.1: 2、输入pip3 install –upgrade pip 可能会出现错误： 拒绝访问，无法进行旧版本的卸载更新，需要使用管理者身份重新进行更新。 3、输入pip3 -V进行检查 如果报错，在重新尝试，由于是国外网站，非常的慢，可能对网络延迟进行报错。]]></content>
+      <categories>
+        <category>文章</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pip</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[虚拟机搭建]]></title>
     <url>%2Fvilce%2F2018%2F12%2F11%2Fmain%2F%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%90%AD%E5%BB%BA%2F</url>
     <content type="text"><![CDATA[远程虚拟机搭建一、创建虚拟机 使用VMware vSphere Client连接服务器，新建服务器，步骤如下：1、选用典型配置 2、命名 3、选用存储器 4、选择操作系统这里的系统应该和之后安装的镜像文件系统一致。 5、选用网卡这里创建两个网卡，一个vlan172用于外网可以上网，一个vlan51用于内网可以内部连接，但是每次只能使用一个网卡，所以需要根据需求切换。(这里使用两个网卡仅是因为学校内部ip分配的原因) 6、创建磁盘根据需求选择大小，后面也可以修改，这里选用Thin Provision并继续配置虚拟机基础设置。 7、虚拟机基础设置内存根据需求选择，也可以后面进行修改，CPU一样，这里选用基础的4核。在选用镜像时需要注意，这里选择的镜像文件是已经存放在服务器上的镜像文件，该方法不支持远程文件安装。勾选开启连接后，完成设置开启虚拟机后就可以自动安装了。 二、设置网络1、配置外网输入如下命令进入网卡配置路径下： 1234cd /etccd sysconfigcd network-scriptsls 可以看到有两个网卡，分别是ifcfg-ens192和ifcfg-ens224: 使用命令ip add查看网卡信息： 使用命令 1vi ifcfg-ens192 进入ifcfg-ens192文件中查看设置： 重要的是BOOTPROTO和ONBOOT两个设置，修改并配置静态ip如下： 保存退出后重启网卡并查询网卡信息： 12systemctl restart networkip add 测试外网的连接： 但是本机还是无法连接虚拟机。 2、配置内网进入外网网卡ifcfg-ens192中，将ONBOOT重新修改为no，关闭网卡，重启网卡。进入内网网卡ifcfg-ens224中，此时仅修改ONBOOT属性为yes，保存退出后重启网卡，这时候校园网会自动分配一个静态ip出来，如下： 随后重新进入网卡ifcfg-ens224进行配置如下： 保存退出后重启网卡，测试内网： 本地连接测试：]]></content>
@@ -47,7 +64,7 @@
   <entry>
     <title><![CDATA[人人网]]></title>
     <url>%2Fvilce%2F2018%2F09%2F18%2Fsuibi%2F%E4%BA%BA%E4%BA%BA%E7%BD%91%2F</url>
-    <content type="text"><![CDATA[人人网 一面，手写代码，字符串回文判断，空格，标点符号不纳入计算，大小写字母忽略大小，求字母和数字是否构成回文。问题:项目中多线程怎么使用的。线程池中哪些地方是耗时操作，利用线程池的批处理中耗时的方面有哪些，分布式部署时如何监控摄像头信息，事务回滚的条件，手写jdbc事务回滚，对事务的理解，手写查询每门课的平均分，手写查询平均分大于80的课程.stringbuffer和stringbuilder的区别，后者不安全的原因是什么，分析一遍 ####二面，手写代码，两个二叉树合并，位置相同的且不为空计算两节点的和，存在为空的节点，则计算不为空的节点，构造一个新的二叉树出来。 问题:控制层的对象什么时候创建的，单例还是多例，默认是什么，equals和hashcode的区别，equals重写，hashcode不变会出现什么问题，举例分析，红黑树和平衡二叉树的区别，项目中的索引是怎么用的，有什么用，awk是什么，有什么用， ####三面:io多路复用，项目介绍，项目的实用性等等]]></content>
+    <content type="text"><![CDATA[人人网 一面，手写代码，字符串回文判断，空格，标点符号不纳入计算，大小写字母忽略大小，求字母和数字是否构成回文。问题:项目中多线程怎么使用的。线程池中哪些地方是耗时操作，利用线程池的批处理中耗时的方面有哪些，分布式部署时如何监控摄像头信息，事务回滚的条件，手写jdbc事务回滚，对事务的理解，手写查询每门课的平均分，手写查询平均分大于80的课程.stringbuffer和stringbuilder的区别，后者不安全的原因是什么，分析一遍 二面，手写代码，两个二叉树合并，位置相同的且不为空计算两节点的和，存在为空的节点，则计算不为空的节点，构造一个新的二叉树出来。 问题:控制层的对象什么时候创建的，单例还是多例，默认是什么，equals和hashcode的区别，equals重写，hashcode不变会出现什么问题，举例分析，红黑树和平衡二叉树的区别，项目中的索引是怎么用的，有什么用，awk是什么，有什么用，三面:io多路复用，项目介绍，项目的实用性等等]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -254,10 +271,5 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Fvilce%2F2018%2F04%2F26%2Fmain%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
